@@ -5,222 +5,229 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Обучаем собак помогать людям</title>
     <style>
-       @font-face {
-    font-family: 'ITC Serif Gothic';
-    src: url('mr_itcserifgothic_black.otf') format('opentype');
-}
+        @font-face {
+            font-family: 'MrITCSerifGothic';
+            src: url('mr_itcserifgothic_black.otf') format('opentype');
+        }
 
-body {
-    font-family: 'MrITCSerifGothic', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #EFF1EE; /* Цвет фона для всего сайта */
-    color: #333;
-}
+        body {
+            font-family: 'MrITCSerifGothic', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #EFF1EE; /* Цвет фона для всего сайта */
+            color: #333;
+        }
 
-header {
-    background-color: #FFFFFF; /* Фон хедера белый */
-    padding: 20px;
-    text-align: center;
-
-    }
+        header {
+            background-color: #FFFFFF; /* Фон хедера белый */
+            padding: 20px;
+            text-align: center;
+        }
 
         header img {
             height: 50px;
         }
+
         nav {
             margin-top: 10px;
         }
+
         nav a {
             margin: 0 10px;
             text-decoration: none;
             color: #333;
         }
+
         .hero {
             text-align: center;
             padding: 50px 20px;
-            background-color: #E0F7FA; /* Adjust this as needed */
-            background-size: cover;
-            background-position: center;
+            background-color: transparent; /* Прозрачный фон у .hero */
+            /* Уберите или замените изображение фона, если не требуется */
+            /* background-image: url('background_image.png'); */
+            /* background-size: cover; */
+            /* background-position: center; */
         }
+
         .hero h1 {
             font-size: 2.5em;
-            color: #2E7D32; /* Adjust this as needed */
+            color: #2E7D32; /* Цвет текста */
         }
+
         .hero p {
             font-size: 1.2em;
             margin-top: 20px;
         }
+
         .hero img {
             margin-top: 30px;
             width: 150px;
             height: auto;
         }
+
         .cta-button {
             display: inline-block;
             margin-top: 20px;
             padding: 10px 20px;
-            background-color: #388E3C; /* Adjust this as needed */
+            background-color: #388E3C; /* Цвет кнопки */
             color: #FFF;
             text-decoration: none;
             border-radius: 5px;
         }
+
         .section {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: transparent; /* Прозрачный фон у секций */
-}
+            padding: 50px 20px;
+            text-align: center;
+            background-color: transparent; /* Прозрачный фон у секций */
         }
+
         .section:nth-child(even) {
-            background-color: #F1F8E9; /* Adjust this as needed */
+            background-color: #F1F8E9; /* Цвет для четных секций */
         }
+
         .section h2 {
             font-size: 2em;
-            color: #2E7D32; /* Adjust this as needed */
+            color: #2E7D32; /* Цвет заголовков секций */
         }
+
         .stats {
             display: flex;
             justify-content: space-around;
             margin-top: 20px;
         }
+
         .stat {
             text-align: center;
         }
+
         .stat h3 {
             font-size: 2em;
-            color: #2E7D32; /* Adjust this as needed */
+            color: #2E7D32; /* Цвет текста статистики */
         }
+
         .stat p {
             margin-top: 10px;
         }
+
         .faq {
             margin: 50px 20px;
             text-align: left;
         }
+
         .faq h2 {
             text-align: center;
             font-size: 2em;
-            color: #2E7D32; /* Adjust this as needed */
+            color: #2E7D32; /* Цвет заголовков FAQ */
         }
+
         .faq-item {
             margin-bottom: 10px;
-            border-bottom: 1px solid #CCC;
+            border-bottom: 1px солid #CCC;
             padding-bottom: 10px;
         }
+
         .faq-question {
             display: flex;
             justify-content: space-between;
             cursor: pointer;
             padding: 10px;
-            background-color: #E8F5E9; /* Adjust this as needed */
+            background-color: #E8F5E9; /* Цвет фона вопроса */
         }
+
         .faq-answer {
             display: none;
             padding: 10px;
         }
+
         .useful-info {
             margin: 50px 20px;
             text-align: center;
         }
+
         .useful-info h2 {
             font-size: 2em;
-            color: #2E7D32; /* Adjust this as needed */
+            color: #2E7D32; /* Цвет заголовков полезной информации */
         }
+
         .articles {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
         }
+
         .article {
             width: 30%;
-            background-color: #FFFFFF; /* Adjust this as needed */
+            background-color: #FFFFFF; /* Цвет фона статьи */
             margin: 10px;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         .article img {
             width: 100%;
             height: auto;
             border-radius: 10px;
         }
+
         footer {
-            background-color: #388E3C; /* Adjust this as needed */
+            background-color: #388E3C; /* Цвет фона футера */
             color: #FFF;
             text-align: center;
             padding: 20px;
             margin-top: 50px;
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var faqItems = document.querySelectorAll(".faq-item");
-            faqItems.forEach(function(item) {
-                item.addEventListener("click", function() {
-                    var answer = this.querySelector(".faq-answer");
-                    var icon = this.querySelector("span");
-                    if (answer.style.display === "block") {
-                        answer.style.display = "none";
-                        icon.innerHTML = "&#9660;";
-                    } else {
-                        answer.style.display = "block";
-                        icon.innerHTML = "&#9650;";
-                    }
-                });
-            });
-        });
-    </script>
 </head>
 <body>
     <header>
-        <img src="logo.svg" alt="Logo"> 
+        <img src="logo.png" alt="Логотип">
         <nav>
-            <a href="#">О нас</a>
-            <a href="#">Наша деятельность</a>
-            <a href="#">Статьи</a>
-            <a href="#">Контакты</a>
-            <a href="#">Партнеры</a>
+            <a href="#about">О нас</a>
+            <a href="#activities">Наша деятельность</a>
+            <a href="#articles">Статьи</a>
+            <a href="#contacts">Контакты</a>
+            <a href="#partners">Партнеры</a>
         </nav>
     </header>
-    
-    <div class="hero">
+
+    <section class="hero">
         <h1>Обучаем собак помогать людям</h1>
         <p>Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
-        <a href="#" class="cta-button">Получить помощь</a>
-        <img src="dog_illustration.png" alt="Dog Illustration"> 
-    
-   <div class="section">
-    <h2>Кто мы</h2>
-    <p>Мы команда энтузиастов, которые работают с собаками-помощниками, способными облегчить людям жизнь.</p>
-    <a href="#" class="cta-button">Стать волонтером</a>
-</div>
+        <img src="dog.png" alt="Собака">
+        <a href="#help" class="cta-button">Получить помощь</a>
+    </section>
 
-<div class="section">
-    <div class="stats">
-        <div class="stat">
-            <h3>14</h3>
-            <p>Кинологов</p>
-        </div>
-        <div class="stat">
-            <h3>26</h3>
-            <p>Благополучателей</p>
-        </div>
-        <div class="stat">
-            <h3>64</h3>
-            <p>Волонтера</p>
+    <section class="section">
+        <h2>Кто мы</h2>
+        <p>Мы команда энтузиастов, которые работают с собаками-помощниками, способными облегчить людям жизнь.</p>
+       <a href="#" class="cta-button">Стать волонтером</a>
+    </div>
+    
+    <div class="section">
+        <div class="stats">
+            <div class="stat">
+                <h3>14</h3>
+                <p>Кинологов</p>
+            </div>
+            <div class="stat">
+                <h3>26</h3>
+                <p>Благополучателей</p>
+            </div>
+            <div class="stat">
+                <h3>64</h3>
+                <p>Волонтера</p>
+            </div>
         </div>
     </div>
-</div>
-
-<div class="section">
-    <h2>Кому мы можем помочь</h2>
-    <p>Гражданам РФ, достигшим 18 лет</p>
-    <p>У которых есть собака, подходящая для работы, или возможность её приобрести</p>
-    <p>Имеющим хронические заболевания, находящиеся под контролем врача</p>
-    <a href="#" class="cta-button">Получить помощь</a>
-    <img src="help_dog_illustration.svg" alt="Helping Dog Illustration"> <!-- Replace with actual illustration -->
-</div>
-
+    
+    <div class="section">
+        <h2>Кому мы можем помочь</h2>
+        <p>Гражданам РФ, достигшим 18 лет</p>
+        <p>У которых есть собака, подходящая для работы, или возможность её приобрести</p>
+        <p>Имеющим хронические заболевания, находящиеся под контролем врача</p>
+        <a href="#" class="cta-button">Получить помощь</a>
+        <img src="help_dog_illustration.svg" alt="Helping Dog Illustration"> <!-- Replace with actual illustration -->
+    </div>
     
     <div class="faq">
         <h2>Вопросы и ответы</h2>
@@ -240,22 +247,8 @@ header {
             <div class="faq-question">С какими заболеваниями помогают собаки? <span>&#9660;</span></div>
             <div class="faq-answer">Ответ на вопрос.</div>
         </div>
-        <div class="faq-item">
-            <div class="faq-question">Подходят ли для работы собаки из приюта? <span>&#9660;</span></div>
-            <div class="faq-answer">Ответ на вопрос.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Кто будет обучать собаку? <span>&#9660;</span></div>
-            <div class="faq-answer">Ответ на вопрос.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Что, если я живу далеко? <span>&#9660;</span></div>
-            <div class="faq-answer">Ответ на вопрос.</div>
-       
-        </div>
-       </div>
+    </div>
 
-            
     <footer>
         <p>&copy; 2024 Дело в собаке. Все права защищены.</p>
     </footer>
