@@ -45,12 +45,22 @@
             text-align: center;
             padding: 50px 20px;
             background-color: transparent; /* Прозрачный фон у .hero */
+            position: relative;
         }
 
         .hero h1 {
             font-size: 3em;
             color: #2E7D32; /* Цвет текста */
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1:first-of-type {
+            margin-bottom: 0;
+        }
+
+        .hero h1:nth-of-type(2) {
+            margin-top: 0;
+            transform: translate(20px, 10px);
         }
 
         .hero p {
@@ -61,6 +71,22 @@
         .hero img {
             margin-top: 30px;
             width: 200px;
+            height: auto;
+        }
+
+        .highlight {
+            position: absolute;
+            top: 20px;
+            left: calc(50% - 60px);
+            width: 100px;
+            height: auto;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 70px;
+            left: calc(50% + 80px);
+            width: 50px;
             height: auto;
         }
 
@@ -195,7 +221,10 @@
     </header>
 
     <section class="hero">
-        <h1>Обучаем собак помогать людям</h1>
+        <img src="Highlight_05.svg" alt="Highlight" class="highlight">
+        <img src="стрелка1.svg" alt="Arrow" class="arrow">
+        <h1>Обучаем собак</h1>
+        <h1>помогать людям</h1>
         <p>Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
         <img src="dog_illustration.png" alt="Собака">
         <a href="#help" class="cta-button">Получить помощь</a>
