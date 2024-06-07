@@ -19,26 +19,22 @@
         }
 
         header {
+            background-color: #FFFFFF; /* Фон хедера белый */
+            padding: 20px;
+            text-align: center;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #FFFFFF; /* Фон хедера белый */
-            padding: 20px;
         }
 
         header img {
             height: 50px;
         }
 
-        nav {
-            display: flex;
-        }
-
         nav a {
             margin: 0 10px;
             text-decoration: none;
             color: #333;
-            font-size: 1.1em;
         }
 
         .hero {
@@ -49,56 +45,54 @@
         }
 
         .hero h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             color: #2E7D32; /* Цвет текста */
-            margin-bottom: 10px;
         }
 
-        .hero h1:first-of-type {
-            margin-bottom: 0;
+        .hero h1 span {
+            display: block;
         }
 
-        .hero h1:nth-of-type(2) {
-            margin-top: 0;
-            transform: translate(20px, 10px);
+        .highlight {
+            position: absolute;
+            top: 50px; /* Позиционирование от верхнего заголовка */
+            left: calc(50% - 160px); /* Позиционирование слева */
+            transform: translateX(-50%);
+            z-index: -1; /* Отправить на задний план */
+        }
+
+        .arrow {
+            position: absolute;
+            top: 90px; /* Позиционирование стрелки */
+            right: calc(50% - 80px); /* Позиционирование справа */
+            transform: rotate(45deg); /* Поворот стрелки */
         }
 
         .hero p {
-            font-size: 1.5em;
+            font-size: 1.2em;
             margin-top: 20px;
         }
 
         .hero img {
             margin-top: 30px;
-            width: 200px;
-            height: auto;
-        }
-
-        .highlight {
-            position: absolute;
-            top: 20px;
-            left: calc(50% - 60px);
-            width: 100px;
-            height: auto;
-        }
-
-        .arrow {
-            position: absolute;
-            top: 70px;
-            left: calc(50% + 80px);
-            width: 50px;
+            width: 150px;
             height: auto;
         }
 
         .cta-button {
             display: inline-block;
             margin-top: 20px;
-            padding: 10px 30px;
+            padding: 10px 20px;
             background-color: #388E3C; /* Цвет кнопки */
             color: #FFF;
             text-decoration: none;
-            border-radius: 30px; /* Абсолютно круглые концы */
-            font-size: 1.2em;
+            border-radius: 25px; /* Круглые углы кнопок */
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            border: 2px solid #2A562B; /* Зелёный контур */
+            color: #2A562B; /* Цвет текста */
         }
 
         .section {
@@ -112,9 +106,8 @@
         }
 
         .section h2 {
-            font-size: 2.5em;
+            font-size: 2em;
             color: #2E7D32; /* Цвет заголовков секций */
-            margin-bottom: 20px;
         }
 
         .stats {
@@ -143,14 +136,13 @@
 
         .faq h2 {
             text-align: center;
-            font-size: 2.5em;
+            font-size: 2em;
             color: #2E7D32; /* Цвет заголовков FAQ */
-            margin-bottom: 30px;
         }
 
         .faq-item {
             margin-bottom: 10px;
-            border-bottom: 1px solid #CCC;
+            border-bottom: 1px солid #CCC;
             padding-bottom: 10px;
         }
 
@@ -173,9 +165,8 @@
         }
 
         .useful-info h2 {
-            font-size: 2.5em;
+            font-size: 2em;
             color: #2E7D32; /* Цвет заголовков полезной информации */
-            margin-bottom: 30px;
         }
 
         .articles {
@@ -221,22 +212,25 @@
     </header>
 
     <section class="hero">
+        <h1>
+            <span>Обучаем собак</span>
+            <span>помогать людям</span>
+        </h1>
         <img src="Highlight_05.svg" alt="Highlight" class="highlight">
         <img src="стрелка1.svg" alt="Arrow" class="arrow">
-        <h1>Обучаем собак</h1>
-        <h1>помогать людям</h1>
         <p>Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
         <img src="dog_illustration.png" alt="Собака">
         <a href="#help" class="cta-button">Получить помощь</a>
+        <a href="#volunteer" class="cta-button secondary">Стать волонтером</a>
     </section>
 
     <section class="section">
         <h2>Кто мы</h2>
         <p>Мы команда энтузиастов, которые работают с собаками-помощниками, способными облегчить людям жизнь.</p>
-       <a href="#" class="cta-button">Стать волонтером</a>
+       <a href="#" class="cta-button secondary">Стать волонтером</a>
     </section>
     
-    <section class="section">
+    <div class="section">
         <div class="stats">
             <div class="stat">
                 <h3>14</h3>
@@ -251,16 +245,16 @@
                 <p>Волонтера</p>
             </div>
         </div>
-    </section>
+    </div>
     
-    <section class="section">
+    <div class="section">
         <h2>Кому мы можем помочь</h2>
         <p>Гражданам РФ, достигшим 18 лет</p>
         <p>У которых есть собака, подходящая для работы, или возможность её приобрести</p>
         <p>Имеющим хронические заболевания, находящиеся под контролем врача</p>
         <a href="#" class="cta-button">Получить помощь</a>
-        <img src="help_dog_illustration.svg" alt="Helping Dog Illustration"> <!-- Replace with actual illustration -->
-    </section>
+        <img src="help_dog_illustration.svg" alt="Helping Dog Illustration">
+    </div>
     
     <div class="faq">
         <h2>Вопросы и ответы</h2>
@@ -276,14 +270,31 @@
             <div class="faq-question">Что, если у меня есть собака? <span>&#9660;</span></div>
             <div class="faq-answer">Ответ на вопрос.</div>
         </div>
-        <div class="faq-item">
-            <div class="faq-question">С какими заболеваниями помогают собаки? <span>&#9660;</span></div>
-            <div class="faq-answer">Ответ на вопрос.</div>
+    </div>
+    
+    <div class="useful-info">
+        <h2>Полезная информация</h2>
+        <div class="articles">
+            <div class="article">
+                <img src="article1.jpg" alt="Article 1">
+                <h3>Статья 1</h3>
+                <p>Описание статьи 1.</p>
+            </div>
+            <div class="article">
+                <img src="article2.jpg" alt="Article 2">
+                <h3>Статья 2</h3>
+                <p>Описание статьи 2.</p>
+            </div>
+            <div class="article">
+                <img src="article3.jpg" alt="Article 3">
+                <h3>Статья 3</h3>
+                <p>Описание статьи 3.</p>
+            </div>
         </div>
     </div>
-
+    
     <footer>
-        <p>&copy; 2024 Дело в собаке. Все права защищены.</p>
+        <p>© 2023 Обучаем собак помогать людям. Все права защищены.</p>
     </footer>
 </body>
 </html>
