@@ -5,210 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Обучаем собак помогать людям</title>
     <style>
+        @font-face {
+            font-family: 'MrITCSerifGothicBlack';
+            src: url('mr_itcserifgothic_black.ttf') format('truetype');
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'MrITCSerifGothicBlack', Arial, sans-serif;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
-            background-color: #F5F5F5;
             color: #333;
         }
-        header {
-            background-color: #FFFFFF;
+        .header, .section, .faq, .useful-info, footer {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
+        }
+        .header {
+            background: url('Highlight_05.svg') no-repeat center center;
+            background-size: cover;
             text-align: center;
+            padding: 40px 20px;
         }
-        header img {
-            height: 50px;
-        }
-        nav {
-            margin-top: 10px;
-        }
-        nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #333;
-        }
-        .hero {
-            text-align: center;
-            padding: 50px 20px;
-            background-color: #E0F7FA;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        }
-        .hero h1 {
+        .header h1 {
             font-size: 2.5em;
-            color: #2E7D32;
+            color: #2F4F2F;
             margin: 0;
-            display: flex;
-            align-items: center;
         }
-        .hero h1 span {
-            font-size: 1.5em;
-            margin-left: 10px;
-        }
-        .hero p {
+        .header p {
             font-size: 1.2em;
-            margin: 20px 0;
-        }
-        .hero img {
-            width: 200px;
-            height: auto;
-            margin-top: 20px;
-        }
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
+            color: #555;
         }
         .cta-button {
+            display: inline-block;
+            margin: 10px 5px;
             padding: 10px 20px;
-            background-color: #388E3C;
-            color: #FFF;
-            text-decoration: none;
+            color: #fff;
+            background-color: #2F4F2F;
             border-radius: 5px;
-            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1em;
         }
-        .arrow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2em;
-            color: #388E3C;
+        .cta-button.secondary {
+            background-color: #fff;
+            color: #2F4F2F;
+            border: 1px solid #2F4F2F;
         }
-        .section {
-            padding: 50px 20px;
-            background-color: #FFFFFF;
-            text-align: center;
-        }
-        .section:nth-child(even) {
-            background-color: #F1F8E9;
-        }
-        .section h2 {
-            font-size: 2em;
-            color: #2E7D32;
-        }
-        .stats {
+        .hero {
             display: flex;
-            justify-content: space-around;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .hero img {
+            max-width: 100%;
+            height: auto;
+        }
+        .hero-text {
+            flex: 1;
+            padding: 20px;
+        }
+        .hero-text h1 {
+            font-size: 3em;
+            color: #2F4F2F;
+            margin: 0;
+        }
+        .hero-text .cta-button {
             margin-top: 20px;
         }
-        .stat {
+        .hero-text .arrow {
+            margin-top: 20px;
+        }
+        .section {
             text-align: center;
-        }
-        .stat h3 {
-            font-size: 2em;
-            color: #2E7D32;
-        }
-        .stat p {
-            margin-top: 10px;
+            padding: 40px 20px;
         }
         .faq {
-            margin: 50px 20px;
-            text-align: left;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
         }
         .faq h2 {
-            text-align: center;
             font-size: 2em;
-            color: #2E7D32;
+            margin-bottom: 20px;
         }
         .faq-item {
             margin-bottom: 10px;
-            border-bottom: 1px solid #CCC;
-            padding-bottom: 10px;
         }
         .faq-question {
-            display: flex;
-            justify-content: space-between;
-            cursor: pointer;
+            background-color: #f0f0f0;
             padding: 10px;
-            background-color: #E8F5E9;
+            border-radius: 5px;
+            cursor: pointer;
         }
         .faq-answer {
             display: none;
             padding: 10px;
         }
-        .useful-info {
-            margin: 50px 20px;
-            text-align: center;
-        }
         .useful-info h2 {
             font-size: 2em;
-            color: #2E7D32;
+            margin-bottom: 20px;
         }
         .articles {
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+            justify-content: space-between;
         }
         .article {
-            width: 30%;
-            background-color: #FFFFFF;
-            margin: 10px;
-            padding: 20px;
+            background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 30%;
         }
         .article img {
-            width: 100%;
+            max-width: 100%;
             height: auto;
             border-radius: 10px;
         }
+        .article h3 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
         footer {
-            background-color: #388E3C;
-            color: #FFF;
             text-align: center;
             padding: 20px;
-            margin-top: 50px;
+            background-color: #2F4F2F;
+            color: #fff;
+        }
+        footer a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.faq-item');
-
-            faqItems.forEach(item => {
-                item.querySelector('.faq-question').addEventListener('click', () => {
-                    const answer = item.querySelector('.faq-answer');
-                    const arrow = item.querySelector('.faq-question span');
-                    const isOpen = answer.style.display === 'block';
-                    faqItems.forEach(i => {
-                        i.querySelector('.faq-answer').style.display = 'none';
-                        i.querySelector('.faq-question span').innerHTML = '&#9660;';
-                    });
-                    if (!isOpen) {
-                        answer.style.display = 'block';
-                        arrow.innerHTML = '&#9650;';
-                    }
-                });
-            });
-        });
-    </script>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Logo"> <!-- Replace with actual logo -->
-        <nav>
-            <a href="#">О нас</a>
-            <a href="#">Наша деятельность</a>
-            <a href="#">Статьи</а>
-            <a href="#">Контакты</а>
-            <a href="#">Партнеры</а>
-        </nav>
-    </header>
-    
-    <div class="hero">
-        <h1>Обучаем собак<span>помогать людям</span></h1>
+    <header class="header">
+        <h1>Обучаем собак помогать людям</h1>
         <p>Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
-        <div class="cta-buttons">
+        <a href="#" class="cta-button">Получить помощь</a>
+        <a href="#" class="cta-button secondary">Стать волонтером</a>
+    </header>
+
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Обучаем собак <br> помогать людям</h1>
             <a href="#" class="cta-button">Получить помощь</a>
-            <a href="#" class="cta-button">Стать волонтером</a>
+            <img src="arrow.svg" alt="Arrow" class="arrow">
         </div>
-        <img src="dog_illustration.svg" alt="Dog Illustration">
-        <div class="arrow">➤</div>
+        <img src="dog_illustration.png" alt="Dog Illustration">
     </div>
-    
+
     <div class="section">
         <h2>Кому мы можем помочь</h2>
         <ul>
@@ -283,4 +231,4 @@
         <p>&copy; 2023 Обучаем собак помогать людям. Все права защищены.</p>
     </footer>
 </body>
-            </html>
+</html>
