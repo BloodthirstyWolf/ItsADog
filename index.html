@@ -19,16 +19,19 @@
         }
 
         header {
-            background-color: #FFFFFF; /* Фон хедера белый */
-            padding: 20px;
-            text-align: center;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: #FFFFFF; /* Фон хедера белый */
+            padding: 20px;
         }
 
         header img {
             height: 50px;
+        }
+
+        nav {
+            margin-top: 10px;
         }
 
         nav a {
@@ -53,21 +56,6 @@
             display: block;
         }
 
-        .highlight {
-            position: absolute;
-            top: 50px; /* Позиционирование от верхнего заголовка */
-            left: calc(50% - 160px); /* Позиционирование слева */
-            transform: translateX(-50%);
-            z-index: -1; /* Отправить на задний план */
-        }
-
-        .arrow {
-            position: absolute;
-            top: 90px; /* Позиционирование стрелки */
-            right: calc(50% - 80px); /* Позиционирование справа */
-            transform: rotate(45deg); /* Поворот стрелки */
-        }
-
         .hero p {
             font-size: 1.2em;
             margin-top: 20px;
@@ -86,13 +74,13 @@
             background-color: #388E3C; /* Цвет кнопки */
             color: #FFF;
             text-decoration: none;
-            border-radius: 25px; /* Круглые углы кнопок */
+            border-radius: 20px; /* Абсолютно круглые концы */
         }
 
-        .cta-button.secondary {
+        .cta-button.outline {
             background-color: transparent;
-            border: 2px solid #2A562B; /* Зелёный контур */
-            color: #2A562B; /* Цвет текста */
+            color: #2A562B;
+            border: 2px solid #2A562B;
         }
 
         .section {
@@ -197,6 +185,21 @@
             padding: 20px;
             margin-top: 50px;
         }
+
+        .highlight {
+            position: absolute;
+            top: 50px;
+            left: -30px;
+            width: 100px;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+        }
     </style>
 </head>
 <body>
@@ -212,24 +215,21 @@
     </header>
 
     <section class="hero">
-        <h1>
-            <span>Обучаем собак</span>
-            <span>помогать людям</span>
-        </h1>
-        <img src="Highlight_05.svg" alt="Highlight" class="highlight">
-        <img src="стрелка1.svg" alt="Arrow" class="arrow">
+        <img src="Highlight_05.svg" class="highlight" alt="Highlight">
+        <h1><span>Обучаем собак</span> <span>помогать людям</span></h1>
+        <img src="стрелка1.svg" class="arrow" alt="Arrow">
         <p>Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
         <img src="dog_illustration.png" alt="Собака">
         <a href="#help" class="cta-button">Получить помощь</a>
-        <a href="#volunteer" class="cta-button secondary">Стать волонтером</a>
+        <a href="#volunteer" class="cta-button outline">Стать волонтером</a>
     </section>
 
     <section class="section">
         <h2>Кто мы</h2>
         <p>Мы команда энтузиастов, которые работают с собаками-помощниками, способными облегчить людям жизнь.</p>
-       <a href="#" class="cta-button secondary">Стать волонтером</a>
+        <a href="#" class="cta-button">Стать волонтером</a>
     </section>
-    
+
     <div class="section">
         <div class="stats">
             <div class="stat">
@@ -246,7 +246,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="section">
         <h2>Кому мы можем помочь</h2>
         <p>Гражданам РФ, достигшим 18 лет</p>
@@ -255,7 +255,7 @@
         <a href="#" class="cta-button">Получить помощь</a>
         <img src="help_dog_illustration.svg" alt="Helping Dog Illustration">
     </div>
-    
+
     <div class="faq">
         <h2>Вопросы и ответы</h2>
         <div class="faq-item">
@@ -270,31 +270,56 @@
             <div class="faq-question">Что, если у меня есть собака? <span>&#9660;</span></div>
             <div class="faq-answer">Ответ на вопрос.</div>
         </div>
+        <div class="faq-item">
+            <div class="faq-question">С какими заболеваниями помогают собаки? <span>&#9660;</span></div>
+            <div class="faq-answer">Ответ на вопрос.</div>
+            </div>
     </div>
-    
+
     <div class="useful-info">
         <h2>Полезная информация</h2>
         <div class="articles">
             <div class="article">
-                <img src="article1.jpg" alt="Article 1">
-                <h3>Статья 1</h3>
-                <p>Описание статьи 1.</p>
+                <img src="article_image1.jpg" alt="Статья 1">
+                <h3>Как собаки помогают людям</h3>
+                <p>Статья о том, как собаки помогают людям с различными заболеваниями.</p>
             </div>
             <div class="article">
-                <img src="article2.jpg" alt="Article 2">
-                <h3>Статья 2</h3>
-                <p>Описание статьи 2.</p>
+                <img src="article_image2.jpg" alt="Статья 2">
+                <h3>Истории успеха</h3>
+                <p>Истории людей, которым помогли наши собаки.</p>
             </div>
             <div class="article">
-                <img src="article3.jpg" alt="Article 3">
-                <h3>Статья 3</h3>
-                <p>Описание статьи 3.</p>
+                <img src="article_image3.jpg" alt="Статья 3">
+                <h3>Как стать волонтером</h3>
+                <p>Информация о том, как можно стать волонтером и помогать нам.</p>
             </div>
         </div>
     </div>
-    
+
     <footer>
-        <p>© 2023 Обучаем собак помогать людям. Все права защищены.</p>
+        <p>&copy; 2024 Дело в собаке. Все права защищены.</p>
+        <nav>
+            <a href="#about">О нас</a>
+            <a href="#activities">Наша деятельность</a>
+            <a href="#articles">Статьи</a>
+            <a href="#contacts">Контакты</a>
+            <a href="#partners">Партнеры</a>
+        </nav>
     </footer>
+
+    <script>
+        // JavaScript для аккордеона FAQ
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
