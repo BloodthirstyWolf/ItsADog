@@ -4,150 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дело в собаке</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #fff;
-            padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        nav a {
-            margin-left: 15px;
-            text-decoration: none;
-            color: #333;
-        }
-        .hero {
-            text-align: center;
-            background-color: #e6f7ee;
-            padding: 50px 20px;
-            position: relative;
-        }
-        .hero h1 {
-            font-size: 36px;
-            margin: 0;
-            position: relative;
-            display: inline-block;
-        }
-        .hero h1 span {
-            display: block;
-            margin-top: 10px;
-        }
-        .hero p {
-            font-size: 20px;
-            margin: 20px 0;
-        }
-        .hero img {
-            max-width: 100%;
-            height: auto;
-        }
-        .highlight {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 50px;
-        }
-        .arrow {
-            position: absolute;
-            top: 70px;
-            right: 20px;
-            width: 100px;
-        }
-        .buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .buttons .btn {
-            margin: 0 10px;
-            padding: 10px 20px;
-            font-size: 18px;
-            border: 2px solid #2A562B;
-            background-color: #fff;
-            color: #2A562B;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .buttons .btn:hover {
-            background-color: #2A562B;
-            color: #fff;
-        }
-        .btn-primary {
-            background-color: #2A562B;
-            color: #fff;
-        }
-        .btn-primary:hover {
-            background-color: #1E3E1D;
-        }
-        .content {
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-top: 20px;
-        }
-        footer {
-            background-color: #2A562B;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
-        footer nav a {
-            color: #fff;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <img src="logo.svg" alt="Логотип" width="50">
-            <nav>
-                <a href="#about">О нас</a>
-                <a href="#activities">Наша деятельность</a>
-                <a href="#articles">Статьи</a>
-                <a href="#contacts">Контакты</a>
-                <a href="#partners">Партнеры</a>
-            </nav>
+        <div class="logo">
+            <img src="logo.png" alt="Дело в собаке">
         </div>
+        <nav>
+            <a href="#about">О нас</a>
+            <a href="#activities">Наша деятельность</a>
+            <a href="#articles">Статьи</a>
+            <a href="#contacts">Контакты</a>
+            <a href="#partners">Партнеры</a>
+        </nav>
     </header>
 
-    <div class="hero">
-        <img src="Highlight_05.svg" class="highlight" alt="Highlight">
-        <h1>
-            Обучаем собак
-            <span>помогать людям</span>
-        </h1>
-        <img src="arrow.svg" class="arrow" alt="Arrow">
-        <p>Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
-        <div class="buttons">
-            <button class="btn btn-primary">Получить помощь</button>
-            <button class="btn">Стать волонтером</button>
+    <div class="main-section">
+        <div class="highlight">
+            <img src="Highlight_05.svg" alt="highlight" class="highlight-img">
+            <h1 class="main-heading">
+                <span>Обучаем собак</span>
+                <span>помогать людям</span>
+            </h1>
+            <img src="стрелка1.svg" alt="стрелка" class="arrow-img">
         </div>
+        <p class="main-text">
+            Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями
+        </p>
+        <div class="buttons">
+            <button class="main-button">Получить помощь</button>
+            <button class="volunteer-button">Стать волонтером</button>
+        </div>
+        <img src="dog_and_person.png" alt="Собака и человек" class="main-image">
     </div>
 
-    <div class="container content">
-        <h2>Кто мы</h2>
-        <p>Мы команда энтузиастов, которые работают с собаками-помощниками, способными облегчить людям жизнь.</p>
-        <img src="dog_illustration.png" alt="Dog and Person">
+    <div class="useful-info">
+        <h2>Полезная информация</h2>
+        <div class="articles">
+            <div class="article">
+                <img src="article_image1.jpg" alt="Статья 1">
+                <h3>Как собаки помогают людям</h3>
+                <p>Статья о том, как собаки помогают людям с различными заболеваниями.</p>
+            </div>
+            <div class="article">
+                <img src="article_image2.jpg" alt="Статья 2">
+                <h3>Истории успеха</h3>
+                <p>Истории людей, которым помогли наши собаки.</p>
+            </div>
+            <div class="article">
+                <img src="article_image3.jpg" alt="Статья 3">
+                <h3>Как стать волонтером</h3>
+                <p>Информация о том, как можно стать волонтером и помогать нам.</p>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -160,5 +70,19 @@
             <a href="#partners">Партнеры</a>
         </nav>
     </footer>
+
+    <script>
+        // JavaScript для аккордеона FAQ
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
