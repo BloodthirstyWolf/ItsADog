@@ -3,298 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обучаем собак помогать людям</title>
+    <title>Дело в собаке</title>
     <style>
-        @font-face {
-            font-family: 'MrITCSerifGothic';
-            src: url('mr_itcserifgothic_black.otf') format('opentype');
-        }
-
         body {
-            font-family: 'MrITCSerifGothic', Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #EFF1EE; /* Цвет фона для всего сайта */
-            color: #333;
+            background-color: #f5f5f5;
         }
-
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #FFFFFF; /* Фон хедера белый */
-            padding: 20px;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
-        header img {
-            height: 50px;
+        header h1 {
+            margin: 0;
+            font-size: 24px;
         }
-
-        nav {
-            margin-top: 10px;
-        }
-
         nav a {
-            margin: 0 10px;
+            margin-left: 15px;
             text-decoration: none;
             color: #333;
         }
-
         .hero {
             text-align: center;
+            background-color: #e6f7ee;
             padding: 50px 20px;
-            background-color: transparent; /* Прозрачный фон у .hero */
             position: relative;
         }
-
         .hero h1 {
-            font-size: 2.5em;
-            color: #2E7D32; /* Цвет текста */
+            font-size: 36px;
+            margin: 0;
         }
-
         .hero h1 span {
             display: block;
         }
-
         .hero p {
-            font-size: 1.2em;
-            margin-top: 20px;
+            font-size: 20px;
+            margin: 20px 0;
         }
-
         .hero img {
-            margin-top: 30px;
-            width: 150px;
+            max-width: 100%;
             height: auto;
         }
-
-        .cta-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #388E3C; /* Цвет кнопки */
-            color: #FFF;
-            text-decoration: none;
-            border-radius: 20px; /* Абсолютно круглые концы */
-        }
-
-        .cta-button.outline {
-            background-color: transparent;
-            color: #2A562B;
-            border: 2px solid #2A562B;
-        }
-
-        .section {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: transparent; /* Прозрачный фон у секций */
-        }
-
-        .section:nth-child(even) {
-            background-color: #F1F8E9; /* Цвет для четных секций */
-        }
-
-        .section h2 {
-            font-size: 2em;
-            color: #2E7D32; /* Цвет заголовков секций */
-        }
-
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat h3 {
-            font-size: 2em;
-            color: #2E7D32; /* Цвет текста статистики */
-        }
-
-        .stat p {
-            margin-top: 10px;
-        }
-
-        .faq {
-            margin: 50px 20px;
-            text-align: left;
-        }
-
-        .faq h2 {
-            text-align: center;
-            font-size: 2em;
-            color: #2E7D32; /* Цвет заголовков FAQ */
-        }
-
-        .faq-item {
-            margin-bottom: 10px;
-            border-bottom: 1px солid #CCC;
-            padding-bottom: 10px;
-        }
-
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            cursor: pointer;
-            padding: 10px;
-            background-color: #E8F5E9; /* Цвет фона вопроса */
-        }
-
-        .faq-answer {
-            display: none;
-            padding: 10px;
-        }
-
-        .useful-info {
-            margin: 50px 20px;
-            text-align: center;
-        }
-
-        .useful-info h2 {
-            font-size: 2em;
-            color: #2E7D32; /* Цвет заголовков полезной информации */
-        }
-
-        .articles {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .article {
-            width: 30%;
-            background-color: #FFFFFF; /* Цвет фона статьи */
-            margin: 10px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .article img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        footer {
-            background-color: #388E3C; /* Цвет фона футера */
-            color: #FFF;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-        }
-
         .highlight {
             position: absolute;
-            top: 50px;
-            left: -30px;
-            width: 100px;
+            top: 20px;
+            left: 20px;
+            width: 50px;
         }
-
         .arrow {
             position: absolute;
-            top: 100px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
+            top: 70px;
+            right: 20px;
+            width: 100px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .buttons .btn {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: 2px solid #2A562B;
+            background-color: #fff;
+            color: #2A562B;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .buttons .btn:hover {
+            background-color: #2A562B;
+            color: #fff;
+        }
+        .btn-primary {
+            background-color: #2A562B;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background-color: #1E3E1D;
+        }
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #2A562B;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        footer nav a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="logo.svg" alt="Логотип">
-        <nav>
-            <a href="#about">О нас</a>
-            <a href="#activities">Наша деятельность</a>
-            <a href="#articles">Статьи</a>
-            <a href="#contacts">Контакты</a>
-            <a href="#partners">Партнеры</a>
-        </nav>
+        <div class="container">
+            <h1>Дело в собаке</h1>
+            <nav>
+                <a href="#about">О нас</a>
+                <a href="#activities">Наша деятельность</a>
+                <a href="#articles">Статьи</a>
+                <a href="#contacts">Контакты</a>
+                <a href="#partners">Партнеры</a>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero">
+    <div class="hero">
         <img src="Highlight_05.svg" class="highlight" alt="Highlight">
-        <h1><span>Обучаем собак</span> <span>помогать людям</span></h1>
-        <img src="стрелка1.svg" class="arrow" alt="Arrow">
+        <h1>
+            Обучаем собак
+            <span>помогать людям</span>
+        </h1>
+        <img src="arrow.svg" class="arrow" alt="Arrow">
         <p>Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
-        <img src="dog_illustration.png" alt="Собака">
-        <a href="#help" class="cta-button">Получить помощь</a>
-        <a href="#volunteer" class="cta-button outline">Стать волонтером</a>
-    </section>
+        <div class="buttons">
+            <button class="btn btn-primary">Получить помощь</button>
+            <button class="btn">Стать волонтером</button>
+        </div>
+    </div>
 
-    <section class="section">
+    <div class="container content">
         <h2>Кто мы</h2>
         <p>Мы команда энтузиастов, которые работают с собаками-помощниками, способными облегчить людям жизнь.</p>
-        <a href="#" class="cta-button">Стать волонтером</a>
-    </section>
-
-    <div class="section">
-        <div class="stats">
-            <div class="stat">
-                <h3>14</h3>
-                <p>Кинологов</p>
-            </div>
-            <div class="stat">
-                <h3>26</h3>
-                <p>Благополучателей</p>
-            </div>
-            <div class="stat">
-                <h3>64</h3>
-                <p>Волонтера</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>Кому мы можем помочь</h2>
-        <p>Гражданам РФ, достигшим 18 лет</p>
-        <p>У которых есть собака, подходящая для работы, или возможность её приобрести</p>
-        <p>Имеющим хронические заболевания, находящиеся под контролем врача</p>
-        <a href="#" class="cta-button">Получить помощь</a>
-        <img src="help_dog_illustration.svg" alt="Helping Dog Illustration">
-    </div>
-
-    <div class="faq">
-        <h2>Вопросы и ответы</h2>
-        <div class="faq-item">
-            <div class="faq-question">Это платно? <span>&#9660;</span></div>
-            <div class="faq-answer">Ответ на вопрос.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Сколько длится обучение собаки? <span>&#9660;</span></div>
-            <div class="faq-answer">Ответ на вопрос.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Что, если у меня есть собака? <span>&#9660;</span></div>
-            <div class="faq-answer">Ответ на вопрос.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">С какими заболеваниями помогают собаки? <span>&#9660;</span></div>
-            <div class="faq-answer">Ответ на вопрос.</div>
-            </div>
-    </div>
-
-    <div class="useful-info">
-        <h2>Полезная информация</h2>
-        <div class="articles">
-            <div class="article">
-                <img src="article_image1.jpg" alt="Статья 1">
-                <h3>Как собаки помогают людям</h3>
-                <p>Статья о том, как собаки помогают людям с различными заболеваниями.</p>
-            </div>
-            <div class="article">
-                <img src="article_image2.jpg" alt="Статья 2">
-                <h3>Истории успеха</h3>
-                <p>Истории людей, которым помогли наши собаки.</p>
-            </div>
-            <div class="article">
-                <img src="article_image3.jpg" alt="Статья 3">
-                <h3>Как стать волонтером</h3>
-                <p>Информация о том, как можно стать волонтером и помогать нам.</p>
-            </div>
-        </div>
+        <img src="dog_and_person.png" alt="Dog and Person">
     </div>
 
     <footer>
@@ -307,19 +157,5 @@
             <a href="#partners">Партнеры</a>
         </nav>
     </footer>
-
-    <script>
-        // JavaScript для аккордеона FAQ
-        document.querySelectorAll('.faq-question').forEach(item => {
-            item.addEventListener('click', () => {
-                const answer = item.nextElementSibling;
-                if (answer.style.display === 'block') {
-                    answer.style.display = 'none';
-                } else {
-                    answer.style.display = 'block';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
