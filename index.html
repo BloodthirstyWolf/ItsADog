@@ -26,6 +26,7 @@
             background-size: cover;
             text-align: center;
             padding: 40px 20px;
+            position: relative;
         }
         .header h1 {
             font-size: 2.5em;
@@ -35,6 +36,12 @@
         .header p {
             font-size: 1.2em;
             color: #555;
+            margin: 10px 0;
+        }
+        .header .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
         }
         .cta-button {
             display: inline-block;
@@ -69,12 +76,18 @@
             font-size: 3em;
             color: #2F4F2F;
             margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .hero-text h1 span {
+            align-self: flex-end;
         }
         .hero-text .cta-button {
             margin-top: 20px;
         }
         .hero-text .arrow {
             margin-top: 20px;
+            transform: rotate(-45deg);
         }
         .section {
             text-align: center;
@@ -142,15 +155,17 @@
 </head>
 <body>
     <header class="header">
-        <h1>Обучаем собак помогать людям</h1>
+        <h1>Обучаем собак <span>помогать людям</span></h1>
         <p>Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
-        <a href="#" class="cta-button">Получить помощь</a>
-        <a href="#" class="cta-button secondary">Стать волонтером</a>
+        <div class="cta-buttons">
+            <a href="#" class="cta-button">Получить помощь</a>
+            <a href="#" class="cta-button secondary">Стать волонтером</a>
+        </div>
     </header>
 
     <div class="hero">
         <div class="hero-text">
-            <h1>Обучаем собак <br> помогать людям</h1>
+            <h1>Обучаем собак <span>помогать людям</span></h1>
             <a href="#" class="cta-button">Получить помощь</a>
             <img src="arrow.svg" alt="Arrow" class="arrow">
         </div>
