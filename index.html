@@ -1,1 +1,88 @@
-ь
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дело в собаке</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Дело в собаке">
+        </div>
+        <nav>
+            <a href="#about">О нас</a>
+            <a href="#activities">Наша деятельность</a>
+            <a href="#articles">Статьи</a>
+            <a href="#contacts">Контакты</a>
+            <a href="#partners">Партнеры</a>
+        </nav>
+    </header>
+
+    <div class="main-section">
+        <div class="highlight">
+            <img src="Highlight_05.svg" alt="highlight" class="highlight-img">
+            <h1 class="main-heading">
+                <span>Обучаем собак</span>
+                <span>помогать людям</span>
+            </h1>
+            <img src="стрелка1.svg" alt="стрелка" class="arrow-img">
+        </div>
+        <p class="main-text">
+            Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями
+        </p>
+        <div class="buttons">
+            <button class="main-button">Получить помощь</button>
+            <button class="volunteer-button">Стать волонтером</button>
+        </div>
+        <img src="dog_and_person.png" alt="Собака и человек" class="main-image">
+    </div>
+
+    <div class="useful-info">
+        <h2>Полезная информация</h2>
+        <div class="articles">
+            <div class="article">
+                <img src="article_image1.jpg" alt="Статья 1">
+                <h3>Как собаки помогают людям</h3>
+                <p>Статья о том, как собаки помогают людям с различными заболеваниями.</p>
+            </div>
+            <div class="article">
+                <img src="article_image2.jpg" alt="Статья 2">
+                <h3>Истории успеха</h3>
+                <p>Истории людей, которым помогли наши собаки.</p>
+            </div>
+            <div class="article">
+                <img src="article_image3.jpg" alt="Статья 3">
+                <h3>Как стать волонтером</h3>
+                <p>Информация о том, как можно стать волонтером и помогать нам.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Дело в собаке. Все права защищены.</p>
+        <nav>
+            <a href="#about">О нас</a>
+            <a href="#activities">Наша деятельность</a>
+            <a href="#articles">Статьи</a>
+            <a href="#contacts">Контакты</a>
+            <a href="#partners">Партнеры</a>
+        </nav>
+    </footer>
+
+    <script>
+        // JavaScript для аккордеона FAQ
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
