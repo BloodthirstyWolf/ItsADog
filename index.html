@@ -3,291 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обучаем собак помогать людям</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #F5F5F5;
-            color: #333;
-        }
-        header {
-            background-color: #FFFFFF;
-            padding: 20px;
-            text-align: center;
-        }
-        header img {
-            height: 50px;
-        }
-        nav {
-            margin-top: 10px;
-        }
-        nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #333;
-        }
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 50px 20px;
-            background-color: #E0F7FA;
-        }
-        .hero h1 {
-            font-size: 2.5em;
-            color: #2E7D32;
-            margin: 0;
-        }
-        .hero p {
-            font-size: 1.2em;
-            margin-top: 20px;
-        }
-        .hero img {
-            margin-top: 30px;
-            width: 200px;
-            height: auto;
-        }
-        .cta-buttons {
-            display: flex;
-            margin-top: 20px;
-        }
-        .cta-buttons .cta-button {
-            display: inline-block;
-            margin: 0 10px;
-            padding: 10px 20px;
-            background-color: #388E3C;
-            color: #FFF;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .section {
-            padding: 50px 20px;
-            background-color: #FFFFFF;
-            text-align: center;
-        }
-        .section:nth-child(even) {
-            background-color: #F1F8E9;
-        }
-        .section h2 {
-            font-size: 2em;
-            color: #2E7D32;
-        }
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-        .stat {
-            text-align: center;
-        }
-        .stat h3 {
-            font-size: 2em;
-            color: #2E7D32;
-        }
-        .stat p {
-            margin-top: 10px;
-        }
-        .faq {
-            margin: 50px 20px;
-            text-align: left;
-        }
-        .faq h2 {
-            text-align: center;
-            font-size: 2em;
-            color: #2E7D32;
-        }
-        .faq-item {
-            margin-bottom: 10px;
-            border-bottom: 1px solid #CCC;
-            padding-bottom: 10px;
-        }
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            cursor: pointer;
-            padding: 10px;
-            background-color: #E8F5E9;
-        }
-        .faq-answer {
-            display: none;
-            padding: 10px;
-        }
-        .useful-info {
-            margin: 50px 20px;
-            text-align: center;
-        }
-        .useful-info h2 {
-            font-size: 2em;
-            color: #2E7D32;
-        }
-        .articles {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        .article {
-            width: 30%;
-            background-color: #FFFFFF;
-            margin: 10px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .article img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        footer {
-            background-color: #388E3C;
-            color: #FFF;
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.faq-item');
-
-            faqItems.forEach(item => {
-                item.querySelector('.faq-question').addEventListener('click', () => {
-                    const answer = item.querySelector('.faq-answer');
-                    const arrow = item.querySelector('.faq-question span');
-                    const isOpen = answer.style.display === 'block';
-                    faqItems.forEach(i => {
-                        i.querySelector('.faq-answer').style.display = 'none';
-                        i.querySelector('.faq-question span').innerHTML = '&#9660;';
-                    });
-                    if (!isOpen) {
-                        answer.style.display = 'block';
-                        arrow.innerHTML = '&#9650;';
-                    }
-                });
-            });
-        });
-    </script>
+    <title>Дело в Собаке</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Logo"> <!-- Replace with actual logo -->
-        <nav>
-            <a href="#">О нас</a>
-            <a href="#">Наша деятельность</a>
-            <a href="#">Статьи</а>
-            <a href="#">Контакты</а>
-            <a href="#">Партнеры</а>
-        </nav>
+        <div class="header-container">
+            <img src="logo.svg" alt="Дело в Собаке Лого" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Наша деятельность</a></li>
+                    <li><a href="#">Статьи</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Партнёры</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    
-    <div class="hero">
-        <h1>Обучаем собак <span>помогать людям</span></h1>
-        <p>Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
-        <div class="cta-buttons">
-            <a href="#" class="cta-button">Получить помощь</a>
-            <a href="#" class="cta-button">Стать волонтером</a>
-        </div>
-        <img src="dog_illustration.svg" alt="Dog Illustration"> <!-- Replace with actual illustration -->
-        <svg width="100" height="50" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 10 Q 50 10, 90 40" stroke="#000" fill="transparent"/>
-            <polygon points="85,40 90,50 95,40" fill="#000"/>
-        </svg>
-    </div>
-    
-    <div class="section">
-        <h2>Кто мы</h2>
-        <p>Мы команда энтузиастов, которые работают с собаками-помощниками, способными облегчить людям жизнь.</p>
-        <a href="#" class="cta-button">Стать волонтером</a>
-    </div>
-    
-    <div class="section">
-        <div class="stats">
-            <div class="stat">
-                <h3>14</h3>
-                <p>Кинологов</p>
+    <main>
+        <section class="hero">
+            <h1>Обучаем собак помогать людям</h1>
+            <button class="volunteer-button">Стать волонтёром</button>
+            <div class="hero-content">
+                <img src="person_with_dog.svg" alt="Человек с собакой">
+                <p>Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями.</p>
+                <button class="help-button">Получить помощь</button>
             </div>
-            <div class="stat">
-                <h3>26</h3>
-                <p>Благополучателей</p>
+        </section>
+        <section class="mission">
+            <h2>Наша миссия</h2>
+            <p>Реабилитация людей с хроническими заболеваниями с помощью обученных собак.</p>
+        </section>
+        <section class="about-us">
+            <h2>Кто мы</h2>
+            <p>Мы команда энтузиастов, которые занимаются обучением собак для помощи людям.</p>
+            <button class="volunteer-button">Стать волонтёром</button>
+            <div class="statistics">
+                <div>
+                    <h3>14</h3>
+                    <p>Кинологов</p>
+                </div>
+                <div>
+                    <h3>26</h3>
+                    <p>Благополучателей</p>
+                </div>
+                <div>
+                    <h3>64</h3>
+                    <p>Волонтёров</p>
+                </div>
             </div>
-            <div class="stat">
-                <h3>64</h3>
-                <p>Волонтера</p>
+        </section>
+        <section class="help">
+            <h2>Кому мы можем помочь</h2>
+            <img src="person_with_dog_2.svg" alt="Человек с собакой 2">
+            <ul>
+                <li>Гражданам РФ, достигшим 18 лет</li>
+                <li>У которых есть собака, подходящая для дрессировки, или возможность её приобрести</li>
+                <li>Имеющим хронические заболевания, контролируемые врачом</li>
+            </ul>
+            <button class="help-button">Получить помощь</button>
+        </section>
+        <section class="faq">
+            <h2>Вопросы и ответы</h2>
+            <div class="faq-item">
+                <h3>Это платно?</h3>
+                <p>Ответ на вопрос</p>
             </div>
-        </div>
-    </div>
-    
-    <div class="section">
-        <h2>Кому мы можем помочь</h2>
-        <p>Гражданам РФ, достигшим 18 лет</p>
-        <p>У которых есть собака, подходящая для работы, или возможность её приобрести</p>
-        <p>Имеющим хронические заболевания, находящиеся под контролем врача</p>
-        <a href="#" class="cta-button">Получить помощь</a>
-        <img src="help_dog_illustration.svg" alt="Helping Dog Illustration"> <!-- Replace with actual illustration -->
-    </div>
-    
-    <div class="faq">
-        <h2>Вопросы и ответы</h2>
-        <div class="faq-item">
-            <div class="faq-question">Это платно? <span>&#9660;</span></div>
-            <div class="faq-answer">Ответ на вопрос.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Сколько длится обучение собаки? <span>&#9660;</span></div>
-            <div class="faq-answer">Ответ на вопрос.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Что, если у меня есть собака? <span>&#9660;</span></div>
-            <div class="faq-answer">Ответ на вопрос.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">С какими заболеваниями помогают собаки? <span>&#9660;</span></div>
-            <div class="faq-answer">Ответ на вопрос.</div>
-        </div>
-                <div class="faq-item">
-            <div class="faq-question">Кто будет обучать собаку? <span>&#9660;</span></div>
-            <div class="faq-answer">Ответ на вопрос.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Что, если я живу далеко? <span>&#9660;</span></div>
-            <div class="faq-answer">Ответ на вопрос.</div>
-        </div>
-    </div>
-    
-    <div class="useful-info">
-        <h2>Полезно знать</h2>
-        <div class="articles">
+            <div class="faq-item">
+                <h3>Как долго длится обучение собак?</h3>
+                <p>Ответ на вопрос</p>
+            </div>
+            <div class="faq-item">
+                <h3>С какими заболеваниями помогают собаки?</h3>
+                <p>Ответ на вопрос</p>
+            </div>
+            <div class="faq-item">
+                <h3>Подходит ли для работы собака из приюта?</h3>
+                <p>Ответ на вопрос</p>
+            </div>
+            <div class="faq-item">
+                <h3>Кто будет обучать собаку?</h3>
+                <p>Ответ на вопрос</p>
+            </div>
+            <div class="faq-item">
+                <h3>Что, если я живу далеко?</h3>
+                <p>Ответ на вопрос</p>
+            </div>
+        </section>
+        <section class="articles">
+            <h2>Полезно знать</h2>
             <div class="article">
-                <img src="helper_dog_evaluation.svg" alt="Helper Dog Evaluation"> <!-- Replace with actual image -->
+                <img src="dog_evaluation.svg" alt="Оценка собаки">
                 <h3>Оценка потенциальной собаки-помощника</h3>
-                <a href="#">Читать статью</a>
+                <button>Читать статью</button>
             </div>
             <div class="article">
-                <img src="psychiatric_service_dog.svg" alt="Psychiatric Service Dog"> <!-- Replace with actual image -->
+                <img src="psychiatric_dog.svg" alt="Психиатрическая собака">
                 <h3>Психиатрическая служебная собака</h3>
-                <a href="#">Читать статью</a>
+                <button>Читать статью</button>
             </div>
             <div class="article">
-                <img src="seizure_alert_dog.svg" alt="Seizure Alert Dog"> <!-- Replace with actual image -->
-                <h3>Собаки, предупреждающие о приступах</h3>
-                <a href="#">Читать статью</a>
+                <img src="alert_dog.svg" alt="Собака предупреждающая">
+                <h3>Собаки, предупреждающие заболевания</h3>
+                <button>Читать статью</button>
             </div>
-        </div>
-    </div>
-    
+        </section>
+    </main>
     <footer>
         <p>© 2024 Дело в Собаке. Все права защищены.</p>
         <nav>
-            <a href="#">О нас</a>
-            <a href="#">Наша деятельность</a>
-            <a href="#">Статьи</a>
-            <a href="#">Контакты</a>
-            <a href="#">Партнеры</a>
+            <ul>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Наша деятельность</a></li>
+                <li><a href="#">Статьи</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Партнёры</a></li>
+            </ul>
         </nav>
     </footer>
 </body>
-            </html>
-                
+</html>
