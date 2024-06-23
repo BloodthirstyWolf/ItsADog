@@ -5,129 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Дело в Собаке</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Include a CSS library like Bootstrap (optional) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <img src="logo.svg" alt="Дело в Собаке Лого" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="#">О нас</a></li>
-                    <li><a href="#">Наша деятельность</a></li>
-                    <li><a href="#">Статьи</a></li>
-                    <li><a href="#">Контакты</a></li>
-                    <li><a href="#">Партнёры</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <section class="hero">
-            <div class="hero-header">
-                <div class="hero-title">
-                    <h1>Обучаем собак</h1>
-                    <button class="volunteer-button">Стать волонтёром</button>
-                </div>
-                <div class="hero-subtitle">
-                    <img src="Highlight_05.svg" alt="Highlight">
-                    <h2>Помогаем людям</h2>
-                </div>
-            </div>
-            <div class="hero-content">
-                <img src="person_with_dog.png" alt="Человек с собакой">
-                <p>Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями.</p>
-                <button class="help-button">Получить помощь</button>
-            </div>
-        </section>
-        <section class="mission">
-            <h2>Наша миссия</h2>
-            <p>Реабилитация людей с хроническими заболеваниями с помощью обученных собак.</p>
-        </section>
-        <section class="about-us">
-            <h2>Кто мы</h2>
-            <p>Мы команда энтузиастов, которые занимаются обучением собак для помощи людям.</p>
-            <button class="volunteer-button">Стать волонтёром</button>
-            <div class="statistics">
-                <div>
-                    <h3>14</h3>
-                    <p>Кинологов</p>
-                </div>
-                <div>
-                    <h3>26</h3>
-                    <p>Благополучателей</p>
-                </div>
-                <div>
-                    <h3>64</h3>
-                    <p>Волонтёров</p>
-                </div>
-            </div>
-        </section>
-        <section class="help">
-            <h2>Кому мы можем помочь</h2>
-            <img src="person_with_dog_2.svg" alt="Человек с собакой 2">
-            <ul>
-                <li>Гражданам РФ, достигшим 18 лет</li>
-                <li>У которых есть собака, подходящая для дрессировки, или возможность её приобрести</li>
-                <li>Имеющим хронические заболевания, контролируемые врачом</li>
-            </ul>
-            <button class="help-button">Получить помощь</button>
-        </section>
-        <section class="faq">
-            <h2>Вопросы и ответы</h2>
-            <div class="faq-item">
-                <h3>Это платно?</h3>
-                <p>Ответ на вопрос</p>
-            </div>
-            <div class="faq-item">
-                <h3>Как долго длится обучение собак?</h3>
-                <p>Ответ на вопрос</п>
-            </div>
-            <div class="faq-item">
-                <h3>С какими заболеваниями помогают собаки?</h3>
-                <p>Ответ на вопрос</p>
-            </div>
-            <div class="faq-item">
-                <h3>Подходит ли для работы собака из приюта?</h3>
-                <p>Ответ на вопрос</p>
-            </div>
-            <div class="faq-item">
-                <h3>Кто будет обучать собаку?</h3>
-                <p>Ответ на вопрос</п>
-            </div>
-            <div class="faq-item">
-                <h3>Что, если я живу далеко?</h3>
-                <п>Ответ на вопрос</p>
-            </div>
-        </section>
-        <section class="articles">
-            <h2>Полезно знать</h2>
-            <div class="article">
-                <img src="dog_evaluation.svg" alt="Оценка собаки">
-                <h3>Оценка потенциальной собаки-помощника</h3>
-                <button>Читать статью</button>
-            </div>
-            <div class="article">
-                <img src="psychiatric_dog.svg" alt="Психиатрическая собака">
-                <h3>Психиатрическая служебная собака</h3>
-                <button>Читать статью</button>
-            </div>
-            <div class="article">
-                <img src="alert_dog.svg" alt="Собака предупреждающая">
-                <h3>Собаки, предупреждающие заболевания</h3>
-                <button>Читать статью</button>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>© 2024 Дело в Собаке. Все права защищены.</p>
         <nav>
             <ul>
                 <li><a href="#">О нас</a></li>
                 <li><a href="#">Наша деятельность</a></li>
-                <li><a href="#">Статьи</a></ли>
-                <ли><a href="#">Контакты</a></ли>
-                <ли><a href="#">Партнёры</a></ли>
+                <li><a href="#">Статьи</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Партнеры</a></li>
             </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="title-row">
+                        <h1>Обучаем собак</h1>
+                        <a href="#" class="btn btn-outline-dark">Стать волонтером</a>
+                    </div>
+                    <h1>помогать людям</h1>
+                </div>
+                <div class="hero-image">
+                    <img src="dog_illustration.svg" alt="Dog illustration"> <!-- Replace with actual image -->
+                </div>
+                <p class="subtitle">Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
+                <a href="#" class="btn btn-success">Получить помощь</a>
+            </div>
+        </section>
+
+        <section class="about-us">
+            <h2>Кто мы</h2>
+            <p>Мы команда энтузиастов, которые работают с собаками-помощниками, способными облегчить людям жизнь.</p>
+            <a href="#" class="btn btn-outline-dark">Стать волонтером</a>
+        </section>
+
+        <section class="stats">
+            <div class="stat-item">
+                <h3>14</h3>
+                <p>Кинологов</p>
+            </div>
+            <div class="stat-item">
+                <h3>26</h3>
+                <p>Благополучателей</p>
+            </div>
+            <div class="stat-item">
+                <h3>64</h3>
+                <p>Волонтера</p>
+            </div>
+        </section>
+
+        <section class="help">
+            <h2>Кому мы можем помочь</h2>
+            <ul>
+                <li>Гражданам РФ, достигшим 18 лет</li>
+                <li>У которых есть собака, подходящая для работы, или возможность её приобрести</li>
+                <li>Имеющим хронические заболевания, находящиеся под контролем врача</li>
+            </ul>
+            <a href="#" class="btn btn-success">Получить помощь</a>
+        </section>
+
+        <section class="faq">
+            <h2>Вопросы и ответы</h2>
+            <div class="faq-item">
+                <div class="faq-question">Это платно? <span>&#9660;</span></div>
+                <div class="faq-answer">Ответ на вопрос.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Сколько длится обучение собаки? <span>&#9660;</span></div>
+                <div class="faq-answer">Ответ на вопрос.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Что, если у меня есть собака? <span>&#9660;</span></div>
+                <div class="faq-answer">Ответ на вопрос.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">С какими заболеваниями помогают собаки? <span>&#9660;</span></div>
+                <div class="faq-answer">Ответ на вопрос.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Подходят ли для работы собаки из приюта? <span>&#9660;</span></div>
+                <div class="faq-answer">Ответ на вопрос.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Кто будет обучать собаку? <span>&#9660;</span></div>
+                <div class="faq-answer">Ответ на вопрос.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Что, если я живу далеко? <span>&#9660;</span></div>
+                <div class="faq-answer">Ответ на вопрос.</div>
+            </div>
+        </section>
+
+        <section class="useful-info">
+            <h2>Полезно знать</h2>
+            <div class="articles">
+                <div class="article">
+                    <img src="helper_dog_evaluation.svg" alt="Helper Dog Evaluation"> <!-- Replace with actual image -->
+                    <h3>Оценка потенциальной собаки-помощника</h3>
+                    <a href="#">Читать статью</a>
+                </div>
+                <div class="article">
+                    <img src="psychiatric_service_dog.svg" alt="Psychiatric Service Dog"> <!-- Replace with actual image -->
+                    <h3>Психиатрическая служебная собака</h3>
+                    <a href="#">Читать статью</a>
+                </div>
+                <div class="article">
+                    <img src="seizure_alert_dog.svg" alt="Seizure Alert Dog"> <!-- Replace with actual image -->
+                    <h3>Собаки, предупреждающие о приступах</h3>
+                    <a href="#">Читать статью</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2024 Дело в Собаке. Все права защищены.</p>
+        <nav>
+            <a href="#">О нас</a>
+            <a href="#">Наша деятельность</a>
+            <a href="#">Статьи</a>
+            <a href="#">Контакты</a>
+            <a href="#">Партнеры</a>
         </nav>
     </footer>
 </body>
