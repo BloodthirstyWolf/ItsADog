@@ -33,24 +33,38 @@ header nav ul li a {
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
 }
 
 .hero-content .title-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    position: relative;
 }
 
-.hero-content h1 {
+.hero-content .title-row h1 {
     margin: 0;
     font-size: 3rem;
     color: #006400;
 }
 
-.hero-content h1 + h1 {
+.hero-content .title-row .btn {
+    margin-left: 20px;
+    padding: 10px 20px;
+    background-color: #006400;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.hero-content .sub-title {
     text-align: right;
+    margin: 0;
+    font-size: 3rem;
+    color: #006400;
     margin-right: auto;
-    margin-left: 0;
 }
 
 .hero-content p.subtitle {
@@ -60,9 +74,15 @@ header nav ul li a {
 
 .hero-content .btn {
     margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #006400;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
-.hero-image img {
+.hero-image {
     width: 100%;
     max-width: 300px;
     margin: 20px auto;
