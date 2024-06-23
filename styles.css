@@ -1,155 +1,130 @@
-/* styles.css */
-
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F8F8F5;
+    background-color: #f2f2f2;
+    color: #333;
 }
 
-header {
-    background-color: #FFF;
-    padding: 20px 40px;
-    border-bottom: 1px solid #DDD;
-}
-
-.header-container {
+header nav ul {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    height: 50px;
-}
-
-nav ul {
+    justify-content: center;
     list-style: none;
-    display: flex;
-    gap: 20px;
+    padding: 20px;
+    margin: 0;
+    background-color: #fff;
 }
 
-nav a {
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
     text-decoration: none;
     color: #333;
-    font-weight: bold;
 }
 
 .hero {
-    text-align: center;
+    background-color: #e0efe7;
     padding: 40px 20px;
-    background-color: #E5F4E3;
-    position: relative;
-}
-
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #3A512B;
-}
-
-.volunteer-button {
-    background-color: #FFD700;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-bottom: 20px;
+    text-align: center;
 }
 
 .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.hero-content img {
-    width: 200px;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    font-size: 18px;
-    color: #666;
-    max-width: 600px;
-}
-
-.help-button {
-    background-color: #4CAF50;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.mission, .about-us, .help, .faq, .articles {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.mission h2, .about-us h2, .help h2, .faq h2, .articles h2 {
-    font-size: 28px;
-    color: #3A512B;
-    margin-bottom: 20px;
-}
-
-.mission p, .about-us p, .help ul, .faq .faq-item p {
-    font-size: 18px;
-    color: #666;
-}
-
-.about-us .statistics {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.about-us .statistics div {
-    text-align: center;
-}
-
-.about-us .statistics h3 {
-    font-size: 36px;
-    color: #3A512B;
-    margin-bottom: 10px;
-}
-
-.about-us .statistics p {
-    font-size: 16px;
-    color: #666;
-}
-
-.help ul {
-    list-style: none;
-    padding: 0;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.help ul li {
-    font-size: 18px;
-    color: #666;
-    text-align: left;
-    margin-bottom: 10px;
-}
-
-.faq .faq-item {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.faq .faq-item h3 {
-    font-size: 20px;
-    color: #3A512B;
-    cursor: pointer;
-}
-
-.articles {
+.hero-content .title-row {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
 }
 
-.article {
+.hero-content h1 {
+    margin: 0;
+    font-size: 3rem;
+    color: #006400;
+}
+
+.hero-content p.subtitle {
+    font-size: 1.25rem;
+    margin-top: 20px;
+}
+
+.hero-content .btn {
+    margin-top: 20px;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+.about-us, .help, .faq, .useful-info {
+    padding: 40px 20px;
+    background-color: #fff;
+    margin: 20px 0;
     text-align: center;
-    margin-bottom: 20px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+.stat-item {
+    margin: 0 20px;
+}
+
+.faq .faq-item {
+    margin: 10px 0;
+}
+
+.faq .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+.faq .faq-answer {
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.useful-info .articles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.useful-info .article {
+    margin: 10px;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
+}
