@@ -52,11 +52,12 @@ header nav ul li a {
 .hero-content .title-row .btn {
     margin-left: 20px;
     padding: 10px 20px;
-    background-color: #006400;
-    color: #fff;
-    border: none;
+    background-color: transparent;
+    color: #006400;
+    border: 2px solid #006400;
     cursor: pointer;
     font-size: 1rem;
+    border-radius: 20px;
 }
 
 .hero-content .sub-title {
@@ -80,6 +81,7 @@ header nav ul li a {
     border: none;
     cursor: pointer;
     font-size: 1rem;
+    border-radius: 20px;
 }
 
 .hero-image {
@@ -152,4 +154,17 @@ footer nav a {
 
 footer nav a:hover {
     text-decoration: underline;
+}
+
+.btn {
+    border-radius: 20px;
+}
+
+.btn-volunteer {
+    background-color: transparent;
+    color: #006400;
+    border: 2px solid #006400;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 20px;
 }
