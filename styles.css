@@ -50,7 +50,7 @@ header nav ul li a {
 }
 
 .hero-content .title-row .btn-volunteer {
-    margin-left: 20px;
+    margin-left: auto; /* Перемещает кнопку в крайнее правое положение */
     padding: 10px 20px;
     background-color: transparent;
     color: #006400;
@@ -61,13 +61,13 @@ header nav ul li a {
 }
 
 .hero-content .sub-title {
-    text-align: right;
     margin: 0;
     font-size: 3rem;
     color: #006400;
-    margin-right: auto;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end; /* Выравнивание по правому краю */
+    align-items: center; /* Выравнивание по вертикали */
+    gap: 20px; /* Промежуток между элементами (для отступа от кнопки) */
 }
 
 .hero-content .sub-title h1 {
