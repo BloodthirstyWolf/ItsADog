@@ -1,176 +1,104 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
-    color: #333;
-}
-
-header nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 20px;
-    margin: 0;
-    background-color: #fff;
-}
-
-header nav ul li {
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: #333;
-}
-
-.hero {
-    background-color: #e0efe7;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.hero-content .title-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.hero-content .title-row h1 {
-    margin: 0;
-    font-size: 3rem;
-    color: #006400;
-}
-
-.hero-content .title-row .btn-volunteer {
-    margin-left: 20px;
-    padding: 10px 20px;
-    background-color: transparent;
-    color: #006400;
-    border: 2px solid #006400;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 20px;
-}
-
-.hero-content .sub-title {
-    text-align: right;
-    margin: 0;
-    font-size: 3rem;
-    color: #006400;
-    margin-right: auto;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.hero-content .sub-title h1 {
-    margin: 0;
-}
-
-.hero-content p.subtitle {
-    font-size: 1.25rem;
-    margin-top: 20px;
-}
-
-.hero-content .btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #006400;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 20px;
-}
-
-.hero-image {
-    width: 100%;
-    max-width: 300px;
-    margin: 20px auto;
-}
-
-.about-us, .help, .faq, .useful-info {
-    padding: 40px 20px;
-    background-color: #fff;
-    margin: 20px 0;
-    text-align: center;
-}
-
-.stats {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding: 20px 0;
-    background-color: #fff;
-}
-
-.stat-item {
-    margin: 0 20px;
-}
-
-.faq .faq-item {
-    margin: 10px 0;
-}
-
-.faq .faq-question {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    padding: 10px;
-    background-color: #f2f2f2;
-}
-
-.faq .faq-answer {
-    display: none;
-    padding: 10px;
-    background-color: #fff;
-}
-
-.useful-info .articles {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.useful-info .article {
-    margin: 10px;
-    text-align: center;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-footer nav a {
-    color: #fff;
-    margin: 0 10px;
-    text-decoration: none;
-}
-
-footer nav a:hover {
-    text-decoration: underline;
-}
-
-.btn {
-    border-radius: 20px;
-}
-
-.btn-volunteer {
-    background-color: transparent;
-    color: #006400;
-    border: 2px solid #006400;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 20px;
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обучаем собак помогать людям</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Наша деятельность</a></li>
+                <li><a href="#">Статьи</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Партнеры</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="title-row">
+                <h1>Обучаем собак</h1>
+                <button class="btn btn-volunteer">Стать волонтером</button>
+            </div>
+            <div class="sub-title">
+                <h1>помогать людям</h1>
+            </div>
+            <img src="person_with_dog.png" alt="Person with dog" class="hero-image">
+            <p class="subtitle">Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
+            <button class="btn">Получить помощь</button>
+        </div>
+    </section>
+    <section class="about-us">
+        <h2>Кто мы</h2>
+        <p>Мы команда энтузиастов, которые работают с собаками-помощниками, способными облегчить людям жизнь.</p>
+        <button class="btn btn-volunteer">Стать волонтером</button>
+    </section>
+    <section class="stats">
+        <div class="stat-item">
+            <h3>14</h3>
+            <p>Кинологов</p>
+        </div>
+        <div class="stat-item">
+            <h3>26</h3>
+            <p>Благополучателей</p>
+        </div>
+        <div class="stat-item">
+            <h3>64</h3>
+            <p>Волонтера</p>
+        </div>
+    </section>
+    <section class="help">
+        <h2>Кому мы можем помочь</h2>
+        <p>Гражданам РФ, достигшим 18 лет</p>
+        <p>У которых есть собака, <a href="#">подходящая для работы</a>, или возможность её приобрести</p>
+        <p>Имеющим хронические заболевания, находящимся под контролем врача</p>
+        <button class="btn">Получить помощь</button>
+    </section>
+    <section class="faq">
+        <h2>Вопросы и ответы</h2>
+        <div class="faq-item">
+            <div class="faq-question">Это платно?</div>
+            <div class="faq-answer">Ответ на вопрос.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Сколько длится обучение собаки?</div>
+            <div class="faq-answer">Ответ на вопрос.</div>
+        </div>
+        <!-- Добавьте остальные вопросы и ответы -->
+    </section>
+    <section class="useful-info">
+        <h2>Полезно знать</h2>
+        <div class="articles">
+            <div class="article">
+                <img src="article1.png" alt="Article 1">
+                <h3>Оценка потенциальной собаки-помощника</h3>
+                <button class="btn">Читать статью</button>
+            </div>
+            <div class="article">
+                <img src="article2.png" alt="Article 2">
+                <h3>Психиатрическая служебная собака</h3>
+                <button class="btn">Читать статью</button>
+            </div>
+            <div class="article">
+                <img src="article3.png" alt="Article 3">
+                <h3>Собаки, предупреждающие о приступах</h3>
+                <button class="btn">Читать статью</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <img src="logo.png" alt="Logo">
+        <nav>
+            <a href="#">О нас</a>
+            <a href="#">Наша деятельность</a>
+            <a href="#">Статьи</a>
+            <a href="#">Контакты</a>
+            <a href="#">Партнеры</a>
+        </nav>
+    </footer>
+</body>
+</html>
