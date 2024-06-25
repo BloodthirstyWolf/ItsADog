@@ -1,5 +1,10 @@
+@font-face {
+    font-family: 'mr_ITCSerifGothic';
+    src: url('/path/to/18094.ttf') format('truetype');
+}
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'mr_ITCSerifGothic', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f2f2f2;
@@ -28,148 +33,89 @@ header nav ul li a {
     background-color: #e0efe7;
     padding: 40px 20px;
     text-align: center;
-    position: relative;
 }
 
 .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Выровнять по правому краю */
-    padding: 0 40px; /* Используем пиксели для боковых отступов */
-    position: relative;
-}
-
-.hero-content .title-row {
     display: flex;
     align-items: center;
-    margin: 0;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 40px 20px;
 }
 
-.hero-content .title-row h1 {
-    margin: 0;
-    font-size: 3rem;
-    color: #006400;
+.left-column {
+    flex: 1;
 }
 
-.hero-content .title-row .btn-volunteer {
-    margin-left: 20px; /* Отступ от заголовка */
-    padding: 10px 20px; /* Используем пиксели для внутреннего отступа */
-    background-color: transparent;
-    color: #006400;
-    border: 2px solid #006400;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 20px;
-}
-
-.hero-content .sub-title {
-    position: absolute;
-    right: 40px;
-    top: 50px; /* Устанавливаем расстояние от верхнего заголовка */
-    font-size: 3rem;
-    color: #006400;
-    margin: 0;
-}
-
-.hero-content p.subtitle {
-    font-size: 1.25rem;
-    margin-top: 80px; /* Корректируем отступ сверху, чтобы текст не перекрывался */
-    text-align: center;
-}
-
-.hero-content .btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #006400;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 20px;
+.right-column {
+    flex: 1;
+    position: relative;
+    text-align: left;
 }
 
 .hero-image {
     width: 100%;
     max-width: 300px;
-    margin: 20px auto;
+    margin-right: 20px;
 }
 
-.about-us, .help, .faq, .useful-info {
-    padding: 40px 20px;
-    background-color: #fff;
-    margin: 20px 0;
-    text-align: center;
-}
-
-.stats {
+.title-row {
     display: flex;
-    justify-content: center;
-    text-align: center;
-    padding: 20px 0;
-    background-color: #fff;
-}
-
-.stat-item {
-    margin: 0 20px;
-}
-
-.faq .faq-item {
-    margin: 10px 0;
-}
-
-.faq .faq-question {
-    display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    cursor: pointer;
-    padding: 10px;
-    background-color: #f2f2f2;
+    margin-bottom: 20px;
+    position: relative;
 }
 
-.faq .faq-answer {
-    display: none;
-    padding: 10px;
-    background-color: #fff;
+.title-row h1 {
+    margin: 0;
+    font-size: 3rem;
+    color: #006400;
+    z-index: 2; /* Поверх всех элементов */
 }
 
-.useful-info .articles {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.useful-info .article {
-    margin: 10px;
-    text-align: center;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-footer nav a {
-    color: #fff;
-    margin: 0 10px;
-    text-decoration: none;
-}
-
-footer nav a:hover {
-    text-decoration: underline;
-}
-
-.btn {
-    border-radius: 20px;
-}
-
-.btn-volunteer {
+.title-row .btn-volunteer {
+    margin-left: 20px;
+    padding: 10px 20px;
     background-color: transparent;
     color: #006400;
     border: 2px solid #006400;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 20px;
+    z-index: 1; /* Ниже заголовка, но выше стрелки */
+}
+
+.arrow {
+    margin-left: 20px;
+    width: 30px; /* Примерный размер */
+    height: auto;
+    z-index: 0; /* Ниже всех элементов */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sub-title {
+    margin: 0;
+    font-size: 3rem;
+    color: #006400;
+    z-index: 2; /* Поверх всех элементов */
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    margin-top: 20px;
+}
+
+.right-column .btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #006400;
+    color: #fff;
+    border: none;
     cursor: pointer;
     font-size: 1rem;
     border-radius: 20px;
