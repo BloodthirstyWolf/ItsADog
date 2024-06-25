@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'mr_ITCSerifGothic';
-    src: url('/mnt/data/18094.ttf') format('truetype');
+    src: url('18094.ttf') format('truetype');
 }
 
 body {
