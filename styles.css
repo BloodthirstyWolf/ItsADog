@@ -44,7 +44,7 @@ header nav ul li a {
     display: flex;
     justify-content: flex-end; /* Выровнять по правому краю */
     align-items: center;
-    margin-bottom: 1rem; /* Отступ снизу для разделения */
+    margin-bottom: 0.5rem; /* Уменьшаем отступ снизу */
 }
 
 .hero-content .title-row h1 {
@@ -71,6 +71,7 @@ header nav ul li a {
     font-size: 3rem;
     color: #006400;
     margin: 0;
+    margin-top: 0.5rem; /* Уменьшаем верхний отступ */
 }
 
 .hero-content p.subtitle {
