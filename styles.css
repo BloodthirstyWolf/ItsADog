@@ -53,13 +53,14 @@ header nav ul li a {
 .title-row {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Уменьшаем нижний отступ */
 }
 
 .title-row h1 {
     margin: 0;
     font-size: 3rem;
     color: #006400;
+    line-height: 1.2; /* Устанавливаем line-height для уменьшения расстояния */
     z-index: 2; /* Поверх всех элементов */
 }
 
@@ -79,6 +80,7 @@ header nav ul li a {
     margin: 0;
     font-size: 3rem;
     color: #006400;
+    line-height: 1.2; /* Устанавливаем line-height для уменьшения расстояния */
     z-index: 2; /* Поверх всех элементов */
 }
 
