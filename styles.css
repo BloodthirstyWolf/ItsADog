@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'mr_ITCSerifGothic';
-    src: url('/path/to/18094.ttf') format('truetype');
+    src: url('18094.ttf') format('truetype');
 }
 
 body {
@@ -36,23 +36,35 @@ header nav ul li a {
 }
 
 .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
 }
 
-.title-section {
-    text-align: center;
+.center-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.title-section h1 {
+.title-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title-row h1 {
     margin: 0;
     font-size: 3rem;
     color: #006400;
+    z-index: 2; /* Поверх всех элементов */
 }
 
-.title-section .btn-volunteer {
-    margin-top: 10px;
+.title-row .btn-volunteer {
+    margin-left: 20px;
     padding: 10px 20px;
     background-color: transparent;
     color: #006400;
@@ -60,41 +72,50 @@ header nav ul li a {
     cursor: pointer;
     font-size: 1rem;
     border-radius: 20px;
+    z-index: 1; /* Ниже заголовка, но выше стрелки */
 }
 
-.main-content {
+.sub-title {
+    margin: 0;
+    font-size: 3rem;
+    color: #006400;
+    z-index: 2; /* Поверх всех элементов */
+}
+
+.bottom-row {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    margin-top: 40px;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .left-column {
     flex: 1;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .right-column {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     position: relative;
-    text-align: left;
 }
 
 .hero-image {
     width: 100%;
     max-width: 300px;
+    margin-right: 20px;
 }
 
-.description {
-    position: relative;
-}
-
-.description .subtitle {
+.subtitle {
     font-size: 1.25rem;
     margin-top: 20px;
 }
 
-.description .btn {
+.right-column .btn {
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #006400;
@@ -103,13 +124,16 @@ header nav ul li a {
     cursor: pointer;
     font-size: 1rem;
     border-radius: 20px;
+    z-index: 2; /* Поверх всех элементов */
 }
 
 .arrow {
+    margin-top: 20px;
+    width: 30px; /* Примерный размер */
+    height: auto;
     position: absolute;
     top: 50%;
-    left: 100%;
-    transform: translate(20px, -50%);
-    width: 50px; /* Примерный размер */
-    height: auto;
+    left: calc(100% + 20px);
+    transform: translateY(-50%);
+    z-index: 0; /* Ниже всех элементов */
 }
