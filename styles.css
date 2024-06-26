@@ -33,6 +33,7 @@ header nav ul li a {
     background-color: #e0efe7;
     padding: 40px 20px;
     text-align: center;
+    position: relative;
 }
 
 .hero-content {
@@ -87,9 +88,8 @@ header nav ul li a {
 
 .bottom-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 100%;
     margin-top: 20px;
 }
 
@@ -97,29 +97,26 @@ header nav ul li a {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
 }
 
 .right-column {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    text-align: left;
     position: relative;
 }
 
-.hero-image {
-    width: 100%;
-    max-width: 300px;
-    margin-right: 20px;
-}
-
 .subtitle {
-    font-size: 1.25rem;
-    margin-top: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
-.right-column .btn {
-    margin-top: 20px;
+.btn {
     padding: 10px 20px;
     background-color: #006400;
     color: #fff;
@@ -127,16 +124,154 @@ header nav ul li a {
     cursor: pointer;
     font-size: 1rem;
     border-radius: 20px;
-    z-index: 2; /* Поверх всех элементов */
+    z-index: 2;
 }
 
 .arrow {
-    margin-top: 20px;
-    width: 30px; /* Примерный размер */
-    height: auto;
     position: absolute;
-    top: 50%;
-    left: calc(100% + 20px);
-    transform: translateY(-50%);
-    z-index: 0; /* Ниже всех элементов */
+    top: 10px;
+    left: calc(100% + 20px); /* Смещение на 20px правее текста */
+    width: 50px;
+    height: auto;
+}
+
+.oval-shape {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%) rotate(3deg); /* Поворот на несколько градусов вправо */
+    width: 200%;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: -1; /* Положить под все элементы */
+}
+
+.mission, .stats, .who-we-help, .faq, .useful-info {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.mission .container, .stats .container, .who-we-help .container, .faq .container, .useful-info .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-block {
+    margin-bottom: 40px;
+}
+
+.text-block h2 {
+    font-size: 2rem;
+    color: #006400;
+}
+
+.text-block p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.stats .stat-block {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+}
+
+.stats .stat-block h3 {
+    font-size: 3rem;
+    color: #006400;
+}
+
+.stats .stat-block p {
+    font-size: 1.2rem;
+}
+
+.who-we-help .help-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.who-we-help .help-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.who-we-help ul {
+    list-style: none;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.who-we-help ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.faq details {
+    margin-bottom: 20px;
+}
+
+.faq details summary {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.faq details p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.useful-info .info-blocks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.useful-info .info-block {
+    flex: 1;
+    max-width: 300px;
+    margin: 20px;
+    text-align: center;
+}
+
+.useful-info .info-block img {
+    max-width: 100%;
+    height: auto;
+}
+
+.useful-info .info-block h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+footer {
+    padding: 20px;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+footer nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer nav ul li {
+    margin: 0 15px;
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+footer .footer-content img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
 }
