@@ -2,11 +2,12 @@
     font-family: 'mr_ITCSerifGothic';
     src: url('18094.ttf') format('truetype');
 }
+
 body {
     font-family: 'mr_ITCSerifGothic', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #d3e4cd; /* Устанавливаем фоновый цвет для всего сайта */
     overflow-x: hidden; /* Убираем горизонтальный скролл */
 }
 
@@ -35,7 +36,6 @@ nav ul li a {
 }
 
 .hero {
-    background-color: #d3e4cd;
     text-align: center;
     position: relative;
     padding: 40px 20px;
@@ -114,36 +114,34 @@ nav ul li a {
     z-index: 0; /* Под всеми элементами */
 }
 
-.mission, .stats, .who-we-help, .faq, .useful-info {
+/* Убираем верхние и нижние отступы у секций */
+.hero, .mission, .stats, .who-we-help, .faq, .useful-info {
+    margin: 0;
     padding: 40px 20px;
-    text-align: center;
-    background-color: #fff;
-    margin-top: 20px;
 }
 
-.mission .container, .stats .container, .who-we-help .container, .faq .container, .useful-info .container {
-    max-width: 1200px;
+/* Убедимся, что фон всех секций одинаковый */
+.hero, .mission, .stats, .who-we-help, .faq, .useful-info {
+    background-color: #d3e4cd;
+}
+
+/* Изменяем отступы и маргинацию для плавного перехода */
+.hero .container, .mission .container, .stats .container, .who-we-help .container, .faq .container, .useful-info .container {
+    padding: 0;
     margin: 0 auto;
 }
 
-.mission h2, .who-we-help h2, .useful-info h2 {
-    font-size: 2.5rem;
-    color: #006400;
+.mission, .stats, .who-we-help, .faq, .useful-info {
+    padding: 40px 20px;
 }
 
-.mission p, .who-we-help ul, .faq details, .useful-info .info-block {
-    font-size: 1.2rem;
-    color: #333;
+.text-block {
     margin-bottom: 20px;
 }
 
-.stats {
-    display: flex;
-    justify-content: space-around;
-}
-
-.stat-block {
+.stats .stat-block {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .stat-block h3 {
@@ -153,87 +151,96 @@ nav ul li a {
 
 .stat-block p {
     font-size: 1rem;
-    color: #333;
 }
 
 .who-we-help .help-content {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
 .help-image {
-    max-width: 100%;
+    max-width: 100px;
     height: auto;
     margin-right: 20px;
 }
 
-.faq details {
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    color: #333;
-    cursor: pointer;
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
-.faq summary {
-    font-weight: bold;
+footer {
+    background-color: #006400;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer nav ul {
+    justify-content: center;
+}
+
+footer nav ul li {
+    margin: 0 10px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-content img {
+    max-width: 100px;
+    height: auto;
 }
 
 .useful-info .info-blocks {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .useful-info .info-block {
+    flex: 1;
+    margin: 20px;
     text-align: center;
 }
 
 .useful-info .info-block img {
     max-width: 100%;
     height: auto;
+    margin-bottom: 10px;
 }
 
 .useful-info .info-block h3 {
     font-size: 1.5rem;
-    color: #006400;
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.useful-info .info-block a {
-    font-size: 1rem;
-    color: #006400;
-    text-decoration: none;
-    margin-top: 5px;
-    display: inline-block;
+details {
+    margin-bottom: 10px;
 }
 
-footer {
-    background-color: #f0f0f0;
-    padding: 20px 0;
-    text-align: center;
-    border-top: 1px solid #eaeaea;
+summary {
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
-footer img {
-    max-width: 100px;
-    height: auto;
+details p {
+    margin: 10px 0 0 20px;
 }
 
-footer nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 20px 0 0 0;
-}
-
-footer nav ul li {
-    margin: 0 15px;
-}
-
-footer nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1rem;
+/* Убедимся, что контейнеры внутри секций не имеют дополнительных отступов */
+.container {
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1200px;
 }
