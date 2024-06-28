@@ -7,8 +7,8 @@ body {
     font-family: 'mr_ITCSerifGothic', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #d3e4cd; /* Устанавливаем фоновый цвет для всего сайта */
-    overflow-x: hidden; /* Убираем горизонтальный скролл */
+    background-color: #d3e4cd;
+    overflow-x: hidden;
 }
 
 header {
@@ -39,7 +39,6 @@ nav ul li a {
     text-align: center;
     position: relative;
     padding: 40px 20px;
-    overflow: hidden; /* Обрезаем все, что выходит за пределы */
 }
 
 .hero h1 {
@@ -67,7 +66,7 @@ nav ul li a {
 .hero-image {
     max-width: 100%;
     height: auto;
-    z-index: 1; /* Под текстом, но над овалом */
+    z-index: 1;
 }
 
 .right-column {
@@ -102,158 +101,30 @@ nav ul li a {
     z-index: 2;
 }
 
-.oval-shape {
-    position: absolute;
-    background-color: #fff;
-    border-radius: 50%;
-    z-index: 0; /* Под всеми элементами */
-}
-
-@media (min-width: 768px) {
-    .oval-shape {
-        width: 150%;
-        height: 400px;
-        top: 100px; /* Начало овала */
-        left: -25%; /* Центрирование овала */
-    }
-}
-
-@media (min-width: 1200px) {
-    .oval-shape {
-        width: 120%;
-        height: 500px;
-        top: 150px; /* Начало овала */
-        left: -10%; /* Центрирование овала */
-    }
-}
-
-/* Убираем верхние и нижние отступы у секций */
-.hero, .mission, .stats, .who-we-help, .faq, .useful-info {
-    margin: 0;
-    padding: 40px 20px;
-}
-
-/* Убедимся, что фон всех секций одинаковый */
-.hero, .mission, .stats, .who-we-help, .faq, .useful-info {
-    background-color: #d3e4cd;
-}
-
-/* Изменяем отступы и маргинацию для плавного перехода */
-.hero .container, .mission .container, .stats .container, .who-we-help .container, .faq .container, .useful-info .container {
-    padding: 0;
+/* SVG фигура */
+.svg-figure {
+    display: block;
+    width: 100%;
+    height: auto;
     margin: 0 auto;
 }
 
-.mission, .stats, .who-we-help, .faq, .useful-info {
+.hero, .mission, .stats, .who-we-help, .faq, .useful-info {
+    margin: 0;
     padding: 40px 20px;
+    background-color: #d3e4cd;
+}
+
+.hero .container, .mission .container, .stats .container, .who-we-help .container, .faq .container, .useful-info .container {
+    padding: 0;
+    margin: 0 auto;
 }
 
 .text-block {
     margin-bottom: 20px;
 }
 
-.stats .stat-block {
-    text-align: center;
-    margin-bottom: 20px;
+.mission, .stats, .who-we-help, .faq, .useful-info {
+    padding: 40px 20px;
 }
 
-.stat-block h3 {
-    font-size: 2rem;
-    color: #006400;
-}
-
-.stat-block p {
-    font-size: 1rem;
-}
-
-.who-we-help .help-content {
-    display: flex;
-    align-items: center;
-}
-
-.help-image {
-    max-width: 100px;
-    height: auto;
-    margin-right: 20px;
-}
-
-ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-footer {
-    background-color: #006400;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-footer nav ul {
-    justify-content: center;
-}
-
-footer nav ul li {
-    margin: 0 10px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.footer-content nav ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.footer-content img {
-    max-width: 100px;
-    height: auto;
-}
-
-.useful-info .info-blocks {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.useful-info .info-block {
-    flex: 1;
-    margin: 20px;
-    text-align: center;
-}
-
-.useful-info .info-block img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.useful-info .info-block h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-details {
-    margin-bottom: 10px;
-}
-
-summary {
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-details p {
-    margin: 10px 0 0 20px;
-}
-
-/* Убедимся, что контейнеры внутри секций не имеют дополнительных отступов */
-.container {
-    padding: 0 20px;
-    margin: 0 auto;
-    max-width: 1200px;
-}
