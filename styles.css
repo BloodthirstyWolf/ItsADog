@@ -9,6 +9,7 @@ body {
     padding: 0;
     background-color: #d3e4cd;
     overflow-x: hidden;
+    position: relative;
 }
 
 header {
@@ -39,6 +40,7 @@ nav ul li a {
     text-align: center;
     position: relative;
     padding: 40px 20px;
+    z-index: 1;
 }
 
 .hero h1 {
@@ -66,13 +68,14 @@ nav ul li a {
 .hero-image {
     max-width: 100%;
     height: auto;
-    z-index: 1;
+    z-index: 2;
 }
 
 .right-column {
     flex: 1;
     text-align: left;
     position: relative;
+    z-index: 2;
 }
 
 .subtitle {
@@ -103,16 +106,20 @@ nav ul li a {
 
 /* SVG фигура */
 .svg-figure {
-    display: block;
+    position: absolute;
+    top: 20px; /* Настройте это значение по своему усмотрению */
+    left: 0;
     width: 100%;
     height: auto;
-    margin: 0 auto;
+    z-index: 0; /* Размещаем на заднем плане */
 }
 
 .hero, .mission, .stats, .who-we-help, .faq, .useful-info {
     margin: 0;
     padding: 40px 20px;
     background-color: #d3e4cd;
+    position: relative;
+    z-index: 1;
 }
 
 .hero .container, .mission .container, .stats .container, .who-we-help .container, .faq .container, .useful-info .container {
