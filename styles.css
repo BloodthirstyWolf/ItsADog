@@ -45,26 +45,31 @@ nav ul li a {
     z-index: 2;
 }
 
+.hero-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Выровнять по правому краю */
+    margin-bottom: 20px;
+}
+
 .hero h1 {
     font-size: 3rem;
     color: #006400;
     line-height: 1;
-    z-index: 3;
     margin: 10px 0;
-}
-
-.hero .line-1 {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-end; /* Выровнять по правому краю */
 }
 
-.hero .line-1 .btn {
-    margin-left: 20px;
+.hero h1 span {
+    display: block;
 }
 
-.hero .line-2 {
-    text-align: right;
+.hero .btn {
+    align-self: flex-end; /* Выровнять по правому краю */
+    margin-top: 10px;
 }
 
 .bottom-row {
@@ -149,4 +154,104 @@ nav ul li a {
 
 .mission, .stats, .who-we-help, .faq, .useful-info {
     padding: 40px 20px;
+}
+
+.stats .container, .who-we-help .container, .faq .container, .useful-info .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    color: #006400;
+}
+
+.stat-item p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.who-we-help ul {
+    list-style: none;
+    padding: 0;
+}
+
+.who-we-help ul li {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    cursor: pointer;
+    text-align: left;
+}
+
+.info-item {
+    text-align: center;
+    margin: 20px;
+}
+
+.info-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.info-item h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+footer {
+    background-color: #fff;
+    padding: 20px 0;
+    border-top: 1px solid #eaeaea;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+footer nav ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer nav ul li {
+    margin: 0 15px;
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
 }
