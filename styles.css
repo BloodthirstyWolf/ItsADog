@@ -104,14 +104,27 @@ nav ul li a {
 
 .oval-shape {
     position: absolute;
-    top: 250px;
-    left: 50%;
-    transform: translateX(-50%) rotate(3deg);
-    width: 200%;
-    height: 400px;
     background-color: #fff;
     border-radius: 50%;
     z-index: 0; /* Под всеми элементами */
+}
+
+@media (min-width: 768px) {
+    .oval-shape {
+        width: 150%;
+        height: 400px;
+        top: 100px; /* Начало овала */
+        left: -25%; /* Центрирование овала */
+    }
+}
+
+@media (min-width: 1200px) {
+    .oval-shape {
+        width: 120%;
+        height: 500px;
+        top: 150px; /* Начало овала */
+        left: -10%; /* Центрирование овала */
+    }
 }
 
 /* Убираем верхние и нижние отступы у секций */
