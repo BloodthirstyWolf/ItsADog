@@ -1,136 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дело в собаке</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Португалия: Забытая Европейская Жемчужина</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #C0C0C0;
+        }
+        
+        .column {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: justify;
+        }
+        
+        .list-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .circle {
+            width: 20px;
+            height: 20px;
+            background-color: #FFFFFF;
+            border: 1px solid #C0C0C0;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .item {
+            padding-left: 30px;
+            border-left: 1px solid #C0C0C0;
+            position: relative;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Наша деятельность</a></li>
-                <li><a href="#">Статьи</a></li>
-                <li><a href="#">Контакты</a></li>
-                <li><a href="#">Партнеры</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- SVG фигура -->
-    <img src="figure.svg" alt="Фон" class="svg-figure">
-
-    <div class="hero">
-        <div class="hero-content">
-            <h1><span>Обучаем собак</span> <span>помогать людям</span></h1>
-            <button class="btn">Стать волонтером</button>
-        </div>
-        <div class="bottom-row">
-            <div class="left-column">
-                <img src="person_with_dog.png" alt="Person with dog" class="hero-image">
-            </div>
-            <div class="right-column">
-                <p class="subtitle">Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
-                <button class="btn">Получить помощь</button>
-                <img src="arrow.png" alt="Arrow" class="arrow">
-            </div>
+    <div class="column">
+        <h3>Что делать, если багаж утерян</h3>
+        <div class="list-container">
+            <div class="circle">1</div>
+            <div class="item">Проверьте информацию на табло: номер прилетевшего рейса должен совпадать с номером на вашем посадочном талоне.</div>
+            <div class="circle">2</div>
+            <div class="item">Узнайте у авиакомпании причину отмены или задержки рейса. Каждая компания имеет определенный план действий в таких ситуациях.</div>
+            <div class="circle">3</div>
+            <div class="item">Обратитесь к представителю компании-перевозчика, у которой вы купили билет. Это можно сделать через сотрудников аэропорта или справочную службу.</div>
         </div>
     </div>
-
-    <div class="mission">
-        <h2>НАША МИССИЯ</h2>
-        <p>Работаем с людьми с хроническими заболеваниями с помощью специально обученных собак.</p>
-    </div>
-
-    <div class="stats">
-        <div class="container">
-            <div class="stat-item">
-                <h3>14</h3>
-                <p>Кинологов</p>
-            </div>
-            <div class="stat-item">
-                <h3>26</h3>
-                <p>Благополучателей</p>
-            </div>
-            <div class="stat-item">
-                <h3>64</h3>
-                <p>Волонтера</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="who-we-help">
-        <h2>КОМУ МЫ МОЖЕМ ПОМОЧЬ</h2>
-        <ul>
-            <li>Гражданам РФ, достигшим 18 лет</li>
-            <li>У которых есть собака, подходящая для работы, или возможность её приобрести</li>
-            <li>Имеющим хронические заболевания, находящиеся под контролем врача</li>
-        </ul>
-        <button class="btn">Получить помощь</button>
-    </div>
-
-    <div class="faq">
-        <h2>ВОПРОСЫ И ОТВЕТЫ</h2>
-        <div class="faq-item">
-            <button class="faq-question">Это платно?</button>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">Сколько длится обучение собаки?</button>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">Что, если у меня есть собака?</button>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">С какими заболеваниями помогают собаки?</button>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">Подходит ли для работы собака из приюта?</button>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">Кто будет обучать собаку?</button>
-        </div>
-        <div class="faq-item">
-            <button class="faq-question">Что, если я живу далеко?</button>
-        </div>
-    </div>
-
-    <div class="useful-info">
-        <h2>ПОЛЕЗНО ЗНАТЬ</h2>
-        <div class="info-item">
-            <img src="dog_assessment.png" alt="Оценка потенциальной собаки-помощника">
-            <h3>Оценка потенциальной собаки-помощника</h3>
-            <button class="btn">Читать статью</button>
-        </div>
-        <div class="info-item">
-            <img src="psychiatric_service_dog.png" alt="Психиатрическая служебная собака">
-            <h3>Психиатрическая служебная собака</h3>
-            <button class="btn">Читать статью</button>
-        </div>
-        <div class="info-item">
-            <img src="seizure_alert_dog.png" alt="Собаки, предупреждающие о приступах">
-            <h3>Собаки, предупреждающие о приступах</h3>
-            <button class="btn">Читать статью</button>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Дело в собаке</p>
-        <nav>
-            <ul>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Наша деятельность</a></li>
-                <li><a href="#">Статьи</a></li>
-                <li><a href="#">Контакты</a></li>
-                <li><a href="#">Партнеры</a></li>
-            </ul>
-        </nav>
-        <div class="social-icons">
-            <a href="#"><img src="vk_icon.png" alt="VK"></a>
-            <a href="#"><img src="facebook_icon.png" alt="Facebook"></a>
-            <a href="#"><img src="twitter_icon.png" alt="Twitter"></a>
-        </div>
-    </footer>
 </body>
 </html>
