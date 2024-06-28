@@ -16,6 +16,8 @@ header {
     background-color: #fff;
     padding: 10px 0;
     border-bottom: 1px solid #eaeaea;
+    position: relative;
+    z-index: 5;
 }
 
 nav ul {
@@ -40,7 +42,7 @@ nav ul li a {
     text-align: center;
     position: relative;
     padding: 40px 20px;
-    z-index: 2; /* Увеличен */
+    z-index: 2;
 }
 
 .hero h1 {
@@ -49,6 +51,20 @@ nav ul li a {
     line-height: 1;
     z-index: 3;
     margin: 10px 0;
+}
+
+.hero .line-1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hero .line-1 .btn {
+    margin-left: 20px;
+}
+
+.hero .line-2 {
+    text-align: right;
 }
 
 .bottom-row {
@@ -107,7 +123,7 @@ nav ul li a {
 /* SVG фигура */
 .svg-figure {
     position: absolute;
-    top: 20px; /* Настройте это значение по своему усмотрению */
+    top: 150px; /* Настройте это значение по своему усмотрению */
     left: 0;
     width: 100%;
     height: auto;
