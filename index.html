@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обучаем собак помогать людям</title>
+    <title>Дело в собаке</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="logo.png" alt="Дело в собаке">
+        <div class="container">
+            <img src="logo.svg" alt="Логотип" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Наша деятельность</a></li>
+                    <li><a href="#">Статьи</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Партнеры</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Наша деятельность</a></li>
-                <li><a href="#">Статьи</a></li>
-                <li><a href="#">Контакты</a></li>
-                <li><a href="#">Партнеры</a></li>
-            </ul>
-        </nav>
     </header>
+
     <section class="hero">
         <div class="oval-shape-container">
             <img src="images/oval-shape.svg" alt="Oval Shape" class="oval-shape">
@@ -30,7 +31,7 @@
             <h1 class="subtitle">помогать людям</h1>
             <div class="bottom-row">
                 <div class="left-column">
-                    <img src="person_with_dog.png" alt="Собака и человек" class="hero-image" id="hero-image">
+                    <img src="person_with_dog.png" alt="Собака и человек" class="hero-image">
                 </div>
                 <div class="right-column">
                     <p class="subtitle">Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
@@ -40,6 +41,112 @@
             </div>
         </div>
     </section>
-    <!-- Остальная часть страницы -->
+
+    <section class="mission">
+        <div class="container">
+            <div class="text-block">
+                <h2>НАША МИССИЯ</h2>
+                <p>Работаем с людьми с хроническими заболеваниями с помощью специально обученных собак.</p>
+            </div>
+            <div class="text-block">
+                <h2>КТО МЫ</h2>
+                <p>Мы команда энтузиастов, которые работают с собаками-помощниками, способными облегчить жизнь людей.</p>
+                <button class="btn">Стать волонтером</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stat-block">
+                <h3>14</h3>
+                <p>Кинологов</p>
+            </div>
+            <div class="stat-block">
+                <h3>26</h3>
+                <p>Благополучателей</p>
+            </div>
+            <div class="stat-block">
+                <h3>64</h3>
+                <p>Волонтера</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="who-we-help">
+        <div class="container">
+            <div class="text-block">
+                <h2>КОМУ МЫ МОЖЕМ ПОМОЧЬ</h2>
+                <div class="help-content">
+                    <img src="helping.png" alt="Помощь" class="help-image">
+                    <ul>
+                        <li>Гражданам РФ, достигшим 18 лет</li>
+                        <li>У которых есть собака, подходящая для работы, или возможность её приобрести</li>
+                        <li>Имеющим хронические заболевания, находящиеся под контролем врача</li>
+                    </ul>
+                </div>
+                <button class="btn get-help">Получить помощь</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <div class="text-block">
+                <h2>ВОПРОСЫ И ОТВЕТЫ</h2>
+                <details>
+                    <summary>Это платно?</summary>
+                    <p>Обучение и помощь бесплатны для благополучателей.</p>
+                </details>
+                <details>
+                    <summary>Сколько длится обучение собаки?</summary>
+                    <p>Обучение может занять от 6 до 12 месяцев в зависимости от специфики работы.</p>
+                </details>
+                <!-- Другие вопросы и ответы -->
+            </div>
+        </div>
+    </section>
+
+    <section class="useful-info">
+        <div class="container">
+            <div class="text-block">
+                <h2>ПОЛЕЗНО ЗНАТЬ</h2>
+                <div class="info-blocks">
+                    <div class="info-block">
+                        <img src="article1.png" alt="Статья 1">
+                        <h3>Оценка потенциальной собаки-помощника</h3>
+                        <button class="btn">Читать статью→</button>
+                    </div>
+                    <div class="info-block">
+                        <img src="article2.png" alt="Статья 2">
+                        <h3>Психиатрическая служебная собака</h3>
+                        <button class="btn">Читать статью→</button>
+                    </div>
+                    <div class="info-block">
+                        <img src="article3.png" alt="Статья 3">
+                        <h3>Собаки, предупреждающие о приступах</h3>
+                        <button class="btn">Читать статью→</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <img src="logo.png" alt="Логотип">
+            <nav>
+                <ul>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Наша деятельность</a></li>
+                    <li><a href="#">Статьи</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Партнеры</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
