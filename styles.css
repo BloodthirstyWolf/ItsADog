@@ -1,31 +1,27 @@
-@font-face {
-    font-family: 'mr_ITCSerifGothic';
-    src: url('18094.ttf') format('truetype');
-}
-
 body {
-    font-family: 'mr_ITCSerifGothic', sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #d3e4cd;
-    overflow-x: hidden;
-    position: relative;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
     background-color: #fff;
-    padding: 10px 0;
-    border-bottom: 1px solid #eaeaea;
-    position: relative;
-    z-index: 5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 50px;
 }
 
 nav ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    display: flex;
 }
 
 nav ul li {
@@ -35,223 +31,82 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #333;
-    font-size: 1rem;
+    font-weight: bold;
 }
 
 .hero {
+    background-color: #d3e4cd;
     text-align: center;
     position: relative;
     padding: 40px 20px;
-    z-index: 2;
+    overflow: hidden; /* Обрезаем все, что выходит за пределы */
 }
 
-.hero-content {
+.oval-shape-container {
+    position: absolute;
+    top: 10vh; /* Регулируйте в соответствии с вашими требованиями */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0; /* Под всеми элементами */
+}
+
+.oval-shape {
+    width: 100%; /* Или точные размеры, если нужно */
+    height: auto;
+}
+
+.container {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Выровнять по правому краю */
-    margin-bottom: 20px;
+    z-index: 1; /* Чтобы текст был поверх овала */
 }
 
-.hero h1 {
-    font-size: 3rem;
-    color: #006400;
-    line-height: 1;
-    margin: 10px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Выровнять по правому краю */
+.title {
+    font-size: 2.5em;
+    margin: 0;
+    color: #333;
 }
 
-.hero h1 span {
-    display: block;
-}
-
-.hero .btn {
-    align-self: flex-end; /* Выровнять по правому краю */
-    margin-top: 10px;
+.subtitle {
+    font-size: 1.5em;
+    color: #666;
 }
 
 .bottom-row {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-top: 20px;
 }
 
 .left-column {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .hero-image {
     max-width: 100%;
     height: auto;
-    z-index: 3;
 }
 
 .right-column {
     flex: 1;
     text-align: left;
-    position: relative;
-    z-index: 3;
-}
-
-.subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    z-index: 3;
 }
 
 .btn {
-    padding: 10px 20px;
-    background-color: #006400;
-    color: #fff;
+    background-color: #4CAF50;
+    color: white;
     border: none;
+    padding: 10px 20px;
     cursor: pointer;
-    font-size: 1rem;
-    border-radius: 20px;
-    z-index: 3;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #45a049;
 }
 
 .arrow {
-    position: absolute;
-    top: 10px;
-    left: calc(100% + 20px);
-    width: 50px;
-    height: auto;
-    z-index: 3;
-}
-
-/* SVG фигура */
-.svg-figure {
-    position: absolute;
-    top: 150px; /* Настройте это значение по своему усмотрению */
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: 1; /* Увеличен, но ниже контента */
-}
-
-.hero, .mission, .stats, .who-we-help, .faq, .useful-info {
-    margin: 0;
-    padding: 40px 20px;
-    background-color: #d3e4cd;
-    position: relative;
-    z-index: 2;
-}
-
-.hero .container, .mission .container, .stats .container, .who-we-help .container, .faq .container, .useful-info .container {
-    padding: 0;
-    margin: 0 auto;
-}
-
-.text-block {
-    margin-bottom: 20px;
-}
-
-.mission, .stats, .who-we-help, .faq, .useful-info {
-    padding: 40px 20px;
-}
-
-.stats .container, .who-we-help .container, .faq .container, .useful-info .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.stat-item {
-    text-align: center;
-}
-
-.stat-item h3 {
-    font-size: 2.5rem;
-    color: #006400;
-}
-
-.stat-item p {
-    font-size: 1rem;
-    color: #333;
-}
-
-.who-we-help ul {
-    list-style: none;
-    padding: 0;
-}
-
-.who-we-help ul li {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.faq-item {
-    margin-bottom: 20px;
-}
-
-.faq-question {
-    width: 100%;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #eaeaea;
-    cursor: pointer;
-    text-align: left;
-}
-
-.info-item {
-    text-align: center;
-    margin: 20px;
-}
-
-.info-item img {
-    max-width: 100%;
-    height: auto;
-}
-
-.info-item h3 {
-    font-size: 1.5rem;
-    margin: 10px 0;
-}
-
-footer {
-    background-color: #fff;
-    padding: 20px 0;
-    border-top: 1px solid #eaeaea;
-    text-align: center;
-    position: relative;
-    z-index: 5;
-}
-
-footer nav ul {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-footer nav ul li {
-    margin: 0 15px;
-}
-
-footer nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1rem;
-}
-
-.social-icons {
-    margin-top: 10px;
-}
-
-.social-icons a {
-    margin: 0 5px;
-    display: inline-block;
-}
-
-.social-icons img {
-    width: 24px;
-    height: 24px;
+    display: block;
+    margin-top: 20px;
 }
