@@ -3,96 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Португалия: Забытая Европейская Жемчужина</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #C0C0C0;
-        }
-        
-        .column {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-            background-color: #FFFFFF;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: justify;
-        }
-        
-        .list-container {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .circle {
-            width: 20px;
-            height: 20px;
-            background-color: #FFFFFF;
-            border: 1px solid #C0C0C0;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-        }
-        
-        .item {
-            padding-left: 30px;
-            border-left: 1px solid #C0C0C0;
-            position: relative;
-        }
-        .point {
-    width: 20vw;
-    height: auto;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    background-color: transparent;
-    border: 1px solid #C0C0C0;
-    border-radius: 8px;
-    padding: 10px;
-    box-sizing: border-box;
-    position: relative;
-}
-
-.point .circle {
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border: 1px solid #C0C0C0;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: -11px;
-}
-
-.point .circle span {
-    font-size: 12px;
-    color: #C0C0C0;
-    font-weight: bold;
-}
-        
-    </style>
+    <title>Обучаем собак помогать людям</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="column">
-        <h3>Что делать, если багаж утерян</h3>
-        <div class="list-container">
-            <div class="circle">1</div>
-            <div class="item">Проверьте информацию на табло: номер прилетевшего рейса должен совпадать с номером на вашем посадочном талоне.</div>
-            <div class="circle">2</div>
-            <div class="item">Узнайте у авиакомпании причину отмены или задержки рейса. Каждая компания имеет определенный план действий в таких ситуациях.</div>
-            <div class="circle">3</div>
-            <div class="item">Обратитесь к представителю компании-перевозчика, у которой вы купили билет. Это можно сделать через сотрудников аэропорта или справочную службу.</div>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Дело в собаке">
         </div>
-    </div>
+        <nav>
+            <ul>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Наша деятельность</a></li>
+                <li><a href="#">Статьи</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Партнеры</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="oval-shape-container">
+            <img src="images/oval-shape.svg" alt="Oval Shape" class="oval-shape">
+        </div>
+        <div class="container">
+            <h1 class="title">Обучаем собак <button class="btn">Стать волонтером</button></h1>
+            <h1 class="subtitle">помогать людям</h1>
+            <div class="bottom-row">
+                <div class="left-column">
+                    <img src="person_with_dog.png" alt="Собака и человек" class="hero-image" id="hero-image">
+                </div>
+                <div class="right-column">
+                    <p class="subtitle">Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
+                    <button class="btn">Получить помощь</button>
+                    <img src="arrow.svg" alt="Стрелка" class="arrow">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Остальная часть страницы -->
 </body>
 </html>
