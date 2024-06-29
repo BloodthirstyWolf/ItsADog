@@ -7,8 +7,8 @@ body {
     font-family: 'mr_ITCSerifGothic', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #d3e4cd; /* Устанавливаем фоновый цвет для всего сайта */
-    overflow-x: hidden; /* Убираем горизонтальный скролл */
+    background-color: #d3e4cd;
+    overflow-x: hidden;
 }
 
 header {
@@ -39,20 +39,7 @@ nav ul li a {
     text-align: center;
     position: relative;
     padding: 40px 20px;
-    overflow: hidden; /* Обрезаем все, что выходит за пределы */
-}
-
-.oval-shape-container {
-    position: absolute;
-    top: 10vh; /* Начальное положение, изменяется JavaScript */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 0; /* Под всеми элементами */
-}
-
-.oval-shape {
-    width: 100%; /* Или точные размеры, если нужно */
-    height: auto;
+    overflow: hidden;
 }
 
 .hero h1 {
@@ -80,7 +67,7 @@ nav ul li a {
 .hero-image {
     max-width: 100%;
     height: auto;
-    z-index: 1; /* Под текстом, но над овалом */
+    z-index: 1;
 }
 
 .right-column {
@@ -108,131 +95,101 @@ nav ul li a {
 
 .arrow {
     position: absolute;
+    top: 10px;
+    left: calc(100% + 20px);
+    width: 50px;
+    height: auto;
+    z-index: 2;
+}
+
+.oval-shape {
+    position: absolute;
     right: -100px;
     top: 0;
-    z-index: 1;
+    z-index: 0;
+    background: url('figure.svg') no-repeat center center;
+    background-size: contain;
+    width: 200px; /* Задаем ширину овала */
+    height: 200vh; /* Задаем высоту овала */
+    transform: rotate(45deg); /* Добавляем поворот овала */
 }
 
 .mission, .stats, .who-we-help, .faq, .useful-info {
-    margin: 0;
+    background-color: #f7f7f7;
     padding: 40px 20px;
-    background-color: #d3e4cd;
-}
-
-.mission .container, .stats .container, .who-we-help .container, .faq .container, .useful-info .container {
-    padding: 0;
-    margin: 0 auto;
-}
-
-.mission, .stats, .who-we-help, .faq, .useful-info {
-    padding: 40px 20px;
-}
-
-.text-block {
-    margin-bottom: 20px;
-}
-
-.stats .stat-block {
     text-align: center;
-    margin-bottom: 20px;
 }
 
-.stat-block h3 {
-    font-size: 2rem;
-    color: #006400;
+.mission h2, .stats h3, .who-we-help h2, .faq h2, .useful-info h2 {
+    color: #333;
 }
 
-.stat-block p {
-    font-size: 1rem;
+.stats {
+    background-color: #fff;
+}
+
+.stat-block {
+    margin: 20px;
 }
 
 .who-we-help .help-content {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.help-image {
-    max-width: 100px;
-    height: auto;
-    margin-right: 20px;
+.help-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 20px;
 }
 
-ul {
-    list-style-type: disc;
-    padding-left: 20px;
+.help-content ul li {
+    margin: 10px 0;
 }
 
-footer {
-    background-color: #006400;
-    color: #fff;
-    padding: 20px 0;
+.faq details {
+    margin: 20px 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.info-blocks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.info-block {
+    margin: 20px;
+    width: 200px;
     text-align: center;
 }
 
-footer nav ul {
-    justify-content: center;
-}
-
-footer nav ul li {
-    margin: 0 10px;
+.info-block img {
+    width: 100%;
+    height: auto;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #006400;
+    color: #fff;
 }
 
 .footer-content nav ul {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
-.footer-content img {
-    max-width: 100px;
-    height: auto;
-}
-
-.useful-info .info-blocks {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.useful-info .info-block {
-    flex: 1;
-    margin: 20px;
-    text-align: center;
-}
-
-.useful-info .info-block img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.useful-info .info-block h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-details {
-    margin-bottom: 10px;
-}
-
-summary {
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-details p {
-    margin: 10px 0 0 20px;
+.footer-content nav ul li a {
+    color: #fff;
 }
 
 .container {
-    padding: 0 20px;
+    width: 80%;
     margin: 0 auto;
-    max-width: 1200px;
 }
