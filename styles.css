@@ -103,14 +103,17 @@ nav ul li a {
 }
 
 .oval-shape {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) rotate(45deg); /* Центрируем по ширине и поворачиваем */
+    position: absolute; /* Абсолютное позиционирование */
+    right: 0;
+    left: 0;
     z-index: 0;
     background: url('figure.svg') no-repeat center center;
     background-size: contain;
-    width: 200px; /* Ширина овала */
-    height: 200vh; /* Высота овала */
+    width: 200px; /* Задаем ширину овала */
+    height: 200vh; /* Задаем высоту овала */
+    margin: 0 auto; /* Центрируем по горизонтали */
+}
+
 }
 
 .mission, .stats, .who-we-help, .faq, .useful-info {
