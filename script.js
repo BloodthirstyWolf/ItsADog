@@ -4,13 +4,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function updateOvalPosition() {
         const heroImageRect = heroImage.getBoundingClientRect();
-        const heroImageBottom = heroImageRect.bottom + window.scrollY; // Позиция нижней границы hero-image
+        const heroImageBottom = heroImageRect.bottom;
+        const heroImageCenterX = heroImageRect.left + heroImageRect.width / 2;
 
-        const ovalHeight = window.innerHeight * 0.2; // Высота овала (20vh)
-
-        const ovalTop = heroImageBottom - ovalHeight; // Позиция верхней границы овала
-
-        ovalShape.style.top = `${ovalTop}px`;
+        // Установка высоты и позиции овала
+        ovalShape.style.top = `${heroImageBottom - (window.innerHeight * 0.2)}px`;
+        ovalShape.style.left = `${heroImageCenterX}px`;
     }
 
     window.addEventListener('resize', updateOvalPosition);
