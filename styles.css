@@ -1,7 +1,3 @@
-@font-face {
-    font-family: 'mr_ITCSerifGothic';
-    src: url('18094.ttf') format('truetype');
-}
 body {
     font-family: 'mr_ITCSerifGothic', sans-serif;
     margin: 0;
@@ -15,20 +11,42 @@ body {
 }
 
 header {
-    padding: 10px 0;
+    background-color: #fff; /* Добавим белый фон для хедера */
     border-bottom: 1px solid #eaeaea;
+    padding: 10px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Располагаем элементы по краям контейнера */
+    align-items: center; /* Выравниваем по центру вертикально */
+}
+
+.logo {
+    flex: 1; /* Логотип будет занимать всё доступное пространство в контейнере */
+}
+
+.logo img {
+    max-height: 50px; /* Высота логотипа по желанию */
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    padding: 0;
+    justify-content: flex-end; /* Располагаем ссылки вправо */
+    align-items: center;
     margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin-left: 15px; /* Расстояние между элементами меню */
+}
+
+nav ul li:first-child {
+    margin-left: 0; /* Убираем отступ слева у первого элемента */
 }
 
 nav ul li a {
@@ -36,6 +54,8 @@ nav ul li a {
     color: #333;
     font-size: 1rem;
 }
+
+/* Остальные стили остаются без изменений */
 
 .hero {
     text-align: center;
@@ -172,9 +192,4 @@ nav ul li a {
 
 .footer-content nav ul li a {
     color: #fff;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
 }
