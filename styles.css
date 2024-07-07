@@ -15,7 +15,6 @@ body {
 }
 
 header {
-    background-color: #fff;
     padding: 10px 0;
     border-bottom: 1px solid #eaeaea;
 }
@@ -105,19 +104,13 @@ nav ul li a {
     z-index: 2;
 }
 
-
 .mission, .stats, .who-we-help, .faq, .useful-info {
-    background-color: #f7f7f7;
     padding: 40px 20px;
     text-align: center;
 }
 
 .mission h2, .stats h3, .who-we-help h2, .faq h2, .useful-info h2 {
     color: #333;
-}
-
-.stats {
-    background-color: #fff;
 }
 
 .stat-block {
