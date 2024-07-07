@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function positionOvalShape() {
         const heroImageRect = heroImage.getBoundingClientRect();
-        const heroImageBottom = heroImageRect.bottom + window.scrollY; // Получаем нижнюю часть hero-image с учетом прокрутки
+        const heroImageBottom = heroImageRect.bottom;
         const windowHeight = window.innerHeight;
         const windowWidth = window.innerWidth;
 
@@ -22,8 +22,5 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     positionOvalShape(); // Вызываем функцию для первоначальной установки позиции
-
-    // Убираем обработчики событий прокрутки и изменения размеров, чтобы избежать параллакса
-    // window.addEventListener('resize', positionOvalShape);
-    // window.addEventListener('scroll', positionOvalShape);
+    window.addEventListener('resize', positionOvalShape); // Перепозиционируем при изменении размеров окна
 });
