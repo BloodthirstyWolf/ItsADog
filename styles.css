@@ -109,10 +109,11 @@ nav ul li a {
     z-index: 0;
     background: url('figure.svg') no-repeat center center;
     background-size: contain;
-    width: 200px; /* Задаем ширину овала */
+    width: 120vw; /* Задаем ширину овала */
     height: 200vh; /* Задаем высоту овала */
     margin: 0 auto; /* Центрируем по горизонтали */
 }
+
 
 }
 
