@@ -104,14 +104,13 @@ nav ul li a {
 
 .oval-shape {
     position: absolute;
-    right: -100px;
-    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg); /* Центрируем по ширине и поворачиваем */
     z-index: 0;
     background: url('figure.svg') no-repeat center center;
     background-size: contain;
-    width: 200px; /* Задаем ширину овала */
-    height: 200vh; /* Задаем высоту овала */
-    transform: rotate(45deg); /* Добавляем поворот овала */
+    width: 200px; /* Ширина овала */
+    height: 200vh; /* Высота овала */
 }
 
 .mission, .stats, .who-we-help, .faq, .useful-info {
