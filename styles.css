@@ -2,12 +2,15 @@
     font-family: 'mr_ITCSerifGothic';
     src: url('18094.ttf') format('truetype');
 }
-
 body {
     font-family: 'mr_ITCSerifGothic', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #d3e4cd;
+    background-color: #EEF0ED;
+    background-image: url('background.png');
+    background-size: 100vw auto;
+    background-repeat: no-repeat;
+    background-position: top center;
     overflow-x: hidden;
 }
 
@@ -102,20 +105,6 @@ nav ul li a {
     z-index: 2;
 }
 
-.oval-shape {
-    position: absolute; /* Абсолютное позиционирование */
-    right: 0;
-    left: 0;
-    z-index: 0;
-    background: url('figure.svg') no-repeat center center;
-    background-size: contain;
-    width: 120vw; /* Задаем ширину овала */
-    height: 200vh; /* Задаем высоту овала */
-    margin: 0 auto; /* Центрируем по горизонтали */
-}
-
-
-}
 
 .mission, .stats, .who-we-help, .faq, .useful-info {
     background-color: #f7f7f7;
