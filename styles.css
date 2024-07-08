@@ -17,11 +17,11 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between; /* Размещаем элементы внутри header по краям */
-    align-items: center; /* Выравниваем элементы по вертикали */
-    padding: 10px 20px; /* Добавляем немного отступов для внутреннего содержимого */
-    background-color: #fff; /* Белый фон для хедера */
-    border-bottom: 1px solid #90A78D; /* Полоса в один пиксель цвета #90A78D */
+    justify-content: space-between;
+    align-items: center; /* Выравниваем элементы по центру вертикали */
+    padding: 10px 20px;
+    border-bottom: 1px solid #90A78D; /* Нижняя полоса */
+    background-color: #ffffff; /* Белый фон */
 }
 
 header img {
@@ -31,7 +31,7 @@ header img {
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Центрируем ссылки по горизонтали */
+    justify-content: center; /* Выравниваем ссылки по центру горизонтали */
     padding: 0;
     margin: 0;
 }
@@ -44,7 +44,8 @@ nav ul li a {
     text-decoration: none;
     color: #333;
     font-size: 1rem;
-    text-align: center; /* Центрируем текст ссылок */
+    display: flex; /* Разрешаем использовать flexbox свойства для выравнивания текста по центру вертикали */
+    align-items: center; /* Выравниваем текст по центру вертикали */
 }
 
 .hero {
