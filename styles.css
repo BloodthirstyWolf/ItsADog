@@ -27,6 +27,14 @@ header {
 header img {
     max-height: 40px; /* Высота логотипа (можно настроить под ваш размер логотипа) */
 }
+nav {
+    display: flex;
+    justify-content: space-between; /* Размещаем элементы левее и правее */
+    align-items: center; /* Выравниваем по центру вертикали */
+    padding: 10px 20px;
+    border-bottom: 1px solid #90A78D; /* Нижняя полоса */
+    background-color: #ffffff; /* Белый фон */
+}
 
 nav ul {
     list-style: none;
