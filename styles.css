@@ -70,7 +70,7 @@ nav ul li a {
 .bottom-row {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Выравниваем по верхнему краю */
     margin-top: 20px;
 }
 
@@ -85,12 +85,19 @@ nav ul li a {
     max-width: 100%;
     height: auto;
     z-index: 1;
+    margin-top: 20px; /* Отступ между изображением и текстом */
 }
 
 .right-column {
     flex: 1;
     text-align: left;
     position: relative;
+}
+
+.title {
+    display: inline-block;
+    text-align: left;
+    margin-right: auto; /* Центрируем текст заголовка влево */
 }
 
 .subtitle {
