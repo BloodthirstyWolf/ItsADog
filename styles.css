@@ -15,46 +15,76 @@ body {
     overflow-x: hidden;
 }
 
-header {
+.sticky-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff; /* Цвет фона хедера */
+    z-index: 1000; /* Чтобы хедер был поверх остального контента */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для эффекта поднятия */
     display: flex;
-    justify-content: center; /* Center aligns the container */
-    align-items: center; /* Vertically center aligns items */
-    padding: 10px 0;
-    border-bottom: 1px solid #90A78D;
-    background-color: #ffffff;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px; /* Внутренние отступы для содержимого */
 }
 
-header img {
-    max-height: 40px; /* Высота логотипа (можно настроить под ваш размер логотипа) */
-}
-nav {
-    display: flex;
-    justify-content: space-between; /* Размещаем элементы левее и правее */
-    align-items: center; /* Выравниваем по центру вертикали */
-    padding: 10px 20px;
-    border-bottom: 1px solid #90A78D; /* Нижняя полоса */
-    background-color: #ffffff; /* Белый фон */
+.logo img {
+    width: 200px; /* Ширина логотипа */
+    height: 70px; /* Высота логотипа */
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end; /* Выравниваем ссылки по правому краю */
-    align-items: center; /* Выравниваем ссылки по центру вертикали */
-    padding: 0;
+.nav-links ul {
+    list-style-type: none;
     margin: 0;
+    padding: 0;
+    display: flex;
 }
 
-nav ul li {
-    margin: 0 15px;
+.nav-links ul li {
+    margin-right: 20px; /* Расстояние между ссылками */
 }
 
-nav ul li a {
+.nav-links ul li a {
     text-decoration: none;
     color: #2A562B; /* Цвет текста ссылок */
     font-size: 1rem;
-    display: flex; /* Разрешаем использовать flexbox свойства для выравнивания текста по центру вертикали */
-    align-items: center; /* Выравниваем текст по центру вертикали */
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    top: 100%; /* Чтобы выпадающий список был под ссылкой */
+    left: 0;
+    padding: 10px 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li {
+    padding: 10px 20px;
+}
+
+.dropdown-content li a {
+    color: #333; /* Цвет текста выпадающих ссылок */
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    background-color: #f0f0f0; /* Цвет фона при наведении на ссылку */
 }
 
 .hero {
