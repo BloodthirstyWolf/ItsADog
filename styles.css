@@ -226,5 +226,5 @@ body {
 
 .container {
     width: 80%;
-    margin: 0 auto;
+    margin: 80px auto 0; /* Добавлен отступ сверху, равный высоте хедера */
 }
