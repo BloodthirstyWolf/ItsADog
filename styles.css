@@ -29,8 +29,8 @@ body {
 }
 
 .logo img {
-    width: 30%; /* Ширина изображения 30% от родительского контейнера */
-    height: auto;
+    width: 200px;
+    height: 70px;
 }
 
 .nav-links ul {
@@ -58,7 +58,7 @@ body {
     position: relative;
 }
 
-.dropdown .dropdown-content {
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #fff;
@@ -69,7 +69,7 @@ body {
     padding: 10px 0;
 }
 
-.dropdown:hover > .dropdown-content {
+.dropdown:hover .dropdown-content {
     display: block;
 }
 
@@ -94,32 +94,9 @@ body {
     overflow: hidden;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    color: #006400;
-    line-height: 1;
-    z-index: 2;
-    margin: 10px 0;
-}
-
-.bottom-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.left-column {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-image {
-    max-width: 30%; /* Ширина изображения 30% от родительского контейнера */
-    height: auto;
-    z-index: 1;
+.left-column img.hero-image {
+    width: 30%; /* Ширина изображения 30% */
+    height: auto; /* Автоматическое вычисление высоты с сохранением пропорций */
 }
 
 .right-column {
@@ -129,11 +106,11 @@ body {
     max-width: 40%; /* Ширина текста 40% от родительского контейнера */
 }
 
-.subtitle {
-    font-size: 1.5rem;
+.right-column p.subtitle {
+    font-size: calc(1.5rem * min(1, 3 / 2)); /* Рассчитываем размер шрифта для текста */
     margin-bottom: 20px;
     z-index: 2;
-    max-width: 40%; /* Ограничиваем ширину текста до 40% от родительского контейнера */
+    max-width: 100%; /* Максимальная ширина текста 100% от родительского контейнера */
     max-height: 4.5em; /* Максимальная высота текста - эквивалентно 3 строкам с учетом линейного интервала */
     overflow: hidden; /* Обрезаем текст, который выходит за пределы максимальной высоты */
     line-height: 1.5; /* Межстрочный интервал, для лучшей читаемости */
@@ -144,13 +121,16 @@ body {
 }
 
 @media (max-width: 768px) {
-    .hero-image {
-        max-width: 100%; /* Полная ширина изображения на мобильных устройствах */
+    .left-column img.hero-image {
+        width: 100%; /* Полная ширина изображения на мобильных устройствах */
     }
 
-    .subtitle {
-        font-size: 1rem; /* Уменьшаем размер шрифта на мобильных устройствах */
+    .right-column {
         max-width: 100%; /* Полная ширина текста на мобильных устройствах */
+    }
+
+    .right-column p.subtitle {
+        font-size: calc(1rem * min(1, 2 / 1)); /* Уменьшаем размер шрифта на мобильных устройствах */
         max-height: 3em; /* Меньшая максимальная высота для мобильных экранов */
         -webkit-line-clamp: 2; /* Меньше строк на мобильных экранах */
     }
