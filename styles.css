@@ -29,8 +29,8 @@ body {
 }
 
 .logo img {
-    width: 200px;
-    height: 70px;
+    width: 30vw;
+    height: auto;
 }
 
 .nav-links ul {
@@ -233,7 +233,7 @@ body {
     flex: 1;
     text-align: left;
     position: relative;
-    max-width: 25vw; /* Ограничиваем ширину до 25% от ширины viewport */
+    max-width: 40vw; /* Ограничиваем ширину до 25% от ширины viewport */
 }
 
 .right-column p.subtitle {
