@@ -240,12 +240,14 @@ body {
     font-size: 1.5rem;
     margin-bottom: 20px;
     z-index: 2;
+    max-width: 25vw; /* Ограничиваем ширину до 25% от ширины viewport */
     max-height: 4.5em; /* Максимальная высота текста - эквивалентно 3 строкам с учетом линейного интервала */
     overflow: hidden; /* Обрезаем текст, который выходит за пределы максимальной высоты */
     line-height: 1.5; /* Межстрочный интервал, для лучшей читаемости */
     display: -webkit-box;
     -webkit-line-clamp: 3; /* Ограничение числа строк в текст */
     -webkit-box-orient: vertical;
+    white-space: pre-line; /* Сохраняем переносы строк */
 }
 
 @media (max-width: 768px) {
