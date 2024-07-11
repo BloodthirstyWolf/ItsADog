@@ -228,3 +228,30 @@ body {
     width: 80%;
     margin: 80px auto 0; /* Добавлен отступ сверху, равный высоте хедера */
 }
+
+.right-column {
+    flex: 1;
+    text-align: left;
+    position: relative;
+    max-width: 25vw; /* Ограничиваем ширину до 25% от ширины viewport */
+}
+
+.right-column p.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    z-index: 2;
+    max-height: 4.5em; /* Максимальная высота текста - эквивалентно 3 строкам с учетом линейного интервала */
+    overflow: hidden; /* Обрезаем текст, который выходит за пределы максимальной высоты */
+    line-height: 1.5; /* Межстрочный интервал, для лучшей читаемости */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Ограничение числа строк в текст */
+    -webkit-box-orient: vertical;
+}
+
+@media (max-width: 768px) {
+    .right-column p.subtitle {
+        font-size: 1rem; /* Уменьшаем размер шрифта на мобильных устройствах */
+        max-height: 3em; /* Меньшая максимальная высота для мобильных экранов */
+        -webkit-line-clamp: 2; /* Меньше строк на мобильных экранах */
+    }
+}
