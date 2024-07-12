@@ -144,7 +144,7 @@ body {
 }
 
 .btn {
-    padding: 0 20px; /* Убраны вертикальные отступы */
+    padding: 10px 20px;
     background-color: #006400;
     color: #fff;
     border: none;
@@ -152,10 +152,10 @@ body {
     font-size: 1rem;
     border-radius: 20px;
     z-index: 2;
-    line-height: 1.2; /* Высота строки равная высоте прописных букв */
-    display: inline-block;
-    height: 1.2em; /* Высота блока равная высоте строки */
-    vertical-align: middle; /* Вертикальное выравнивание содержимого */
+    line-height: 1; /* Высота строки равная высоте строки текста */
+    height: 3rem; /* Высота кнопки равная высоте заголовка */
+    display: inline-flex;
+    align-items: center; /* Вертикальное выравнивание содержимого */
 }
 
 .arrow {
