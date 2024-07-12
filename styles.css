@@ -29,8 +29,8 @@ body {
 }
 
 .logo img {
-    width: 200px;
-    height: 70px;
+    width: 150px; /* Изменено с 200px */
+    height: auto; /* Снято фиксированное значение высоты */
 }
 
 .nav-links ul {
@@ -117,23 +117,30 @@ body {
 }
 
 .hero-image {
-    max-width: 30vw; /* Установка максимальной ширины для изображения */
+    max-width: 100%;
     height: auto;
+    z-index: 1;
 }
 
 .right-column {
     flex: 1;
     text-align: left;
     position: relative;
+    width: 40%; /* Фиксированная ширина 40% экрана */
+}
+
+.right-column p.subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem); /* Адаптивный размер шрифта */
+    line-height: 1.6;
+    max-width: 100%;
+    overflow-wrap: break-word; /* Разрыв слов при необходимости */
+    white-space: pre-line; /* Сохранение переносов строк */
 }
 
 .subtitle {
-    font-size: 1rem; /* Исходный размер шрифта */
-    max-width: 40vw; /* Установка максимальной ширины для описания текста */
-    max-height: calc(1.5rem * 3); /* Максимум 3 строки текста высотой 1.5rem каждая */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Многоточие в конце текста, если он обрезается */
-    white-space: nowrap; /* Предотвращает перенос текста */
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    z-index: 2;
 }
 
 .btn {
@@ -142,7 +149,7 @@ body {
     color: #fff;
     border: none;
     cursor: pointer;
-    font-size: 1rem; /* Исходный размер шрифта */
+    font-size: 1rem;
     border-radius: 20px;
     z-index: 2;
 }
@@ -229,16 +236,4 @@ body {
 .container {
     width: 80%;
     margin: 80px auto 0; /* Добавлен отступ сверху, равный высоте хедера */
-}
-
-@media (max-width: 768px) {
-    .right-column .subtitle {
-        font-size: 0.9rem; /* Уменьшение размера шрифта для умещения текста */
-    }
-}
-
-@media (max-width: 480px) {
-    .right-column .subtitle {
-        font-size: 0.8rem; /* Дополнительное уменьшение размера шрифта для умещения текста */
-    }
 }
