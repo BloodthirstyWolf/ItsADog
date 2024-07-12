@@ -144,7 +144,7 @@ body {
 }
 
 .btn {
-    padding: 10px 20px;
+    padding: 0 20px; /* Изменен padding для высоты */
     background-color: #006400;
     color: #fff;
     border: none;
@@ -152,10 +152,8 @@ body {
     font-size: 1rem;
     border-radius: 20px;
     z-index: 2;
-    line-height: 1; /* Высота строки равная высоте строки текста */
-    height: 3rem; /* Высота кнопки равная высоте заголовка */
-    display: inline-flex;
-    align-items: center; /* Вертикальное выравнивание содержимого */
+    line-height: 3rem; /* Высота строки равная высоте заголовка */
+    display: inline-block;
 }
 
 .arrow {
@@ -240,4 +238,4 @@ body {
 .container {
     width: 80%;
     margin: 80px auto 0;
-    }
+}
