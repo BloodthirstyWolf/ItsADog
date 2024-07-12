@@ -29,8 +29,8 @@ body {
 }
 
 .logo img {
-    width: 150px; /* Изменено с 200px */
-    height: auto; /* Снято фиксированное значение высоты */
+    width: 150px;
+    height: auto;
 }
 
 .nav-links ul {
@@ -126,15 +126,15 @@ body {
     flex: 1;
     text-align: left;
     position: relative;
-    width: 40%; /* Фиксированная ширина 40% экрана */
+    width: 40%;
 }
 
 .right-column p.subtitle {
-    font-size: clamp(1rem, 2vw, 1.5rem); /* Адаптивный размер шрифта */
+    font-size: clamp(1rem, 2vw, 1.5rem);
     line-height: 1.6;
     max-width: 100%;
-    overflow-wrap: break-word; /* Разрыв слов при необходимости */
-    white-space: pre-line; /* Сохранение переносов строк */
+    overflow-wrap: break-word;
+    white-space: pre-line;
 }
 
 .subtitle {
@@ -144,7 +144,7 @@ body {
 }
 
 .btn {
-    padding: 10px 20px;
+    padding: 0 20px; /* Убраны вертикальные отступы */
     background-color: #006400;
     color: #fff;
     border: none;
@@ -152,6 +152,10 @@ body {
     font-size: 1rem;
     border-radius: 20px;
     z-index: 2;
+    line-height: 1.2; /* Высота строки равная высоте прописных букв */
+    display: inline-block;
+    height: 1.2em; /* Высота блока равная высоте строки */
+    vertical-align: middle; /* Вертикальное выравнивание содержимого */
 }
 
 .arrow {
@@ -235,5 +239,5 @@ body {
 
 .container {
     width: 80%;
-    margin: 80px auto 0; /* Добавлен отступ сверху, равный высоте хедера */
-}
+    margin: 80px auto 0;
+    }
