@@ -259,6 +259,6 @@ body {
 
 @media only screen and (max-width: 576px) {
     .description {
-        font-size: 0.75rem; /* Уменьшаем размер текста на 25% */
+        font-size: 0.5rem; /* Уменьшаем размер текста на 25% */
     }
 }
