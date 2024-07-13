@@ -178,7 +178,7 @@ body {
     position: absolute;
     top: calc(var(--header-padding) + var(--header-title-font-size) + var(--header-title-margin-bottom) + var(--header-subtitle-font-size) + var(--description-margin-top) + 0.5rem);
     left: 30vw;
-    width: 20wv; /* Длина стрелки */
+    width: 8vw; /* Ширина стрелки */
     height: auto;
 }
 
@@ -259,6 +259,6 @@ body {
 
 @media only screen and (max-width: 576px) {
     .description {
-        font-size: 0.5rem; /* Уменьшаем размер текста на 25% */
+        font-size: 0.75rem; /* Уменьшаем размер текста на 25% */
     }
-}
+    }
