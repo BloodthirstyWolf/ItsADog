@@ -178,7 +178,7 @@ body {
     position: absolute;
     top: calc(var(--header-padding) + var(--header-title-font-size) + var(--header-title-margin-bottom) + var(--header-subtitle-font-size) + var(--description-margin-top) + 0.5rem);
     left: 30vw;
-    width: 100px; /* Длина стрелки */
+    width: 20wv; /* Длина стрелки */
     height: auto;
 }
 
