@@ -154,32 +154,16 @@ body {
     z-index: 2;
     line-height: 3rem; /* Высота строки равная высоте заголовка */
     display: inline-block;
-}
-
-.volunteer-btn {
-    margin-top: 20px; /* Просто для примера */
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border: 2px solid green;
-    background-color: transparent;
-    color: green;
-    cursor: pointer;
-}
-
-.description {
-    width: 40%;
-    margin: 0 auto;
-    margin-top: calc(var(--header-padding) + var(--header-title-font-size) + var(--header-title-margin-bottom) + var(--header-subtitle-font-size) + var(--description-margin-top));
-    font-size: 1rem;
-    line-height: 1.5;
+    margin-top: 10px;
 }
 
 .arrow {
     position: absolute;
-    top: 40%; /* Поправьте значение для точного позиционирования */
-    left: 30vw; /* Поправьте значение для точного позиционирования */
-    width: 20vw; /* Увеличение ширины стрелки */
+    top: calc(3rem + 10px + 20px + 1.5rem); /* Расчетное значение для корректного позиционирования */
+    left: calc(100% + 20px);
+    width: 20vw; /* Размер стрелки */
     height: auto;
+    z-index: 2;
 }
 
 .mission, .stats, .who-we-help, .faq, .useful-info {
@@ -257,16 +241,8 @@ body {
     margin: 80px auto 0;
 }
 
-:root {
-  --header-padding: 20px;
-  --header-title-font-size: 4rem;
-  --header-title-margin-bottom: 1rem;
-  --header-subtitle-font-size: 3rem;
-  --description-margin-top: 1rem;
-}
-
 @media only screen and (max-width: 576px) {
-    .description {
-        font-size: 0.75rem; /* Уменьшаем размер текста на 25% */
+    .right-column p.subtitle {
+        font-size: 75%; /* Уменьшение размера текста на 25% */
     }
 }
