@@ -257,6 +257,14 @@ body {
     margin: 80px auto 0;
 }
 
+:root {
+  --header-padding: 20px;
+  --header-title-font-size: 4rem;
+  --header-title-margin-bottom: 1rem;
+  --header-subtitle-font-size: 3rem;
+  --description-margin-top: 1rem;
+}
+
 @media only screen and (max-width: 576px) {
     .description {
         font-size: 0.75rem; /* Уменьшаем размер текста на 25% */
