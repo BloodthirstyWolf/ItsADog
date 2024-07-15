@@ -158,9 +158,9 @@ body {
 
 .arrow {
     position: absolute;
-    top: 0; /* Начальное значение, которое будет изменено JavaScript-ом */
-    left: calc(100% + 20px);
-    width: 20vw; /* Размер стрелки */
+    top: 50vh; /* Заменено на 50vh */
+    left: 70vw; /* Заменено на 70vw */
+    width: 20vw;
     height: auto;
     z-index: 2;
 }
@@ -240,9 +240,8 @@ body {
     margin: 80px auto 0;
 }
 
-/* Media Queries */
 @media only screen and (max-width: 576px) {
     .right-column p.subtitle {
-        font-size: 75%; /* Уменьшение размера текста в описании на 25% */
+        font-size: 75%; /* Уменьшение размера текста на 25% */
     }
-    }
+}
