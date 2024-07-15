@@ -154,12 +154,11 @@ body {
     z-index: 2;
     line-height: 3rem; /* Высота строки равная высоте заголовка */
     display: inline-block;
-    margin-top: 10px;
 }
 
 .arrow {
     position: absolute;
-    top: calc(3rem + 10px + 20px + 1.5rem); /* Расчетное значение для корректного позиционирования */
+    top: 0; /* Начальное значение, которое будет изменено JavaScript-ом */
     left: calc(100% + 20px);
     width: 20vw; /* Размер стрелки */
     height: auto;
@@ -241,8 +240,9 @@ body {
     margin: 80px auto 0;
 }
 
+/* Media Queries */
 @media only screen and (max-width: 576px) {
     .right-column p.subtitle {
-        font-size: 75%; /* Уменьшение размера текста на 25% */
+        font-size: 75%; /* Уменьшение размера текста в описании на 25% */
     }
-}
+    }
