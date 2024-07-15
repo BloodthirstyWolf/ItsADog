@@ -1,26 +1,12 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const heroImage = document.querySelector('.hero-image');
-    const ovalShape = document.querySelector('.oval-shape');
-
-    function positionOvalShape() {
-        const heroImageRect = heroImage.getBoundingClientRect();
-        const heroImageBottom = heroImageRect.bottom;
-        const windowHeight = window.innerHeight;
-        const windowWidth = window.innerWidth;
-
-        // Установка вертикальной позиции
-        const ovalTop = heroImageBottom - (windowHeight * 0.2); // Начать на 20vh выше нижней части hero-image
-        ovalShape.style.top = `${ovalTop}px`;
-
-        // Установка горизонтальной позиции в центре экрана
-        const ovalLeft = (windowWidth / 2) - (ovalShape.offsetWidth / 2);
-        ovalShape.style.left = `${ovalLeft}px`;
-
-        // Установка высоты овала
-        const ovalHeight = windowHeight * 1.2; // Высота овала на 120vh
-        ovalShape.style.height = `${ovalHeight}px`;
-    }
-
-    positionOvalShape(); // Вызываем функцию для первоначальной установки позиции
-    window.addEventListener('resize', positionOvalShape); // Перепозиционируем при изменении размеров окна
+window.addEventListener('load', function() {
+    const headerHeight = document.querySelector('.hero h1').offsetHeight;
+    const headerMarginTop = parseInt(getComputedStyle(document.querySelector('.hero h1')).marginTop);
+    const headerMarginBottom = parseInt(getComputedStyle(document.querySelector('.hero h1')).marginBottom);
+    const descriptionHeight = document.querySelector('.right-column p.subtitle').offsetHeight;
+    const descriptionMarginTop = parseInt(getComputedStyle(document.querySelector('.right-column p.subtitle')).marginTop);
+    const descriptionMarginBottom = parseInt(getComputedStyle(document.querySelector('.right-column p.subtitle')).marginBottom);
+    
+    const totalHeight = headerHeight + headerMarginTop + headerMarginBottom + descriptionHeight + descriptionMarginTop + descriptionMarginBottom + 20; // 20px отступ
+    
+    document.querySelector('.arrow').style.top = totalHeight + 'px';
 });
