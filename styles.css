@@ -158,8 +158,8 @@ body {
 
 .arrow {
     position: absolute;
-    top: 3vh; /* Отступ сверху */
-    left: 15vw; /* Отступ слева */
+    top: 3,5vh; /* Отступ сверху */
+    left: 17vw; /* Отступ слева */
     width: 20vw; /* Размер стрелки */
     height: auto;
     z-index: 2;
