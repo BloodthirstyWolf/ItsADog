@@ -144,7 +144,7 @@ body {
 }
 
 .btn {
-    padding: 0 20px; /* Изменен padding для высоты */
+    padding: 0 20px;
     background-color: #006400;
     color: #fff;
     border: none;
@@ -152,15 +152,15 @@ body {
     font-size: 1rem;
     border-radius: 20px;
     z-index: 2;
-    line-height: 3rem; /* Высота строки равная высоте заголовка */
+    line-height: 3rem;
     display: inline-block;
 }
 
 .arrow {
     position: absolute;
-    top: 50vh; /* Заменено на 50vh */
-    left: 70vw; /* Заменено на 70vw */
-    width: 20vw;
+    top: 40vh; /* Отступ сверху */
+    left: 10vw; /* Отступ слева */
+    width: 20vw; /* Размер стрелки */
     height: auto;
     z-index: 2;
 }
@@ -242,6 +242,6 @@ body {
 
 @media only screen and (max-width: 576px) {
     .right-column p.subtitle {
-        font-size: 75%; /* Уменьшение размера текста на 25% */
+        font-size: 0.75rem; /* Уменьшение размера текста в описании на 25% */
     }
 }
