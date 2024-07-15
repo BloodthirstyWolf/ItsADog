@@ -90,7 +90,7 @@ body {
 .hero {
     text-align: center;
     position: relative;
-    padding: 40px 20px;
+    padding: 20px 20px; /* Уменьшен padding сверху */
     overflow: hidden;
 }
 
@@ -106,7 +106,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10px; /* Уменьшен отступ сверху */
 }
 
 .left-column {
@@ -127,6 +127,7 @@ body {
     text-align: left;
     position: relative;
     width: 40%;
+    top: -10px; /* Поднятие блока описания */
 }
 
 .right-column p.subtitle {
@@ -139,7 +140,7 @@ body {
 
 .subtitle {
     font-size: 1.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Уменьшен отступ снизу */
     z-index: 2;
 }
 
