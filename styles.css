@@ -4,15 +4,33 @@
 }
 
 body {
-    font-family: 'mr_ITCSerifGothic', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #EEF0ED;
-    background-image: url('background.png');
-    background-size: 100vw auto;
-    background-repeat: no-repeat;
-    background-position: top center;
     overflow-x: hidden;
+}
+
+.main-container {
+    font-family: 'mr_ITCSerifGothic', sans-serif;
+    width: 100%;
+    min-height: 100vh; /* Ensure it covers the entire viewport height */
+}
+
+@media (min-width: 768px) {
+    .main-container {
+        background-image: url('background_desktop.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-container {
+        background-image: url('background_mobile.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+    }
 }
 
 .sticky-header {
@@ -165,136 +183,106 @@ body {
     z-index: 2;
 }
 
-.mission, .who-we-are {
+.columns-container {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding: 40px 20px;
-    margin: 20px 0;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 20px;
+}
+
+.mission, .who-we-are {
+    flex: 1;
+    margin: 20px;
 }
 
 .mission .content, .who-we-are .content {
-    max-width: 45%;
-    text-align: left;
+    padding: 20px;
 }
 
-.mission .content h2, .who-we-are .content h2 {
-    font-size: 2rem;
-    color: #2A562B;
-    margin-bottom: 20px;
-}
-
-.mission .content p, .who-we-are .content p {
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-.mission .content .btn, .who-we-are .content .btn {
-    padding: 10px 20px;
-    background-color: #006400;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 20px;
-    display: inline-block;
-}
-
-.mission .content .btn:hover, .who-we-are .content .btn:hover {
-    background-color: #004d00;
+.arrow-2 {
+    position: absolute;
+    top: 0;
+    left: 30vw; /* Примерный отступ, корректируйте по необходимости */
+    width: 15vw; /* Размер стрелки */
+    height: auto;
+    z-index: 2;
 }
 
 .stats {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.stat-block {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+}
+
+.stat-block p {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.who-we-help {
     padding: 40px 20px;
     text-align: center;
 }
 
-.stats h3 {
-    color: #333;
-}
-
-.stat-block {
-    margin: 20px;
-}
-
-.who-we-help .help-content {
+.help-content {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
 .help-content ul {
-    list-style: none;
+    list-style-type: none;
+    margin: 20px;
     padding: 0;
-    margin: 0 20px;
 }
 
-.help-content ul li {
-    margin: 10px 0;
-}
-
-.faq details {
-    margin: 20px 0;
-    text-align: left;
-    cursor: pointer;
+.faq {
+    padding: 40px 20px;
 }
 
 .info-blocks {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    padding: 40px 20px;
 }
 
 .info-block {
     margin: 20px;
-    width: 200px;
     text-align: center;
 }
 
-.info-block img {
-    width: 100%;
-    height: auto;
+.footer-content {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #006400;
-    color: #fff;
+.footer-content p {
+    margin: 10px 0;
 }
 
 .footer-content nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
+    justify-content: center;
+}
+
+.footer-content nav ul li {
+    margin: 0 10px;
 }
 
 .footer-content nav ul li a {
-    color: #fff;
-}
-
-.container {
-    width: 80%;
-    margin: 80px auto 0;
-}
-
-@media (max-width: 768px) {
-    .mission, .who-we-are {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .mission .content, .who-we-are .content {
-        max-width: 90%;
-        text-align: center;
-    }
-}
-
-@media only screen and (max-width: 576px) {
-    .right-column p.subtitle {
-        font-size: 0.75rem;
-    }
+    text-decoration: none;
+    color: #006400;
 }
