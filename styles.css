@@ -144,7 +144,8 @@ body {
     flex: 1;
     text-align: left;
     position: relative;
-    width: 40%;
+    width: 30%;
+    font-size: 1rem;
 }
 
 .right-column p.subtitle {
