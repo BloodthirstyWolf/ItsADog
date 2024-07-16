@@ -3,158 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дело в собаке</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Дело в собаке</title>
 </head>
 <body>
-<header class="sticky-header">
-        <div class="logo">
-            <img src="logo.svg" alt="Логотип">
-        </div>
-        <nav class="nav-links">
-            <ul>
-                <li class="dropdown">
-                    <a href="#">О нас &#9662;</a>
-                    <ul class="dropdown-content">
-                        <li><a href="#">Наша команда</a></li>
-                        <li><a href="#">История компании</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#">Наша деятельность &#9662;</a>
-                    <ul class="dropdown-content">
-                        <li><a href="#">Услуги</a></li>
-                        <li><a href="#">Проекты</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Статьи</a></li>
-                <li><a href="#">Контакты и партнеры</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="hero">
-        <div class="oval-shape"></div> <!-- Овал добавлен здесь -->
-        <div class="container">
-            <h1 class="title">ОБУЧАЕМ СОБАК <button class="btn">СТАТЬ ВОЛОНТЕРОМ➔</button></h1>
-            <h1 class="subtitle">ПОМОГАТЬ ЛЮДЯМ</h1>
-            <div class="bottom-row">
-                <div class="left-column">
-                    <img src="person_with_dog.png" alt="Собака и человек" class="hero-image">
-                </div>
-                <div class="right-column">
-                    <p class="subtitle">Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
-                    <button class="btn get-help">Получить помощь</button>
-                    <img src="arrow.svg" alt="Стрелка" class="arrow">
-                </div>
+    <div class="main-container">
+        <header class="sticky-header">
+            <div class="logo">
+                <img src="logo.png" alt="Логотип">
             </div>
-        </div>
-    </section>
-
- <div class="mission">
-    <div class="content">
-        <h2>Наша миссия</h2>
-        <p>Реабилитация людей с хроническими заболеваниями с помощью специально обученных собак.</p>
-    </div>
-</div>
-
-<div class="who-we-are">
-    <div class="content">
-        <h2>Кто мы</h2>
-        <p>Мы команда энтузиастов, которые работают с собаками-помощниками, способными облегчить людям жизнь.</p>
-        <a href="#" class="btn">Стать волонтером</a>
-    </div>
-</div>
-
-
-    </section>
-
-    <section class="stats">
-        <div class="container">
-            <div class="stat-block">
-                <h3>14</h3>
-                <p>Кинологов</p>
-            </div>
-            <div class="stat-block">
-                <h3>26</h3>
-                <p>Благополучателей</p>
-            </div>
-            <div class="stat-block">
-                <h3>64</h3>
-                <p>Волонтера</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="who-we-help">
-        <div class="container">
-            <div class="text-block">
-                <h2>КОМУ МЫ МОЖЕМ ПОМОЧЬ</h2>
-                <div class="help-content">
-                    <img src="helping.png" alt="Помощь" class="help-image">
-                    <ul>
-                        <li>Гражданам РФ, достигшим 18 лет</li>
-                        <li>У которых есть собака, подходящая для работы, или возможность её приобрести</li>
-                        <li>Имеющим хронические заболевания, находящиеся под контролем врача</li>
-                    </ul>
-                </div>
-                <button class="btn get-help">Получить помощь</button>
-            </div>
-        </div>
-    </section>
-
-    <section class="faq">
-        <div class="container">
-            <div class="text-block">
-                <h2>ВОПРОСЫ И ОТВЕТЫ</h2>
-                <details>
-                    <summary>Это платно?</summary>
-                    <p>Обучение и помощь бесплатны для благополучателей.</p>
-                </details>
-                <details>
-                    <summary>Сколько длится обучение собаки?</summary>
-                    <p>Обучение может занять от 6 до 12 месяцев в зависимости от специфики работы.</p>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <section class="useful-info">
-        <div class="container">
-            <div class="text-block">
-                <h2>ПОЛЕЗНО ЗНАТЬ</h2>
-                <div class="info-blocks">
-                    <div class="info-block">
-                        <img src="article1.png" alt="Статья 1">
-                        <h3>Оценка потенциальной собаки-помощника</h3>
-                        <button class="btn">Читать статью➔</button>
-                    </div>
-                    <div class="info-block">
-                        <img src="article2.png" alt="Статья 2">
-                        <h3>Психиатрическая служебная собака</h3>
-                        <button class="btn">Читать статью➔</button>
-                    </div>
-                    <div class="info-block">
-                        <img src="article3.png" alt="Статья 3">
-                        <h3>Собаки, предупреждающие о приступах</h3>
-                        <button class="btn">Читать статью➔</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="container footer-content">
-            <img src="logo.svg" alt="Логотип" class="logo">
-            <nav>
+            <nav class="nav-links">
                 <ul>
                     <li><a href="#">О нас</a></li>
-                    <li><a href="#">Наша деятельность</a></li>
+                    <li class="dropdown">
+                        <a href="#">Наша деятельность</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#">Проекты</a></li>
+                            <li><a href="#">Команда</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Статьи</a></li>
                     <li><a href="#">Контакты</a></li>
                     <li><a href="#">Партнеры</a></li>
                 </ul>
             </nav>
-        </div>
-    </footer>
+        </header>
+        <section class="hero">
+            <h1>Обучаем собак помогать людям</h1>
+            <div class="bottom-row">
+                <div class="left-column">
+                    <img src="hero-image.png" class="hero-image" alt="Иллюстрация">
+                </div>
+                <div class="right-column">
+                    <p class="subtitle">Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
+                    <a href="#" class="btn">Получить помощь</a>
+                    <img src="arrow.png" class="arrow" alt="стрелка">
+                </div>
+            </div>
+        </section>
+        <section class="columns-container">
+            <div class="mission">
+                <div class="content">
+                    <h2>Наша миссия</h2>
+                    <p>Реабилитация людей с хроническими заболеваниями с помощью специально обученных собак.</p>
+                    <a href="#" class="btn">Подробнее</a>
+                </div>
+            </div>
+            <div class="who-we-are">
+                <div class="content">
+                    <h2>Кто мы</h2>
+                    <p>Мы команда энтузиастов, которые работают с собаками-помощниками, способными облегчить людям жизнь.</p>
+                    <a href="#" class="btn">Стать волонтером</a>
+                </div>
+            </div>
+            <img src="стрелка2.png" class="arrow-2" alt="стрелка 2">
+        </section>
+        <section class="stats">
+            <h3>Статистика</h3>
+            <div class="stat-block">
+                <p>14</p>
+                <p>Кинологов</p>
+            </div>
+            <div class="stat-block">
+                <p>26</p>
+                <p>Благополучателей</p>
+            </div>
+            <div class="stat-block">
+                <p>64</p>
+                <p>Волонтера</p>
+            </div>
+        </section>
+        <section class="who-we-help">
+            <h3>Кому мы помогаем</h3>
+            <div class="help-content">
+                <ul>
+                    <li>Дети с аутизмом</li>
+                    <li>Взрослые с неврологическими заболеваниями</li>
+                </ul>
+                <ul>
+                    <li>Люди с эндокринными заболеваниями</li>
+                    <li>Пожилые люди с деменцией</li>
+                </ul>
+            </div>
+        </section>
+        <section class="faq">
+            <h3>Часто задаваемые вопросы</h3>
+            <details>
+                <summary>Вопрос 1</summary>
+                <p>Ответ на вопрос 1.</p>
+            </details>
+            <details>
+                <summary>Вопрос 2</summary>
+                <p>Ответ на вопрос 2.</p>
+            </details>
+        </section>
+        <section class="info-blocks">
+            <div class="info-block">
+                <img src="info1.png" alt="Информация 1">
+                <p>Информация 1</p>
+            </div>
+            <div class="info-block">
+                <img src="info2.png" alt="Информация 2">
+                <p>Информация 2</p>
+            </div>
+        </section>
+        <footer class="footer-content">
+            <p>&copy; 2023 Дело в собаке. Все права защищены.</p>
+            <nav>
+                <ul>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                    <li><a href="#">Условия использования</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
 </body>
 </html>
