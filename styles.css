@@ -9,7 +9,7 @@ body {
     padding: 0;
     background-color: #EEF0ED;
     background-image: url('background.png');
-    background-size: cover; /* Изменено на cover */
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
     overflow-x: hidden;
@@ -109,7 +109,7 @@ body {
     margin-top: 20px;
 }
 
-.left-column {
+.left-column, .right-column {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -120,13 +120,6 @@ body {
     max-width: 100%;
     height: auto;
     z-index: 1;
-}
-
-.right-column {
-    flex: 1;
-    text-align: left;
-    position: relative;
-    width: 40%;
 }
 
 .right-column p.subtitle {
@@ -144,7 +137,7 @@ body {
 }
 
 .btn {
-    padding: 0 20px; /* Изменен padding для высоты */
+    padding: 10px 20px;
     background-color: #006400;
     color: #fff;
     border: none;
@@ -152,15 +145,13 @@ body {
     font-size: 1rem;
     border-radius: 20px;
     z-index: 2;
-    line-height: 3rem; /* Высота строки равная высоте заголовка */
-    display: inline-block;
 }
 
 .arrow {
     position: absolute;
-    top: 1vh; /* Отступ сверху */
-    left: 17vw; /* Отступ слева */
-    width: 20vw; /* Размер стрелки */
+    top: 1vh;
+    left: 17vw;
+    width: 20vw;
     height: auto;
     z-index: 2;
 }
@@ -209,14 +200,14 @@ body {
     justify-content: space-around;
     align-items: flex-start;
     margin: 20px 0;
-    position: relative; /* Добавлен относительный контейнер для стрелки */
+    position: relative;
 }
 
 .arrow-2 {
     position: absolute;
-    top: 10vh; /* Можете настроить отступ сверху */
-    left: 30vw; /* Отступ слева */
-    width: 15vw; /* Размер стрелки */
+    top: 10vh;
+    left: 30vw;
+    width: 15vw;
     height: auto;
     z-index: 2;
 }
@@ -292,8 +283,10 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: 100%;
+    max-width: 1200px;
     margin: 80px auto 0;
+    padding: 0 20px;
 }
 
 @media (max-width: 768px) {
@@ -308,17 +301,52 @@ body {
     }
 
     .arrow-2 {
-        top: 15vh; /* Отступ сверху для мобильной версии */
-        left: 50%; /* Центровка для мобильной версии */
+        top: 15vh;
+        left: 50%;
         transform: translateX(-50%);
     }
 
-    body {
-        background-size: cover; /* Убедиться, что фон занимает всю ширину */
+    .hero h1 {
+        font-size: 1.5rem;
     }
-}
 
-@media only screen and (max-width: 576px) {
+    .subtitle {
+        font-size: 0.75rem;
+    }
+
+    .btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+        line-height: 1.5rem;
+    }
+
+    .stats h3 {
+        font-size: 1rem;
+    }
+
+    .stat-block p {
+        font-size: 1rem;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links ul li {
+        margin-right: 0;
+    }
+
+    .nav-links ul li a {
+        font-size: 0.875rem;
+    }
+
+    .right-column, .left-column {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+    }
+
     .right-column p.subtitle {
         font-size: 0.75rem;
     }
