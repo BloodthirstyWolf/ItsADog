@@ -9,7 +9,7 @@ body {
     padding: 0;
     background-color: #EEF0ED;
     background-image: url('background.png');
-    background-size: 100vw auto; /* Изменено на 100vw */
+    background-size: cover; /* Изменено на cover */
     background-repeat: no-repeat;
     background-position: top center;
     overflow-x: hidden;
@@ -314,7 +314,7 @@ body {
     }
 
     body {
-        background-size: 100vw auto; /* Убедиться, что фон занимает всю ширину */
+        background-size: cover; /* Убедиться, что фон занимает всю ширину */
     }
 }
 
