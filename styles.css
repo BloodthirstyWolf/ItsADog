@@ -109,7 +109,7 @@ body {
     margin-top: 20px;
 }
 
-.left-column, .right-column {
+.left-column {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -120,6 +120,13 @@ body {
     max-width: 100%;
     height: auto;
     z-index: 1;
+}
+
+.right-column {
+    flex: 1;
+    text-align: left;
+    position: relative;
+    width: 40%;
 }
 
 .right-column p.subtitle {
@@ -341,13 +348,11 @@ body {
         font-size: 0.875rem;
     }
 
-    .right-column, .left-column {
+    .right-column {
         width: 100%;
-        flex-direction: column;
-        text-align: center;
     }
 
-    .right-column p.subtitle {
-        font-size: 0.75rem;
+    .left-column {
+        width: 100%;
     }
-}
+    }
