@@ -5,3 +5,10 @@
         menuToggle.classList.toggle('active');
         mobileMenu.classList.toggle('active');
     })
+
+   document.querySelectorAll('.dropdown > a').forEach(item => {
+        item.addEventListener('click', function(event) {
+            const parent = item.parentNode;
+            parent.classList.toggle('open');
+        });
+    });
