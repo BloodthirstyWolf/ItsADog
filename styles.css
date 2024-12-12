@@ -81,6 +81,11 @@ body {
 .nav-links .arrow {
     font-size: 0.8rem;
     margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.nav-links .dropdown.open .arrow {
+    transform: rotate(180deg); /* Поворачиваем стрелку на 180 градусов */
 }
 
 .nav-links .mobile-menu {
@@ -199,9 +204,10 @@ body {
 }
 
 .btn {
-    padding: 10px 20px;
+    padding: 10px 30px;
     background-color: #006400;
     color: #fff;
+    margin-top: -10px;
     border: none;
     cursor: pointer;
     font-size: 1rem;
