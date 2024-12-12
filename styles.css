@@ -7,6 +7,7 @@ body {
     font-family: 'mr_ITCSerifGothic', sans-serif;
     margin: 0;
     padding: 0;
+    padding-top: 80px; /* высота хедера */
     background-color: #EEF0ED;
     background-image: url('background.png');
     background-size: cover;
@@ -46,6 +47,7 @@ body {
 }
 
 .nav-links ul li {
+    position: relative;
     margin-right: 20px;
 }
 
@@ -57,6 +59,28 @@ body {
     display: block;
     padding: 10px;
     position: relative;
+}
+
+.nav-links .dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.nav-links .arrow {
+    font-size: 0.8rem;
+    margin-left: 5px;
 }
 
 .nav-links .mobile-menu {
@@ -93,6 +117,36 @@ body {
     height: 3px;
     background-color: #2A562B;
     margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+    .nav-links ul {
+        display: none;
+    }
+
+    .nav-links .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .nav-links .mobile-menu-toggle.active + .mobile-menu {
+        display: flex;
+    }
+
+    .nav-links .mobile-menu {
+        display: none;
+    }
+
+    .nav-links ul li {
+        margin: 10px 0;
+    }
+
+    .dropdown .dropdown-content {
+        position: static;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 }
 
 .hero {
