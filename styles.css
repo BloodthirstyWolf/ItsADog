@@ -147,6 +147,12 @@ body {
     font-size: 1rem;
     border-radius: 20px;
     z-index: 2;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #004d00;
+    transform: scale(1.05);
 }
 
 .arrow {
@@ -191,6 +197,7 @@ body {
     font-size: 1rem;
     border-radius: 20px;
     display: inline-block;
+    transition: background-color 0.3s ease;
 }
 
 .mission .content .btn:hover, .who-we-are .content .btn:hover {
@@ -199,10 +206,11 @@ body {
 
 .columns-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
     margin: 20px 0;
     position: relative;
+    flex-wrap: wrap;
 }
 
 .arrow-2 {
@@ -287,7 +295,7 @@ body {
 .container {
     width: 100%;
     max-width: 1200px;
-    margin: 80px auto 0;
+    margin: 0 auto;
     padding: 0 20px;
 }
 
