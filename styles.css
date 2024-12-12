@@ -16,7 +16,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Основные стили для хедера */
+/* Стили для хедера */
 .sticky-header {
     position: fixed;
     top: 0;
@@ -63,9 +63,9 @@ body {
 }
 
 .nav-links .dropdown-menu {
-    display: none;
+    display: none; /* Скрываем меню по умолчанию */
     position: absolute;
-    top: 100%;
+    top: 100%; /* Подкладываем меню под родительский элемент */
     left: 0;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -83,7 +83,7 @@ body {
 }
 
 .nav-links .dropdown:hover .dropdown-menu {
-    display: block;
+    display: block; /* Показываем меню при наведении */
 }
 
 .nav-links .dropdown-arrow {
@@ -91,6 +91,7 @@ body {
     font-size: 0.9rem;
 }
 
+/* Мобильное меню */
 .nav-links .mobile-menu {
     display: none;
     flex-direction: column;
@@ -127,6 +128,7 @@ body {
     margin: 4px 0;
 }
 
+/* Мобильная версия */
 @media (max-width: 768px) {
     .nav-links ul {
         display: none;
@@ -153,6 +155,8 @@ body {
 body {
     margin-top: 80px; /* Замените 80px на высоту вашего хедера */
 }
+
+
 
 
 /* Добавим отступ сверху для всего контента */
