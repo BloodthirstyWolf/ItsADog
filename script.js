@@ -6,9 +6,12 @@
         mobileMenu.classList.toggle('active');
     })
 
-   document.querySelectorAll('.dropdown > a').forEach(item => {
-        item.addEventListener('click', function(event) {
-            const parent = item.parentNode;
-            parent.classList.toggle('open');
+<script>
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', function() {
+            this.classList.toggle('open'); // Добавляем/убираем класс "open" для анимации стрелки и открытия меню
         });
     });
+</script>
