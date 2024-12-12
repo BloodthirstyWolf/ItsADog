@@ -7,7 +7,6 @@ body {
     font-family: 'mr_ITCSerifGothic', sans-serif;
     margin: 0;
     padding: 0;
-    padding-top: 80px; /* высота хедера */
     background-color: #EEF0ED;
     background-image: url('background.png');
     background-size: cover;
@@ -16,7 +15,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Стили для хедера */
 .sticky-header {
     position: fixed;
     top: 0;
@@ -25,19 +23,14 @@ body {
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 10px 20px;
 }
 
 .logo img {
     width: 150px;
     height: auto;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
 }
 
 .nav-links ul {
@@ -49,7 +42,7 @@ body {
 
 .nav-links ul li {
     margin-right: 20px;
-    position: relative; /* Для правильного отображения выпадающего меню */
+    position: relative;
 }
 
 .nav-links ul li a {
@@ -62,108 +55,31 @@ body {
     position: relative;
 }
 
-.nav-links .dropdown-menu {
-    display: none; /* Скрываем меню по умолчанию */
+.nav-links .dropdown-content {
+    display: none;
     position: absolute;
-    top: 100%; /* Подкладываем меню под родительский элемент */
-    left: 0;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-    z-index: 1000;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
-.nav-links .dropdown-menu li {
-    padding: 10px 20px;
+.nav-links .dropdown:hover .dropdown-content {
+    display: block;
 }
 
-.nav-links .dropdown-menu li a {
-    padding: 0;
-    color: #333;
-}
-
-.nav-links .dropdown:hover .dropdown-menu {
-    display: block; /* Показываем меню при наведении */
-}
-
-.nav-links .dropdown-arrow {
+/* Стиль для стрелочки */
+.dropdown-arrow {
+    font-size: 1rem;
+    transition: transform 0.3s ease;  /* Плавное вращение стрелки */
+    display: inline-block;
     margin-left: 5px;
-    font-size: 0.9rem;
 }
 
-/* Мобильное меню */
-.nav-links .mobile-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: #fff;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+/* При активном состоянии, стрелка поворачивается */
+.dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);  /* Поворот на 180 градусов */
 }
-
-.nav-links .mobile-menu li {
-    border-bottom: 1px solid #eee;
-}
-
-.nav-links .mobile-menu li a {
-    padding: 15px;
-    text-align: center;
-}
-
-.nav-links .mobile-menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.nav-links .mobile-menu-toggle .hamburger {
-    width: 25px;
-    height: 3px;
-    background-color: #2A562B;
-    margin: 4px 0;
-}
-
-/* Мобильная версия */
-@media (max-width: 768px) {
-    .nav-links ul {
-        display: none;
-    }
-
-    .nav-links .mobile-menu-toggle {
-        display: flex;
-    }
-
-    .nav-links .mobile-menu-toggle.active + .mobile-menu {
-        display: flex;
-    }
-
-    .nav-links .mobile-menu {
-        display: none;
-    }
-
-    .nav-links ul li {
-        margin: 10px 0;
-    }
-}
-
-/* Отступ сверху для контейнера */
-body {
-    margin-top: 80px; /* Замените 80px на высоту вашего хедера */
-}
-
-
-
-
-/* Добавим отступ сверху для всего контента */
-body {
-    padding-top: 80px; /* высота хедера */
-}
-
 
 .hero {
     text-align: center;
@@ -215,21 +131,14 @@ body {
 }
 
 .btn {
-    padding: 10px 30px;
+    padding: 10px 20px;
     background-color: #006400;
     color: #fff;
-    margin-top: -10px;
     border: none;
     cursor: pointer;
     font-size: 1rem;
     border-radius: 20px;
     z-index: 2;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #004d00;
-    transform: scale(1.05);
 }
 
 .arrow {
@@ -274,7 +183,6 @@ body {
     font-size: 1rem;
     border-radius: 20px;
     display: inline-block;
-    transition: background-color 0.3s ease;
 }
 
 .mission .content .btn:hover, .who-we-are .content .btn:hover {
@@ -283,11 +191,10 @@ body {
 
 .columns-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
     margin: 20px 0;
     position: relative;
-    flex-wrap: wrap;
 }
 
 .arrow-2 {
@@ -372,7 +279,7 @@ body {
 .container {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 80px auto 0;
     padding: 0 20px;
 }
 
@@ -436,7 +343,6 @@ body {
     }
 
     .mobile-menu-toggle.active + .mobile-menu {
-          transform: rotate(90deg); /* Поворот гамбургера на 90 градусов */
         display: flex;
     }
 }
