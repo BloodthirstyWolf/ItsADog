@@ -48,8 +48,8 @@ body {
 }
 
 .nav-links ul li {
-    position: relative;
     margin-right: 20px;
+    position: relative; /* Для правильного отображения выпадающего меню */
 }
 
 .nav-links ul li a {
@@ -57,37 +57,38 @@ body {
     color: #2A562B;
     font-size: 1rem;
     font-weight: bold;
-    display: flex; /* Используем flex для выравнивания */
-    align-items: center; /* Центрируем текст и стрелку по вертикали */
+    display: block;
     padding: 10px;
     position: relative;
 }
 
-.nav-links .dropdown .dropdown-content {
+.nav-links .dropdown-menu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    padding: 10px 0;
+    z-index: 1000;
 }
 
-.nav-links .dropdown:hover .dropdown-content {
+.nav-links .dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.nav-links .dropdown-menu li a {
+    padding: 0;
+    color: #333;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
     display: block;
 }
 
-.nav-links .arrow {
-    font-size: 0.8rem;
-    margin-left: 8px; /* Уменьшаем отступ слева от стрелки */
-    transition: transform 0.3s ease;
-}
-
-.nav-links .dropdown.open .arrow {
-    transform: rotate(180deg); /* Поворачиваем стрелку на 180 градусов */
+.nav-links .dropdown-arrow {
+    margin-left: 5px;
+    font-size: 0.9rem;
 }
 
 .nav-links .mobile-menu {
@@ -146,15 +147,13 @@ body {
     .nav-links ul li {
         margin: 10px 0;
     }
-
-    .dropdown .dropdown-content {
-        position: static;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
 }
+
+/* Отступ сверху для контейнера */
+body {
+    margin-top: 80px; /* Замените 80px на высоту вашего хедера */
+}
+
 
 /* Добавим отступ сверху для всего контента */
 body {
