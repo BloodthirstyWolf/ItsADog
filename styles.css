@@ -447,6 +447,7 @@ body {
     }
 
     .mobile-menu-toggle.active + .mobile-menu {
+          transform: rotate(90deg); /* Поворот гамбургера на 90 градусов */
         display: flex;
     }
 }
