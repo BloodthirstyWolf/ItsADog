@@ -17,7 +17,6 @@ body {
 }
 
 /* Основные стили для хедера */
-/* Основные стили для хедера */
 .sticky-header {
     position: fixed;
     top: 0;
@@ -63,22 +62,6 @@ body {
     position: relative;
 }
 
-.nav-links .dropdown {
-    cursor: pointer;
-}
-
-/* Стрелка рядом с выпадающими меню */
-.nav-links .arrow {
-    font-size: 0.8rem;
-    margin-left: 5px;
-    transition: transform 0.3s ease;
-}
-
-.nav-links .dropdown.open .arrow {
-    transform: rotate(180deg); /* Поворачиваем стрелку на 180 градусов, когда меню раскрыто */
-}
-
-/* Выпадающее меню */
 .nav-links .dropdown .dropdown-content {
     display: none;
     position: absolute;
@@ -92,17 +75,18 @@ body {
     margin: 0;
 }
 
-.nav-links .dropdown.open .dropdown-content {
+.nav-links .dropdown:hover .dropdown-content {
     display: block;
 }
 
-.nav-links .dropdown-content li {
-    border-bottom: 1px solid #eee;
+.nav-links .arrow {
+    font-size: 0.8rem;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
 }
 
-.nav-links .dropdown-content li a {
-    padding: 10px;
-    text-align: left;
+.nav-links .dropdown.open .arrow {
+    transform: rotate(180deg); /* Поворачиваем стрелку на 180 градусов */
 }
 
 .nav-links .mobile-menu {
@@ -170,6 +154,7 @@ body {
         display: block;
     }
 }
+
 /* Добавим отступ сверху для всего контента */
 body {
     padding-top: 80px; /* высота хедера */
