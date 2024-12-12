@@ -6,7 +6,6 @@
         mobileMenu.classList.toggle('active');
     })
 
-<script>
     const dropdowns = document.querySelectorAll('.dropdown');
 
     dropdowns.forEach(dropdown => {
@@ -14,4 +13,3 @@
             this.classList.toggle('open'); // Добавляем/убираем класс "open" для анимации стрелки и открытия меню
         });
     });
-</script>
