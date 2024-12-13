@@ -1,24 +1,24 @@
-  const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
-
-    menuToggle.addEventListener('click', function() {
-        menuToggle.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-    })
-
-    const dropdowns = document.querySelectorAll('.dropdown');
-
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', function() {
-            this.classList.toggle('open'); // Добавляем/убираем класс "open" для анимации стрелки и открытия меню
-        });
-    });
+// Мобильное меню
+const menuToggle = document.querySelector('.mobile-menu-toggle');
+const mobileMenu = document.querySelector('.mobile-menu');
 
 menuToggle.addEventListener('click', function() {
-    if (menuToggle.classList.contains('active')) {
-        mobileMenu.classList.remove('active');
-    } else {
-        mobileMenu.classList.add('active');
-    }
-    menuToggle.classList.toggle('active');
+    menuToggle.classList.toggle('active');  // Поворот гамбургера
+    mobileMenu.classList.toggle('active');  // Показ/скрытие мобильного меню
+});
+
+// Выпадающее меню
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(dropdown => {
+    const link = dropdown.querySelector('a');
+    const dropdownContent = dropdown.querySelector('.dropdown-content');
+    const arrow = dropdown.querySelector('.dropdown-arrow');
+
+    // Обработчик клика по выпадающему меню
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); // Останавливаем стандартное поведение ссылки
+        dropdown.classList.toggle('open'); // Открываем/закрываем меню
+        arrow.classList.toggle('rotate');  // Поворачиваем стрелку
+    });
 });
