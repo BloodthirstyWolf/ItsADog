@@ -86,10 +86,30 @@ body {
     display: block; /* Показываем меню при наведении */
 }
 
-
-.nav-links .dropdown- {
+.nav-links .dropdown-arrow {
+    font-size: 1rem;
+    transition: transform 0.3s ease;  /* Плавное вращение стрелки */
+    display: inline-block;
     margin-left: 5px;
-    font-size: 0.9rem;
+}
+
+/* Стиль для выпадающего меню */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* При активном состоянии, стрелка поворачивается */
+.dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);  /* Поворот на 180 градусов */
 }
 
 /* Мобильное меню */
@@ -133,39 +153,61 @@ body {
 @media (max-width: 768px) {
     .nav-links ul {
         display: none;
+        flex-direction: column;
     }
 
     .nav-links .mobile-menu-toggle {
-        display: flex;
-    }
-
-    .nav-links .mobile-menu-toggle.active + .mobile-menu {
-        display: flex;
+        display: flex; /* Гамбургер появляется в мобильной версии */
     }
 
     .nav-links .mobile-menu {
         display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #fff;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
     }
 
-    .nav-links ul li {
-        margin: 10px 0;
+    .nav-links .mobile-menu li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-links .mobile-menu li a {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .mobile-menu-toggle.active + .mobile-menu {
+        display: flex; /* Показ мобильного меню */
+    }
+
+    /* Поворот гамбургера на 90 градусов при активном состоянии */
+    .mobile-menu-toggle.active .hamburger {
+        transform: rotate(90deg); /* Поворот гамбургера */
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-content {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 100%;
     }
 }
 
 /* Отступ сверху для контейнера */
 body {
-    margin-top: 80px; /* Замените 80px на высоту вашего хедера */
-}
-
-
-
-
-/* Добавим отступ сверху для всего контента */
-body {
     padding-top: 80px; /* высота хедера */
 }
 
-
+/* Добавим отступ сверху для всего контента */
 .hero {
     text-align: center;
     position: relative;
@@ -233,55 +275,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Стиль для стрелочки */
-.dropdown-arrow {
-    font-size: 1rem;
-    transition: transform 0.3s ease;  /* Плавное вращение стрелки */
-    display: inline-block;
-    margin-left: 5px;
-}
-
-/* Стиль для выпадающего меню */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* При активном состоянии, стрелка поворачивается */
-.dropdown.active .dropdown-arrow {
-    transform: rotate(180deg);  /* Поворот на 180 градусов */
-}
-
-/* CSS для работы с мобильной версией */
-@media (max-width: 768px) {
-    .nav-links ul {
-        display: none;
-        flex-direction: column;
-    }
-
-    .nav-links .mobile-menu-toggle.active + .nav-links ul {
-        display: flex;
-    }
-
-    .dropdown {
-        position: relative;
-    }
-
-    .dropdown-content {
-        position: absolute;
-        top: 30px;
-        left: 0;
-        width: 100%;
-    }
-}
 .mission, .who-we-are {
     flex: 1;
     text-align: left;
@@ -435,49 +428,6 @@ body {
     }
 
     .hero h1 {
-        font-size: 1.5rem;
-    }
-
-    .subtitle {
-        font-size: 0.75rem;
-    }
-
-    .btn {
-        padding: 5px 10px;
-        font-size: 0.75rem;
-    }
-
-    .nav-links ul {
-        display: none;
-    }
-
-    .nav-links .mobile-menu-toggle {
-        display: flex;
-    }
-
-    .nav-links .mobile-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #fff;
-        width: 100%;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-    }
-
-    .nav-links .mobile-menu li {
-        border-bottom: 1px solid #eee;
-    }
-
-    .nav-links .mobile-menu li a {
-        padding: 15px;
-        text-align: center;
-    }
-
-    .mobile-menu-toggle.active + .mobile-menu {
-          transform: rotate(90deg); /* Поворот гамбургера на 90 градусов */
-        display: flex;
+        font-size: 2rem;
     }
 }
