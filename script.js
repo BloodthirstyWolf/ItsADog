@@ -18,7 +18,7 @@ dropdowns.forEach(dropdown => {
     // Обработчик клика по выпадающему меню
     link.addEventListener('click', function(e) {
         e.preventDefault(); // Останавливаем стандартное поведение ссылки
-        dropdown.classList.toggle('open'); // Открываем/закрываем меню
+        dropdown.classList.toggle('active'); // Открываем/закрываем меню
         arrow.classList.toggle('rotate');  // Поворачиваем стрелку
     });
 });
