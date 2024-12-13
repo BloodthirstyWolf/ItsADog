@@ -94,7 +94,7 @@ body {
 }
 
 .nav-links .dropdown:hover .dropdown-arrow {
-    transform: rotate(180deg); /* Поворот стрелки при наведении */
+    transform: rotate(180deg); /* Поворот стрелки */
 }
 
 /* Мобильное меню */
@@ -249,7 +249,7 @@ body {
 
 /* Стиль для выпадающего меню */
 .dropdown-content {
-    display: none; /* Скрыто по умолчанию */
+    display: none;
     position: absolute;
     background-color: #fff;
     min-width: 160px;
@@ -257,8 +257,9 @@ body {
     z-index: 1;
 }
 
-.nav-links ul li:hover .dropdown-content {
-    display: block; /* Появляется при наведении */
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Показываем меню при наведении */
 }
 
 /* При активном состоянии, стрелка поворачивается */
