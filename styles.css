@@ -40,7 +40,6 @@ body {
     align-items: center;
 }
 
-/* Основные стили для пунктов меню */
 .nav-links ul {
     list-style-type: none;
     margin: 0;
@@ -63,42 +62,36 @@ body {
     position: relative;
 }
 
-/* Скрытое выпадающее меню */
-.nav-links .dropdown-menu {
-    display: none; /* Скрываем меню по умолчанию */
-    position: absolute;
-    top: 100%; /* Подкладываем меню под родительский элемент */
-    left: 0;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-    z-index: 1000;
-}
-
-.nav-links .dropdown-menu li {
-    padding: 10px 20px;
-}
-
-.nav-links .dropdown-menu li a {
-    padding: 0;
-    color: #333;
-}
-
-/* Стиль для стрелки */
-.nav-links .dropdown-arrow {
+/* Стиль для стрелочки */
+.dropdown-arrow {
     font-size: 1rem;
     transition: transform 0.3s ease;  /* Плавное вращение стрелки */
     display: inline-block;
     margin-left: 5px;
 }
 
-/* Показываем меню по наведению */
-.nav-links .dropdown:hover .dropdown-menu {
+/* Стиль для выпадающего меню */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
     display: block;
 }
 
-.nav-links .dropdown:hover .dropdown-arrow {
-    transform: rotate(180deg); /* Поворот стрелки при наведении */
+/* При активном состоянии, стрелка поворачивается */
+.dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);  /* Поворот на 180 градусов */
+}
+
+/* При активном состоянии выпадающее меню показывается */
+.dropdown.active .dropdown-content {
+    display: block;
 }
 
 /* Мобильное меню */
@@ -123,7 +116,6 @@ body {
     text-align: center;
 }
 
-/* Гамбургер-меню */
 .nav-links .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -139,7 +131,7 @@ body {
     margin: 4px 0;
 }
 
-/* Показ мобильного меню */
+/* Мобильная версия */
 @media (max-width: 768px) {
     .nav-links ul {
         display: none;
@@ -171,16 +163,15 @@ body {
         text-align: center;
     }
 
-    /* Активный гамбургер и меню */
     .mobile-menu-toggle.active + .mobile-menu {
         display: flex; /* Показ мобильного меню */
     }
 
+    /* Поворот гамбургера на 90 градусов при активном состоянии */
     .mobile-menu-toggle.active .hamburger {
         transform: rotate(90deg); /* Поворот гамбургера */
     }
 
-    /* Стиль для выпадающего меню в мобильной версии */
     .dropdown {
         position: relative;
     }
@@ -190,20 +181,19 @@ body {
         top: 30px;
         left: 0;
         width: 100%;
-        display: none; /* Меню скрыто по умолчанию */
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block; /* Показываем меню при наведении */
     }
 }
 
-/* Отступ сверху для контейнера */
+/* Добавим отступ сверху для всего контента */
+body {
+    margin-top: 80px; /* высота хедера */
+}
+
+/* Стили для контейнера с отступом сверху */
 body {
     padding-top: 80px; /* высота хедера */
 }
 
-/* Добавим отступ сверху для всего контента */
 .hero {
     text-align: center;
     position: relative;
@@ -271,6 +261,97 @@ body {
     transform: scale(1.05);
 }
 
+/* Стиль для стрелочки */
+.dropdown-arrow {
+    font-size: 1rem;
+    transition: transform 0.3s ease;  /* Плавное вращение стрелки */
+    display: inline-block;
+    margin-left: 5px;
+}
+
+/* Стиль для выпадающего меню */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* При активном состоянии, стрелка поворачивается */
+.dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);  /* Поворот на 180 градусов */
+}
+
+/* CSS для работы с мобильной версией */
+@media (max-width: 768px) {
+    .columns-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mission .content, .who-we-are .content {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .arrow-2 {
+        top: 15vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.75rem;
+    }
+
+    .btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+
+    .nav-links ul {
+        display: none;
+    }
+
+    .nav-links .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .nav-links .mobile-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #fff;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-links .mobile-menu li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-links .mobile-menu li a {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .mobile-menu-toggle.active + .mobile-menu {
+        display: flex;
+    }
+}
 .mission, .who-we-are {
     flex: 1;
     text-align: left;
@@ -327,104 +408,5 @@ body {
     width: 15vw;
     height: auto;
     z-index: 2;
+    transition: top 1s, left 1s;
 }
-
-.stats {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.stats h3 {
-    color: #333;
-}
-
-.stat-block {
-    margin: 20px;
-}
-
-.who-we-help .help-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.help-content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 20px;
-}
-
-.help-content ul li {
-    margin: 10px 0;
-}
-
-.faq details {
-    margin: 20px 0;
-    text-align: left;
-    cursor: pointer;
-}
-
-.info-blocks {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.info-block {
-    margin: 20px;
-    width: 200px;
-    text-align: center;
-}
-
-.info-block img {
-    width: 100%;
-    height: auto;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #006400;
-    color: #fff;
-}
-
-.footer-content nav ul {
-    display: flex;
-}
-
-.footer-content nav ul li a {
-    color: #fff;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-@media (max-width: 768px) {
-    .columns-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .mission .content, .who-we-are .content {
-        max-width: 90%;
-        text-align: center;
-    }
-
-    .arrow-2 {
-        top: 15vh;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-}
-
