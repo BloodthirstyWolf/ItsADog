@@ -65,15 +65,16 @@ body {
 }
 
 .nav-links .dropdown-menu {
-    display: flex; /* Добавляем flex-контейнер */
+    display: flex; /* Используем flex-контейнер */
     flex-direction: column; /* Вертикальное расположение */
-    display: none; /* Скрываем меню по умолчанию */
+    visibility: hidden; /* Скрываем меню по умолчанию */
+    opacity: 0;
+    transition: opacity 0.3s ease;
     position: absolute;
-    top: 100%;
+    top: 100%; /* Позиционируем под родительским элементом */
     left: 0;
     width: max-content;
     background-color: #fff;
-    white-space: nowrap;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
     z-index: 1000;
@@ -91,7 +92,8 @@ body {
 }
 
 .nav-links .dropdown:hover .dropdown-menu {
-    display: block; /* Показываем меню при наведении */
+    visibility: visible; /* Показываем меню при наведении */
+    opacity: 1;
 }
 
 .nav-links .dropdown-arrow {
