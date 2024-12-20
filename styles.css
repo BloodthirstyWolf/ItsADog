@@ -49,6 +49,8 @@ body {
 
 .nav-links ul li {
     margin-right: 20px;
+     display: block; /* Каждая кнопка занимает свою строку */
+    width: auto; /* Ширина зависит только от текста внутри */
     position: relative; /* Для правильного отображения выпадающего меню */
 }
 
@@ -67,10 +69,15 @@ body {
     position: absolute;
     top: 100%; /* Подкладываем меню под родительский элемент */
     left: 0;
+    flex-direction: column; /* Вертикальное расположение */
+    width: max-content; /* Размер только под содержимое */
     background-color: #fff;
+    white-space: nowrap; /* Запрещаем перенос строк */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
     z-index: 1000;
+    min-width: 200px; /* Добавляем минимальную ширину */
+    
 }
 
 .nav-links .dropdown-menu li {
