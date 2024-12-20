@@ -246,19 +246,16 @@ body {
     display: inline-block;
     margin-left: 5px;
 }
-.dropdown-content {
-    display: none !important;
-    position: absolute;
-    background-color: #fff;
-    min-width: 160px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+.dropdown .dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block; /* Показываем меню при наведении */
+.dropdown:hover > .dropdown-content {
+    visibility: visible;
+    opacity: 1;
 }
-
 
 /* При активном состоянии, стрелка поворачивается */
 .dropdown.active .dropdown-arrow {
