@@ -246,8 +246,6 @@ body {
     display: inline-block;
     margin-left: 5px;
 }
-
-/* Стиль для выпадающего меню */
 .dropdown-content {
     display: none;
     position: absolute;
@@ -257,10 +255,10 @@ body {
     z-index: 1;
 }
 
-
 .dropdown:hover .dropdown-content {
     display: block; /* Показываем меню при наведении */
 }
+
 
 /* При активном состоянии, стрелка поворачивается */
 .dropdown.active .dropdown-arrow {
