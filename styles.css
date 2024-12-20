@@ -247,7 +247,7 @@ body {
     margin-left: 5px;
 }
 .dropdown-content {
-    display: none;
+    display: none !important;
     position: absolute;
     background-color: #fff;
     min-width: 160px;
