@@ -65,20 +65,21 @@ body {
 }
 
 .nav-links .dropdown-menu {
+    display: flex; /* Добавляем flex-контейнер */
+    flex-direction: column; /* Вертикальное расположение */
     display: none; /* Скрываем меню по умолчанию */
     position: absolute;
-    top: 100%; /* Подкладываем меню под родительский элемент */
+    top: 100%;
     left: 0;
-    flex-direction: column; /* Вертикальное расположение */
-    width: max-content; /* Размер только под содержимое */
+    width: max-content;
     background-color: #fff;
-    white-space: nowrap; /* Запрещаем перенос строк */
+    white-space: nowrap;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
     z-index: 1000;
-    min-width: 200px; /* Добавляем минимальную ширину */
-    
+    min-width: 200px;
 }
+
 
 .nav-links .dropdown-menu li {
     padding: 10px 20px;
