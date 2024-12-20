@@ -48,10 +48,10 @@ body {
 }
 
 .nav-links ul li {
-    margin-right: 20px;
-     display: block; /* Каждая кнопка занимает свою строку */
-    width: auto; /* Ширина зависит только от текста внутри */
-    position: relative; /* Для правильного отображения выпадающего меню */
+   margin-right: 20px; /* Этот стиль для главного списка навигации */
+    display: inline-block; /* Убедитесь, что элементы будут располагаться в ряд в основном меню */
+    width: auto;
+    position: relative;
 }
 
 .nav-links ul li a {
@@ -85,7 +85,11 @@ body {
 
 
 .nav-links .dropdown-menu li {
-    padding: 10px 20px;
+      margin-right: 0; /* Убираем горизонтальные отступы для элементов выпадающего меню */
+    display: block; /* Каждое меню — отдельная строка */
+    width: 100%; /* Позволяет элементам быть на всю ширину контейнера */
+    padding: 10px 20px; /* Отступы */
+}
 }
 
 .nav-links .dropdown-menu li a {
