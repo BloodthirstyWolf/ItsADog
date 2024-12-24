@@ -399,10 +399,59 @@
   </main>
 
   <script>
+    let startX = 0; // Начальная позиция для свайпа
+    let isSwiping = false; // Флаг для отслеживания, идет ли свайп
+
     function toggleMenu() {
       const sidebar = document.getElementById('sidebar');
       sidebar.classList.toggle('open');
     }
+
+    // Закрытие сайдбара при клике вне его
+    document.addEventListener('click', (event) => {
+      const sidebar = document.getElementById('sidebar');
+      const hamburger = document.querySelector('.hamburger');
+      // Если клик был вне сайдбара и кнопки гамбургера, закрываем сайдбар
+      if (!sidebar.contains(event.target) && !hamburger.contains(event.target)) {
+        sidebar.classList.remove('open');
+      }
+    });
+
+    // Функция для начала смахивания пальцем
+    document.getElementById('sidebar').addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX; // Сохраняем начальную позицию
+      isSwiping = true; // Начинаем отслеживание смахивания
+    });
+
+    // Отслеживание движения пальца
+    document.getElementById('sidebar').addEventListener('touchmove', (e) => {
+      if (!isSwiping) return;
+      const currentX = e.touches[0].clientX; // Текущая позиция
+      const offset = currentX - startX; // Вычисляем смещение
+
+      // Если смещение положительное (свайп вправо), то открываем сайдбар
+      if (offset > 0 && offset < 350) {
+        document.getElementById('sidebar').style.right = -350 + offset + 'px';
+      }
+    });
+
+    // Завершаем свайп
+    document.getElementById('sidebar').addEventListener('touchend', (e) => {
+      if (!isSwiping) return;
+      isSwiping = false; // Завершаем отслеживание свайпа
+      const sidebar = document.getElementById('sidebar');
+      const offset = parseInt(sidebar.style.right, 10);
+
+      // Если свайп был достаточно большим, открываем сайдбар
+      if (offset > -175) {
+        sidebar.classList.add('open');
+      } else {
+        sidebar.classList.remove('open');
+      }
+
+      sidebar.style.right = ''; // Сбрасываем стиль после окончания свайпа
+    });
+
   </script>
 </body>
 </html>
