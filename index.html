@@ -338,12 +338,26 @@
   </style>
 </head>
 <body>
-  <header class="sticky-header">
+   <header class="sticky-header">
     <div class="header-container">
       <img src="logo.svg" alt="Логотип" class="logo">
       <nav class="nav-links">
-        <a href="#" class="nav-link">О нас</a>
-        <a href="#" class="nav-link">Наша деятельность</a>
+        <div class="dropdown">
+          <a href="#" class="nav-link">О нас</a>
+          <div class="dropdown-content">
+            <a href="#">Миссия</a>
+            <a href="#">Наша команда</a>
+            <a href="#">История</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="nav-link">Наша деятельность</a>
+          <div class="dropdown-content">
+            <a href="#">Программы</a>
+            <a href="#">Проекты</a>
+            <a href="#">Статистика</a>
+          </div>
+        </div>
         <a href="articles.html" class="nav-link">Статьи</a>
         <a href="contacts.html" class="nav-link">Контакты</a>
         <a href="partners.html" class="nav-link">Партнёры</a>
