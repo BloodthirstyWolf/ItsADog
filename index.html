@@ -35,6 +35,7 @@
       width: 200px;
       height: 70px;
       object-fit: contain;
+      padding: 0.2%;
     }
 
     .nav-links {
@@ -46,8 +47,8 @@
     .nav-link {
       text-decoration: none;
       color: #29562B;
-      font-size: 18px; /* Увеличенный размер текста */
-      text-transform: uppercase; /* Преобразование текста в большие буквы */
+      font-size: 18px;
+      text-transform: uppercase;
       position: relative;
     }
 
@@ -95,6 +96,69 @@
       border-width: 0 5px 5px 5px;
       border-color: transparent transparent #29562B transparent;
     }
+
+    /* Основная часть страницы */
+    .container1 {
+      width: 90%;
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .row .title {
+      font-size: 36px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .row .button {
+      background-color: transparent;
+      border: 2px solid #29562B;
+      border-radius: 25px;
+      padding: 10px 20px;
+      color: #29562B;
+      font-size: 16px;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+
+    .row .button:hover {
+      background-color: #29562B;
+      color: #FFFFFF;
+    }
+
+    .row .highlight {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      position: relative;
+    }
+
+    .row .highlight img {
+      width: 100px;
+      height: 100px;
+      transform: rotate(-34deg);
+      margin-right: 20px;
+    }
+
+    .row .highlight .highlight-text {
+      font-size: 36px;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: right;
+    }
+
   </style>
 </head>
 <body>
@@ -122,8 +186,23 @@
       </nav>
     </div>
   </header>
+
   <main>
-    <p>Основной контент страницы</p>
+    <div class="container1">
+      <!-- Первый ряд -->
+      <div class="row">
+        <div class="title">ОБУЧАЕМ СОБАК</div>
+        <button class="button">Стать волонтером →</button>
+      </div>
+
+      <!-- Второй ряд -->
+      <div class="row">
+        <div class="highlight">
+          <img src="Highlight_05.svg" alt="Декоративный элемент">
+          <div class="highlight-text">ПОМОГАТЬ ЛЮДЯМ</div>
+        </div>
+      </div>
+    </div>
   </main>
 </body>
 </html>
