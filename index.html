@@ -99,10 +99,11 @@
 
     /* Основная часть страницы */
     .container1 {
-      width: 90%;
+      width: 60%; /* Уменьшаем ширину контейнера */
       max-width: 1200px;
-      margin: 50px -5%; /* Сдвигаем контейнер влево */
+      margin: 50px 15%; /* Убираем сдвиг по горизонтали */
       padding: 20px;
+      color: #000000; /* Цвет текста черный */
     }
 
     .row {
@@ -164,8 +165,8 @@
     /* Новый стиль для секции с фото и текстом */
     .photo-text-row {
       display: flex;
-      align-items: center;
-      justify-content: space-between; /* Распределяем элементы по обеим сторонам */
+      flex-direction: column; /* Размещаем элементы друг под другом */
+      align-items: flex-start;
       gap: 20px;
     }
 
