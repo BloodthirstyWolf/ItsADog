@@ -6,13 +6,13 @@
   <title>Пример страницы</title>
   <style>
     @font-face {
-      font-family: 'GilroyUltraLight';
-      src: url('Gilroy-UltraLight.ttf') format('truetype');
+      font-family: 'CustomFont';
+      src: url('18094.ttf') format('truetype');
     }
 
     @font-face {
-      font-family: 'CustomFont';
-      src: url('18094.ttf') format('truetype');
+      font-family: 'Gilroy-UltraLight';
+      src: url('Gilroy-UltraLight.ttf') format('truetype');
     }
 
     body {
@@ -113,34 +113,30 @@
 
     .row {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px; /* Уменьшено расстояние между рядами */
+      justify-content: flex-start; /* Выравнивание элементов по левому краю */
+      gap: 20px;
+      margin-bottom: 20px; /* Отступ между рядами */
     }
 
     .row .title {
-      font-size: 4em; /* Увеличен размер текста */
+      font-size: clamp(2.5rem, 5vw, 4em); /* Адаптивный размер шрифта */
       font-weight: bold;
       text-transform: uppercase;
       text-align: center;
-      flex-grow: 1;
-      margin-right: 5px; /* Уменьшен отступ между текстом и кнопкой */
+      color: #2A562B; /* Цвет заголовка */
     }
 
     .row .button {
       background-color: transparent;
       border: 2px solid #29562B;
-      border-radius: 25px;
-      padding: 10px 20px;
+      border-radius: 50px; /* Закругленные углы */
+      padding: 1.3% 2%; /* Пропорциональные отступы */
       color: #29562B;
       font-size: 16px;
       text-transform: uppercase;
       cursor: pointer;
       display: inline-block;
-      width: auto; /* Автоматическая ширина кнопки */
-      height: auto; /* Автоматическая высота кнопки */
-      min-width: 200px; /* Минимальная ширина кнопки */
-      min-height: 50px; /* Минимальная высота кнопки */
       transition: background-color 0.3s;
     }
 
@@ -149,30 +145,10 @@
       color: #FFFFFF;
     }
 
-    .photo-text-row .button {
-      background-color: #29562B;
-      border: 2px solid #29562B;
-      border-radius: 50px;
-      padding: 2% 2%;
-      color: white;
-      font-size: 16px;
-      text-transform: uppercase;
-      cursor: pointer;
-      display: inline-block;
-      transition: background-color 0.3s;
-      margin-top: 4%;
-    }
-
-    .photo-text-row .description {
-      font-family: 'GilroyUltraLight', sans-serif; /* Применение шрифта */
-      max-width: 70%;
-      font-size: 1.2em;
-    }
-
     .row .highlight {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: flex-end; /* Выравнивание по правому краю */
       position: relative;
     }
 
@@ -188,6 +164,47 @@
       font-weight: bold;
       text-transform: uppercase;
       text-align: right;
+      color: #2A562B; /* Цвет заголовка */
+    }
+
+    /* Новый стиль для секции с фото и текстом */
+    .photo-text-row {
+      display: flex;
+      justify-content: space-between; /* Распределяем элементы по двум колонкам */
+      align-items: center;
+      gap: 20px; /* Отступ между колонками */
+    }
+
+    .photo-text-row img {
+      width: 40vw; /* Ширина фото 40% от ширины экрана */
+      height: auto; /* Автоматическая высота */
+    }
+
+    .photo-text-row .description {
+      max-width: 70%; /* Ограничиваем ширину текста */
+      font-size: 1.2em;
+      font-family: 'Gilroy-UltraLight', sans-serif; /* Применяем новый шрифт */
+      color: #2A562B;
+    }
+
+    .photo-text-row .button {
+      background-color: #29562B;
+      border: 2px solid #29562B;
+      border-radius: 50px; /* Закругленные углы */
+      padding: 2% 2%; /* Пропорциональные отступы */
+      color: white;
+      font-size: 16px;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-block;
+      transition: background-color 0.3s;
+      width: 200px; /* Фиксированная ширина кнопки */
+      margin-top: 4%; /* Отступ сверху */
+    }
+
+    .photo-text-row .button:hover {
+      background-color: #29562B;
+      color: #FFFFFF;
     }
 
   </style>
@@ -234,10 +251,18 @@
         </div>
       </div>
 
-      <!-- Дополнительный ряд с кнопкой и описанием -->
+      <!-- Новый блок с фото и текстом -->
       <div class="photo-text-row">
-        <button class="button">Стать волонтером</button>
-        <p class="description">Описание вашего проекта или активности с дополнительной информацией.</p>
+        <!-- Левый столбец с изображением -->
+        <img src="person_with_dog.png" alt="Человек с собакой">
+        
+        <!-- Правый столбец с текстом и кнопкой -->
+        <div>
+          <div class="description">
+            Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями.
+          </div>
+          <button class="button">Получить помощь</button>
+        </div>
       </div>
     </div>
   </main>
