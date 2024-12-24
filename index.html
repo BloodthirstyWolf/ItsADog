@@ -1,132 +1,121 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дело в собаке</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пример страницы</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #EFF1EE;
+    }
+
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid #CCCCCC;
+      z-index: 1000;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #29562B;
+      font-size: 16px;
+      position: relative;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #FFFFFF;
+      border: 1px solid #CCCCCC;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      z-index: 999;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 5px 10px;
+      text-decoration: none;
+      color: #29562B;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #EFF1EE;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .nav-link::after {
+      content: '';
+      display: inline-block;
+      margin-left: 5px;
+      border-width: 5px 5px 0 5px;
+      border-style: solid;
+      border-color: #29562B transparent transparent transparent;
+    }
+
+    .dropdown:hover .nav-link::after {
+      border-width: 0 5px 5px 5px;
+      border-color: transparent transparent #29562B transparent;
+    }
+  </style>
 </head>
 <body>
-<header class="sticky-header">
-    <div class="logo">
-        <img src="logo.svg" alt="Логотип">
-    </div>
-    <nav class="nav-links" aria-label="Главная навигация">
-        <ul>
-            <li class="dropdown">
-                <a href="#">О нас <span class="dropdown-arrow">▼</span></a>
-                <ul class="dropdown-content">
-                    <li><a href="#">Наша команда</a></li>
-                    <li><a href="#">История компании</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#">Наша деятельность <span class="dropdown-arrow">▼</span></a>
-                <ul class="dropdown-content">
-                    <li><a href="#">Услуги</a></li>
-                    <li><a href="#">Проекты</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Статьи</a></li>
-            <li><a href="#">Контакты</a></li>
-            <li><a href="#">Партнёры</a></li>
-        </ul>
-    </nav>
-</header>
-
-    
-<section class="hero">
-    <div class="oval-shape"></div>
-    <div class="container">
-        <h1 class="title">ОБУЧАЕМ СОБАК <button class="btn">СТАТЬ ВОЛОНТЕРОМ&#8594;</button></h1>
-        <h2 class="subtitle">ПОМОГАТЬ ЛЮДЯМ</h2>
-        <div class="bottom-row">
-            <div class="left-column">
-                <img src="person_with_dog.png" alt="Собака и человек" class="hero-image">
-            </div>
-            <div class="right-column">
-                <p class="subtitle">Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями</p>
-                <button class="btn get-help">Получить помощь</button>
-                <img src="arrow.svg" alt="Стрелка" class="arrow">
-            </div>
+  <header class="sticky-header">
+    <div class="header-container">
+      <img src="logo.svg" alt="Логотип" class="logo">
+      <nav class="nav-links">
+        <div class="dropdown">
+          <a href="#" class="nav-link">О нас</a>
+          <div class="dropdown-content">
+            <a href="#">Наша команда</a>
+            <a href="#">История</a>
+          </div>
         </div>
-    </div>
-</section>
-<section class="columns-container">
-    <div class="mission">
-        <div class="content">
-            <h2>Наша миссия</h2>
-            <p>Реабилитация людей с хроническими заболеваниями с помощью специально обученных собак.</p>
-            <a href="#" class="btn">Подробнее</a>
+        <div class="dropdown">
+          <a href="#" class="nav-link">Наша деятельность</a>
+          <div class="dropdown-content">
+            <a href="#">Проекты</a>
+            <a href="#">Услуги</a>
+          </div>
         </div>
+        <a href="#" class="nav-link">Статьи</a>
+        <a href="#" class="nav-link">Контакты</a>
+        <a href="#" class="nav-link">Партнёры</a>
+      </nav>
     </div>
-    <div class="who-we-are">
-        <div class="content">
-            <h2>Кто мы</h2>
-            <p>Мы команда энтузиастов, которые работают с собаками-помощниками, способными облегчить людям жизнь.</p>
-            <a href="#" class="btn">Стать волонтером</a>
-        </div>
-    </div>
-    <img src="стрелка2.png" class="arrow-2" alt="стрелка 2">
-</section>
-<section class="stats">
-    <h3>Статистика</h3>
-    <div class="stat-block">
-        <p>14</p>
-        <p>Кинологов</p>
-    </div>
-    <div class="stat-block">
-        <p>26</p>
-        <p>Благополучателей</p>
-    </div>
-    <div class="stat-block">
-        <p>64</p>
-        <p>Волонтера</p>
-    </div>
-</section>
-<section class="who-we-help">
-    <h3>Кому мы помогаем</h3>
-    <div class="help-content">
-        <ul>
-            <li>Дети с аутизмом</li>
-            <li>Взрослые с неврологическими заболеваниями</li>
-        </ul>
-        <ul>
-            <li>Люди с эндокринными заболеваниями</li>
-            <li>Пожилые люди с деменцией</li>
-        </ul>
-    </div>
-</section>
-<section class="faq">
-    <h3>Часто задаваемые вопросы</h3>
-    <details>
-        <summary>Вопрос 1</summary>
-        <p>Ответ на вопрос 1.</p>
-    </details>
-    <details>
-        <summary>Вопрос 2</summary>
-        <p>Ответ на вопрос 2.</p>
-    </details>
-</section>
-<section class="info-blocks">
-    <div class="info-block">
-        <img src="info1.png" alt="Информация 1">
-        <p>Информация 1</p>
-    </div>
-    <div class="info-block">
-        <img src="info2.png" alt="Информация 2">
-        <p>Информация 2</p>
-    </div>
-</section>
-<footer class="footer-content">
-    <p>&copy; 2023 Дело в собаке. Все права защищены.</p>
-    <nav>
-        <ul>
-            <li><a href="#">Политика конфиденциальности</a></li>
-            <li><a href="#">Условия использования</a></li>
-        </ul>
-    </nav>
-</footer>
+  </header>
+  <main>
+    <p>Основной контент страницы</p>
+  </main>
 </body>
 </html>
