@@ -54,15 +54,24 @@ body {
     position: relative;
 }
 
-/* Стили для выпадающего меню */
+.nav-links ul li a {
+    text-decoration: none;
+    color: #2A562B;
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+
 .nav-links .dropdown-menu {
-    display: flex;
-    flex-direction: column;  /* Вертикальное расположение */
+    display: none; /* По умолчанию скрыто */
+    flex-direction: column; /* Меню будет вертикальным */
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease;
     position: absolute;
-    top: 100%;
+    top: 100%; /* Сдвигаем меню вниз от родительского элемента */
     left: 0;
     width: max-content;
     background-color: #fff;
@@ -72,30 +81,31 @@ body {
     min-width: 200px;
 }
 
-/* Убедитесь, что пункты меню располагаются вертикально */
 .nav-links .dropdown-menu li {
-    display: flex;
-    align-items: center;  /* Вертикальное выравнивание */
-    justify-content: flex-start;  /* Горизонтальное выравнивание */
-    padding: 10px 20px;  /* Отступы */
+    margin-right: 0; /* Убираем горизонтальные отступы */
+    display: block; /* Меню элементы в столбик */
     width: 100%;
+    padding: 10px 20px;
 }
 
-/* Плавный переход для отображения выпадающего меню */
+.nav-links .dropdown-menu li a {
+    padding: 0;
+    color: #333;
+}
+
 .nav-links .dropdown:hover .dropdown-menu {
-    visibility: visible;
+    visibility: visible; /* Показываем меню при наведении */
     opacity: 1;
+    display: block;  /* Меню отображается */
 }
 
-/* Стиль для стрелочки */
-.dropdown-arrow {
+.nav-links .dropdown-arrow {
     font-size: 1rem;
     transition: transform 0.3s ease;  /* Плавное вращение стрелки */
     display: inline-block;
     margin-left: 5px;
 }
 
-/* При наведении на пункт с выпадающим меню, стрелка поворачивается */
 .nav-links .dropdown:hover .dropdown-arrow {
     transform: rotate(180deg); /* Поворот стрелки */
 }
@@ -173,6 +183,7 @@ body {
 body {
     padding-top: 80px; /* высота хедера */
 }
+
 
 .hero {
     text-align: center;
@@ -460,119 +471,6 @@ body {
         display: flex;
     }
 
-        .nav-links .mobile-menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #fff;
-        width: 100%;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-    }
-
-    .nav-links .mobile-menu li {
-        border-bottom: 1px solid #eee;
-    }
-
-    .nav-links .mobile-menu li a {
-        padding: 15px;
-        text-align: center;
-    }
-
-    .nav-links .mobile-menu-toggle.active + .mobile-menu {
-        display: flex;
-    }
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #006400;
-    color: #fff;
-}
-
-.footer-content nav ul {
-    display: flex;
-}
-
-.footer-content nav ul li {
-    margin-right: 20px;
-}
-
-.footer-content nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.footer-content .social-icons {
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-content .social-icons a {
-    margin-right: 10px;
-    color: #fff;
-    text-decoration: none;
-}
-
-.footer-content .social-icons a:hover {
-    color: #006400;
-}
-
-.footer-content .social-icons img {
-    width: 20px;
-    height: 20px;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-@media (max-width: 768px) {
-    .columns-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .mission .content, .who-we-are .content {
-        max-width: 90%;
-        text-align: center;
-    }
-
-    .arrow-2 {
-        top: 15vh;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .hero h1 {
-        font-size: 1.5rem;
-    }
-
-    .subtitle {
-        font-size: 0.75rem;
-    }
-
-    .btn {
-        padding: 5px 10px;
-        font-size: 0.75rem;
-    }
-
-    .nav-links ul {
-        display: none;
-    }
-
-    .nav-links .mobile-menu-toggle {
-        display: flex;
-    }
-
     .nav-links .mobile-menu {
         display: none;
         flex-direction: column;
@@ -594,7 +492,7 @@ body {
         text-align: center;
     }
 
-    .nav-links .mobile-menu-toggle.active + .mobile-menu {
+    .mobile-menu-toggle.active + .mobile-menu {
         display: flex;
     }
 }
