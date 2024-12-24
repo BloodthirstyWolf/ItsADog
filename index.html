@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Пример страницы</title>
   <style>
+    @font-face {
+      font-family: 'CustomFont';
+      src: url('18094.ttf') format('truetype');
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'CustomFont', Arial, sans-serif;
       background-color: #EFF1EE;
     }
 
@@ -27,7 +32,9 @@
     }
 
     .logo {
-      height: 40px;
+      width: 200px;
+      height: 70px;
+      object-fit: contain;
     }
 
     .nav-links {
