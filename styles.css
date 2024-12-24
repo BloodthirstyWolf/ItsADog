@@ -42,11 +42,14 @@ body {
 }
 
 .nav-links ul {
-     list-style-type: none;
+    list-style-type: none;
     margin: 0;
     padding: 0;
-   flex-direction: column;
+    display: flex;  /* Горизонтальное выравнивание */
+    align-items: center;
 }
+
+
 .nav-links ul li {
    margin-right: 20px; /* Этот стиль для главного списка навигации */
     display: inline-block; /* Убедитесь, что элементы будут располагаться в ряд в основном меню */
@@ -55,29 +58,29 @@ body {
 }
 
 .nav-links ul li a {
-    text-decoration: none;
+     text-decoration: none;
     color: #2A562B;
     font-size: 1rem;
     font-weight: bold;
     display: block;
     padding: 10px;
-    position: relative;
 }
 
 .nav-links .dropdown-menu {
-    display: flex;
-    flex-direction: column; /* Вертикальное расположение пунктов меню */
+  display: flex;
+    flex-direction: column;  /* Вертикальное расположение */
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.3s ease;
     position: absolute;
     top: 100%;
     left: 0;
+    width: max-content;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
     z-index: 1000;
     min-width: 200px;
+    transition: opacity 0.3s ease;
 }
 
 
