@@ -249,58 +249,82 @@
       }
 
       /* Стили для гамбургер-меню */
-      .hamburger-menu {
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-links {
+        display: none; /* Скрываем обычное меню */
+      }
+
+      .hamburger {
         display: block;
         cursor: pointer;
-        z-index: 1001;
+        width: 30px;
+        height: 20px;
+        position: relative;
       }
 
-      .hamburger-menu div {
-        width: 35px;
-        height: 5px;
+      .hamburger div {
         background-color: #29562B;
-        margin: 6px 0;
-        transition: 0.4s;
+        height: 4px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        transition: transform 0.3s ease-in-out;
       }
 
-      .side-menu {
+      .hamburger div:nth-child(1) {
+        top: 0;
+      }
+
+      .hamburger div:nth-child(2) {
+        top: 8px;
+      }
+
+      .hamburger div:nth-child(3) {
+        top: 16px;
+      }
+
+      .sidebar {
         position: fixed;
         top: 0;
-        right: -350px; /* Меню скрыто справа */
+        right: -350px;
         width: 350px;
         height: 100%;
-        background-color: white;
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
+        background-color: #FFFFFF;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+        transition: right 0.3s ease-in-out;
         padding: 20px;
-        z-index: 1000;
       }
 
-      .side-menu.active {
-        right: 0; /* Когда меню активно, оно появляется */
+      .sidebar.open {
+        right: 0;
       }
 
-      .side-menu .logo {
-        width: 150px;
-        height: 50px;
+      .sidebar .close-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 30px;
+        color: #29562B;
+        cursor: pointer;
+      }
+
+      .sidebar .nav-link {
+        display: block;
         margin-bottom: 20px;
-      }
-
-      .side-menu .nav-links {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .side-menu .nav-link {
-        font-size: 20px;
+        font-size: 18px;
+        text-transform: uppercase;
         color: #29562B;
         text-decoration: none;
-        text-transform: uppercase;
       }
 
-      .side-menu .nav-link:hover {
-        color: #77b56e; /* Цвет при наведении */
+      .sidebar .nav-link:hover {
+        color: #5a9f67;
       }
     }
 
@@ -311,25 +335,13 @@
     <div class="header-container">
       <img src="logo.svg" alt="Логотип" class="logo">
       <nav class="nav-links">
-        <div class="dropdown">
-          <a href="#" class="nav-link">О нас</a>
-          <div class="dropdown-content">
-            <a href="#">Наша команда</a>
-            <a href="#">История</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a href="#" class="nav-link">Наша деятельность</a>
-          <div class="dropdown-content">
-            <a href="#">Проекты</a>
-            <a href="#">Услуги</a>
-          </div>
-        </div>
+        <a href="#" class="nav-link">О нас</a>
+        <a href="#" class="nav-link">Наша деятельность</a>
         <a href="articles.html" class="nav-link">Статьи</a>
         <a href="contacts.html" class="nav-link">Контакты</a>
         <a href="partners.html" class="nav-link">Партнёры</a>
       </nav>
-      <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="hamburger" onclick="toggleMenu()">
         <div></div>
         <div></div>
         <div></div>
@@ -337,19 +349,17 @@
     </div>
   </header>
 
-  <!-- Боковое меню -->
-  <div class="side-menu" id="sideMenu">
-    <img src="logo.svg" alt="Логотип" class="logo">
-    <div class="nav-links">
-      <a href="#" class="nav-link">О нас</a>
-      <a href="#" class="nav-link">Наша деятельность</a>
-      <a href="articles.html" class="nav-link">Статьи</a>
-      <a href="contacts.html" class="nav-link">Контакты</a>
-      <a href="partners.html" class="nav-link">Партнёры</a>
-    </div>
+  <!-- Сайдбар для гамбургер-меню -->
+  <div class="sidebar" id="sidebar">
+    <span class="close-btn" onclick="toggleMenu()">&times;</span>
+    <a href="#" class="nav-link">О нас</a>
+    <a href="#" class="nav-link">Наша деятельность</a>
+    <a href="articles.html" class="nav-link">Статьи</a>
+    <a href="contacts.html" class="nav-link">Контакты</a>
+    <a href="partners.html" class="nav-link">Партнёры</a>
   </div>
 
-  <main>
+ <main>
     <div class="container1">
       <!-- Первый ряд -->
       <div class="row">
@@ -383,7 +393,8 @@
 
   <script>
     function toggleMenu() {
-      document.getElementById('sideMenu').classList.toggle('active');
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
     }
   </script>
 </body>
