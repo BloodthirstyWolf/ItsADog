@@ -74,6 +74,7 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       padding: 10px;
       z-index: 999;
+      white-space: nowrap;
     }
 
     .dropdown-content a {
@@ -117,25 +118,26 @@
     .row {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Элементы выравниваются по правому краю */
+  justify-content: flex-end; /* Выравнивание элементов по правому краю */
   gap: 20px;
   margin-bottom: 20px;
 }
 
 .row .title {
-  width: 61%; /* Заголовок занимает 61% ширины контейнера */
-  text-align: center; /* Центрируем заголовок внутри этого пространства */
-  font-size: 5vw;
+  width: 100%; /* Заголовок займет всю ширину контейнера */
+  text-align: center; /* Центрируем заголовок внутри контейнера */
+  font-size: 5vw; /* Размер шрифта */
   font-weight: bold;
   text-transform: uppercase;
   color: #2A562B; /* Цвет заголовка */
 }
 
+
     .row .button {
       background-color: transparent;
       border: 2px solid #29562B;
       border-radius: 50px; /* Закругленные углы */
-      padding: 1.3% 2%; /* Пропорциональные отступы */
+      padding: 1.5% 3%; /* Пропорциональные отступы */
       color: #29562B;
       font-size: 16px;
       text-transform: uppercase;
@@ -198,9 +200,9 @@
       background-color: #29562B;
       border: 2px solid #29562B;
       border-radius: 50px; /* Закругленные углы */
-      padding: 3% 3%; /* Пропорциональные отступы */
+      padding: 5% 3%; /* Пропорциональные отступы */
       color: white;
-      font-size: 0.8vw; /* Размер шрифта в vw */
+      font-size: 1vw; /* Размер шрифта в vw */
       text-transform: uppercase;
       cursor: pointer;
       display: inline-block;
@@ -228,10 +230,6 @@
       .container1 {
         width: 100%; /* Контейнер должен занять всю ширину */
         margin: 20px 0; /* Уменьшаем отступы */
-     
-        .logo {
-      width: 140px;
-      height: 50px;
       }
 
       .photo-text-row {
@@ -303,7 +301,7 @@
         display: block;
         position: fixed;
         top: 0;
-        right: -100vw;
+        right: -90vw;
         width: 350px;
         height: 100%;
         background-color: #FFFFFF;
@@ -385,7 +383,7 @@
       <!-- Первый ряд -->
       <div class="row">
         <div class="title">ОБУЧАЕМ СОБАК</div>
-        <button class="button">Стать волонтером &#8594;</button>
+        <button class="button">Стать волонтером →</button>
       </div>
 
       <!-- Второй ряд -->
@@ -406,7 +404,7 @@
           <div class="description">
             Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями.
           </div>
-          <button class="button">Получить помощь &#8594;</button>
+          <button class="button">Получить помощь</button>
         </div>
       </div>
     </div>
