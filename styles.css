@@ -1,3 +1,4 @@
+/* Общие стили */
 @font-face {
     font-family: 'mr_ITCSerifGothic';
     src: url('18094.ttf') format('truetype');
@@ -62,20 +63,22 @@ body {
 }
 
 .nav-links .dropdown {
-    position: relative;
+    position: relative; /* Позиционируем относительно родителя */
 }
 
 .nav-links .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 100%; /* Располагаем меню ниже родительского элемента */
     left: 0;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: max-content;
-    z-index: 1000;
-    grid-template-columns: 1fr; /* Делаем список вертикальным */
     padding: 0;
+    z-index: 999; /* Чтобы меню было выше других элементов */
+    border-radius: 5px; /* Немного скруглим углы */
+    display: grid;
+    grid-template-columns: 1fr; /* Вертикальное расположение */
 }
 
 .nav-links .dropdown-menu li {
@@ -168,299 +171,49 @@ body {
     }
 }
 
-/* Отступ сверху для контейнера */
+/* Добавим отступ сверху для контейнера */
 body {
     margin-top: 80px; /* Замените 80px на высоту вашего хедера */
 }
 
-/* Добавим отступ сверху для всего контента */
-body {
-    padding-top: 80px; /* высота хедера */
+/* Стили для выпадающих меню с абсолютным позиционированием */
+.nav-links .dropdown-menu {
+    position: absolute; /* Позиционируем выпадающее меню абсолютно относительно родительского элемента */
+    top: 100%; /* Это заставит меню выпадать вниз */
+    left: 0;
+    display: none;
+    background-color: #fff;
+    padding: 10px 0;
+    z-index: 9999; /* Чтобы меню было выше других элементов */
+    width: auto;
+    min-width: 160px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-
-.hero {
-    text-align: center;
-    position: relative;
-    padding: 40px 20px;
-    overflow: hidden;
+.nav-links .dropdown:hover .dropdown-menu {
+    display: block; /* Показываем меню при наведении */
 }
 
-.hero h1 {
-    font-size: 3rem;
-    color: #006400;
-    line-height: 1;
-    z-index: 2;
-    margin: 10px 0;
-}
-
-.bottom-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.left-column, .right-column {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-image {
-    max-width: 100%;
-    height: auto;
-    z-index: 1;
-}
-
-.right-column p.subtitle {
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    line-height: 1.6;
-    max-width: 100%;
-    overflow-wrap: break-word;
-    white-space: pre-line;
-}
-
-.subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    z-index: 2;
-}
-
-.btn {
-    padding: 10px 30px;
-    background-color: #006400;
-    color: #fff;
-    margin-top: -10px;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 20px;
-    z-index: 2;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #004d00;
-    transform: scale(1.05);
-}
-
-/* Стиль для стрелочки */
-.dropdown-arrow {
-    font-size: 1rem;
-    transition: transform 0.3s ease;  /* Плавное вращение стрелки */
-    display: inline-block;
-    margin-left: 5px;
-}
-.dropdown .dropdown-content {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.dropdown:hover > .dropdown-content {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* При активном состоянии, стрелка поворачивается */
-.dropdown.active .dropdown-arrow {
-    transform: rotate(180deg);  /* Поворот на 180 градусов */
-}
-
-/* CSS для работы с мобильной версией */
-@media (max-width: 768px) {
-    .nav-links ul {
-        display: none;
-        flex-direction: column;
-    }
-
-    .nav-links .mobile-menu-toggle.active + .nav-links ul {
-        display: flex;
-    }
-
-    .dropdown {
-        position: relative;
-    }
-
-    .dropdown-content {
-        position: absolute;
-        top: 30px;
-        left: 0;
-        width: 100%;
-    }
-}
-
-.mission, .who-we-are {
-    flex: 1;
-    text-align: left;
-    padding: 40px 20px;
-}
-
-.mission .content, .who-we-are .content {
-    max-width: 100%;
-    text-align: left;
-}
-
-.mission .content h2, .who-we-are .content h2 {
-    font-size: 2rem;
-    color: #2A562B;
-    margin-bottom: 20px;
-}
-
-.mission .content p, .who-we-are .content p {
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-.mission .content .btn, .who-we-are .content .btn {
+.nav-links .dropdown-menu li {
+    display: block;
     padding: 10px 20px;
-    background-color: #006400;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 20px;
-    display: inline-block;
-    transition: background-color 0.3s ease;
+    white-space: nowrap;
 }
 
-.mission .content .btn:hover, .who-we-are .content .btn:hover {
-    background-color: #004d00;
-}
-
-.columns-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 20px 0;
-    position: relative;
-    flex-wrap: wrap;
-}
-
-.arrow-2 {
-    position: absolute;
-    top: 10vh;
-    left: 30vw;
-    width: 15vw;
-    height: auto;
-    z-index: 2;
-}
-
-.stats {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.stats h3 {
+.nav-links .dropdown-menu li a {
     color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
 }
 
-.stat-block {
-    margin: 20px;
+.nav-links .dropdown-menu li a:hover {
+    background-color: #f1f1f1;
+    color: #2A562B;
 }
 
-.who-we-help .help-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.help-content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 20px;
-}
-
-.help-content ul li {
-    margin: 10px 0;
-}
-
-.faq details {
-    margin: 20px 0;
-    text-align: left;
-    cursor: pointer;
-}
-
-.info-blocks {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.info-block {
-    margin: 20px;
-    width: 200px;
-    text-align: center;
-}
-
-.info-block img {
-    width: 100%;
-    height: auto;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #006400;
-    color: #fff;
-}
-
-.footer-content nav ul {
-    display: flex;
-}
-
-.footer-content nav ul li a {
-    color: #fff;
-}
-
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
+/* Мобильное меню */
 @media (max-width: 768px) {
-    .columns-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .mission .content, .who-we-are .content {
-        max-width: 90%;
-        text-align: center;
-    }
-
-    .arrow-2 {
-        top: 15vh;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .hero h1 {
-        font-size: 1.5rem;
-    }
-
-    .subtitle {
-        font-size: 0.75rem;
-    }
-
-    .btn {
-        padding: 5px 10px;
-        font-size: 0.75rem;
-    }
-
-    .nav-links ul {
-        display: none;
-    }
-
     .nav-links .mobile-menu-toggle {
         display: flex;
     }
