@@ -101,31 +101,30 @@
     .container1 {
       width: 90%;
       max-width: 1200px;
-      margin: 50px -5%; /* Сдвигаем контейнер влево */
+      margin: 50px -5%;
       padding: 20px;
     }
 
     .row {
       display: flex;
       align-items: center;
-      justify-content: flex-end; /* Выравнивание по правому краю */
-      gap: 20px;
-      margin-bottom: 10px; /* Уменьшено расстояние между рядами */
+      justify-content: space-between; /* Добавлено, чтобы элементы располагались по бокам */
+      margin-bottom: 20px;
     }
 
     .row .title {
-      font-size: 4em; /* Увеличен размер текста */
+      font-size: clamp(2.5rem, 5vw, 4em);
       font-weight: bold;
       text-transform: uppercase;
       text-align: center;
-      color: #2A562B; /* Цвет заголовка */
+      color: #2A562B;
     }
 
     .row .button {
       background-color: transparent;
       border: 2px solid #29562B;
-      border-radius: 50px; /* Закругленные углы */
-      padding: 1.3% 2%; /* Пропорциональные отступы */
+      border-radius: 50px;
+      padding: 1.3% 2%;
       color: #29562B;
       font-size: 16px;
       text-transform: uppercase;
@@ -139,26 +138,41 @@
       color: #FFFFFF;
     }
 
-    .row .highlight {
+    .image-text-row {
       display: flex;
       align-items: center;
-      justify-content: flex-end; /* Выравнивание по правому краю */
-      position: relative;
+      justify-content: space-between; /* Размещение изображения и текста по бокам */
     }
 
-    .row .highlight img {
-      width: 10%; /* Установлена ширина 10% */
-      height: 10%; /* Установлена высота 10% */
-      margin-right: 20px; /* Отступ справа */
-      margin-top: -5%; /* Отрицательный отступ сверху */
+    .image-text-row img {
+      width: 40vw;
+      height: auto;
+      margin-right: 20px; /* Отступ между изображением и текстом */
     }
 
-    .row .highlight .highlight-text {
-      font-size: 4em; /* Увеличен размер текста */
-      font-weight: bold;
+    .image-text-row .text {
+      font-size: 1.2em; /* Размер текста */
+      color: #2A562B;
+      line-height: 1.5;
+      max-width: 55%; /* Ограничение ширины текста */
+    }
+
+    /* Кнопка "получить помощь" */
+    .get-help-button {
+      background-color: #29562B;
+      border: 2px solid #29562B;
+      border-radius: 50px;
+      padding: 1.3% 2%;
+      color: white;
+      font-size: 16px;
       text-transform: uppercase;
-      text-align: right;
-      color: #2A562B; /* Цвет заголовка */
+      cursor: pointer;
+      display: inline-block;
+      margin-top: 20px; /* Отступ сверху */
+    }
+
+    .get-help-button:hover {
+      background-color: #2A562B;
     }
 
   </style>
@@ -204,7 +218,7 @@
           <div class="highlight-text">ПОМОГАТЬ ЛЮДЯМ</div>
         </div>
       </div>
-    </div>
-  </main>
-</body>
-</html>
+
+      <!-- Новый блок с изображением и текстом -->
+      <div class="image-text-row">
+       
