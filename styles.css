@@ -44,30 +44,23 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;  /* Горизонтальное расположение */
-    align-items: center;
+    display: flex;
 }
 
 .nav-links ul li {
-    margin-right: 20px; /* Отступ между пунктами */
+    margin-right: 20px; /* Этот стиль для главного списка навигации */
+    display: inline-block; /* Убедитесь, что элементы будут располагаться в ряд в основном меню */
+    width: auto;
     position: relative;
 }
 
-.nav-links ul li a {
-    text-decoration: none;
-    color: #2A562B;
-    font-size: 1rem;
-    font-weight: bold;
-    display: block;
-    padding: 10px;
-}
-
-/* Стили для выпадающего меню (подменю) */
+/* Стили для выпадающего меню */
 .nav-links .dropdown-menu {
     display: flex;
     flex-direction: column;  /* Вертикальное расположение */
     visibility: hidden;
     opacity: 0;
+    transition: opacity 0.3s ease;
     position: absolute;
     top: 100%;
     left: 0;
@@ -77,33 +70,32 @@ body {
     padding: 10px 0;
     z-index: 1000;
     min-width: 200px;
-    transition: opacity 0.3s ease;
 }
 
+/* Убедитесь, что пункты меню располагаются вертикально */
 .nav-links .dropdown-menu li {
-    display: block;  /* Каждый элемент в меню на новой строке */
-    padding: 10px 20px;
+    display: flex;
+    align-items: center;  /* Вертикальное выравнивание */
+    justify-content: flex-start;  /* Горизонтальное выравнивание */
+    padding: 10px 20px;  /* Отступы */
+    width: 100%;
 }
 
-.nav-links .dropdown-menu li a {
-    padding: 0;  /* Убираем лишние отступы */
-    color: #333;
+/* Плавный переход для отображения выпадающего меню */
+.nav-links .dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
 }
 
-/* Стили для стрелки */
-.nav-links .dropdown-arrow {
+/* Стиль для стрелочки */
+.dropdown-arrow {
     font-size: 1rem;
     transition: transform 0.3s ease;  /* Плавное вращение стрелки */
     display: inline-block;
     margin-left: 5px;
 }
 
-/* При наведении на родительский элемент выпадающего меню */
-.nav-links .dropdown:hover .dropdown-menu {
-    visibility: visible;
-    opacity: 1; /* Показываем меню */
-}
-
+/* При наведении на пункт с выпадающим меню, стрелка поворачивается */
 .nav-links .dropdown:hover .dropdown-arrow {
     transform: rotate(180deg); /* Поворот стрелки */
 }
@@ -149,7 +141,6 @@ body {
 @media (max-width: 768px) {
     .nav-links ul {
         display: none;
-        flex-direction: column;
     }
 
     .nav-links .mobile-menu-toggle {
@@ -162,23 +153,10 @@ body {
 
     .nav-links .mobile-menu {
         display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #fff;
-        width: 100%;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
     }
 
-    .nav-links .mobile-menu li {
-        border-bottom: 1px solid #eee;
-    }
-
-    .nav-links .mobile-menu li a {
-        padding: 15px;
-        text-align: center;
+    .nav-links ul li {
+        margin: 10px 0;
     }
 
     .mobile-menu-toggle.active + .mobile-menu {
@@ -376,26 +354,247 @@ body {
     color: #333;
 }
 
-.statistics-container {
+.stat-block {
+    margin: 20px;
+}
+
+.who-we-help .help-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.help-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 20px;
+}
+
+.help-content ul li {
+    margin: 10px 0;
+}
+
+.faq details {
+    margin: 20px 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.info-blocks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.info-block {
+    margin: 20px;
+    width: 200px;
+    text-align: center;
+}
+
+.info-block img {
+    width: 100%;
+    height: auto;
+}
+
+.footer-content {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
-}
-
-.stat-box {
-    width: 30%;
+    align-items: center;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    background-color: #006400;
+    color: #fff;
 }
 
-.stat-box h4 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+.footer-content nav ul {
+    display: flex;
 }
 
-.stat-box p {
-    font-size: 2rem;
-    font-weight: bold;
+.footer-content nav ul li a {
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .columns-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mission .content, .who-we-are .content {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .arrow-2 {
+        top: 15vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.75rem;
+    }
+
+    .btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+
+    .nav-links ul {
+        display: none;
+    }
+
+    .nav-links .mobile-menu-toggle {
+        display: flex;
+    }
+
+        .nav-links .mobile-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #fff;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-links .mobile-menu li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-links .mobile-menu li a {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .nav-links .mobile-menu-toggle.active + .mobile-menu {
+        display: flex;
+    }
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #006400;
+    color: #fff;
+}
+
+.footer-content nav ul {
+    display: flex;
+}
+
+.footer-content nav ul li {
+    margin-right: 20px;
+}
+
+.footer-content nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-content .social-icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-content .social-icons a {
+    margin-right: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-content .social-icons a:hover {
     color: #006400;
+}
+
+.footer-content .social-icons img {
+    width: 20px;
+    height: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+    .columns-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mission .content, .who-we-are .content {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .arrow-2 {
+        top: 15vh;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.75rem;
+    }
+
+    .btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+
+    .nav-links ul {
+        display: none;
+    }
+
+    .nav-links .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .nav-links .mobile-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #fff;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .nav-links .mobile-menu li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-links .mobile-menu li a {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .nav-links .mobile-menu-toggle.active + .mobile-menu {
+        display: flex;
+    }
 }
