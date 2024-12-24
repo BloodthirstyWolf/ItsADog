@@ -49,27 +49,21 @@ body {
 
 .nav-links ul li {
     margin-right: 20px; /* Этот стиль для главного списка навигации */
-    display: inline-block; /* Убедитесь, что элементы будут располагаться в ряд в основном меню */
-    width: auto;
     position: relative;
 }
 
 .nav-links ul li a {
     text-decoration: none;
-    color: #2A562B;
+    color: #2A562B; /* Темно-зеленый цвет */
     font-size: 1rem;
     font-weight: bold;
     display: block;
     padding: 10px;
-    position: relative;
 }
 
 .nav-links .dropdown-menu {
     display: none; /* По умолчанию скрыто */
     flex-direction: column; /* Меню будет вертикальным */
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease;
     position: absolute;
     top: 100%; /* Сдвигаем меню вниз от родительского элемента */
     left: 0;
@@ -94,8 +88,6 @@ body {
 }
 
 .nav-links .dropdown:hover .dropdown-menu {
-    visibility: visible; /* Показываем меню при наведении */
-    opacity: 1;
     display: block;  /* Меню отображается */
 }
 
@@ -106,11 +98,12 @@ body {
     margin-left: 5px;
 }
 
+/* Поворот стрелки при наведении */
 .nav-links .dropdown:hover .dropdown-arrow {
-    transform: rotate(180deg); /* Поворот стрелки */
+    transform: rotate(180deg);
 }
 
-/* Мобильное меню */
+/* Стили для мобильного меню */
 .nav-links .mobile-menu {
     display: none;
     flex-direction: column;
