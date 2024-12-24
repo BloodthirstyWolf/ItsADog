@@ -48,7 +48,9 @@ body {
 }
 
 .nav-links ul li {
-    margin-right: 20px;
+    margin-right: 20px; /* Этот стиль для главного списка навигации */
+    display: inline-block; /* Убедитесь, что элементы будут располагаться в ряд в основном меню */
+    width: auto;
     position: relative;
 }
 
@@ -59,13 +61,54 @@ body {
     font-weight: bold;
     display: block;
     padding: 10px;
+    position: relative;
 }
 
+.nav-links .dropdown {
+    position: relative;
+}
+
+.nav-links .dropdown-menu {
+    display: block; /* Вертикальное расположение меню */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 100%;  /* Позиционирование меню непосредственно под элементом */
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 200px;
+}
+
+.nav-links .dropdown-menu li {
+    width: 100%;
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.nav-links .dropdown-menu li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Стрелочка для выпадающего меню */
 .nav-links .dropdown-arrow {
     font-size: 1rem;
     transition: transform 0.3s ease;
     display: inline-block;
     margin-left: 5px;
+}
+
+.nav-links .dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg); /* Поворот стрелки */
 }
 
 /* Мобильное меню */
@@ -103,51 +146,6 @@ body {
     height: 3px;
     background-color: #2A562B;
     margin: 4px 0;
-}
-
-/* Перемещаем выпадающее меню в отдельный блок */
-.dropdown-menu {
-    display: grid;
-    grid-template-columns: 1fr;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    position: absolute;
-    top: 100px; /* Расстояние от хедера */
-    left: 0;
-    width: max-content;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-    z-index: 1000;
-    min-width: 200px;
-}
-
-.dropdown-menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.dropdown-menu li {
-    display: block;
-    padding: 10px 20px;
-}
-
-.dropdown-menu li a {
-    padding: 0;
-    color: #333;
-}
-
-/* Показываем выпадающее меню при наведении на ссылку меню */
-.nav-links .dropdown:hover + .dropdown-menu {
-    visibility: visible;
-    opacity: 1;
-}
-
-/* Поворот стрелки при активном состоянии */
-.nav-links .dropdown:hover .dropdown-arrow {
-    transform: rotate(180deg);
 }
 
 /* Мобильная версия */
@@ -252,6 +250,52 @@ body {
 .btn:hover {
     background-color: #004d00;
     transform: scale(1.05);
+}
+
+/* Стиль для стрелочки */
+.dropdown-arrow {
+    font-size: 1rem;
+    transition: transform 0.3s ease;  /* Плавное вращение стрелки */
+    display: inline-block;
+    margin-left: 5px;
+}
+.dropdown .dropdown-content {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dropdown:hover > .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* При активном состоянии, стрелка поворачивается */
+.dropdown.active .dropdown-arrow {
+    transform: rotate(180deg);  /* Поворот на 180 градусов */
+}
+
+/* CSS для работы с мобильной версией */
+@media (max-width: 768px) {
+    .nav-links ul {
+        display: none;
+        flex-direction: column;
+    }
+
+    .nav-links .mobile-menu-toggle.active + .nav-links ul {
+        display: flex;
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-content {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 100%;
+    }
 }
 
 .mission, .who-we-are {
