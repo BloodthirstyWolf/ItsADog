@@ -30,11 +30,12 @@
     }
 
     .header-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
-    }
+  display: flex;
+  align-items: center; /* Центрируем элементы по вертикали */
+  width: 100%; /* Занимает всю ширину */
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
 
     .logo {
       width: 200px;
@@ -44,10 +45,12 @@
     }
 
     .nav-links {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
+  display: flex;
+  justify-content: flex-end; /* Расположим меню справа */
+  gap: 20px;
+  align-items: center; /* Центрируем по вертикали */
+  margin-left: auto; /* Это отталкивает меню вправо */
+}
 
     .nav-link {
       text-decoration: none;
