@@ -107,8 +107,9 @@
 
     .row {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: center; /* Центрирование элементов */
+      gap: 20px; /* Расстояние между заголовком и кнопкой */
       margin-bottom: 10px; /* Уменьшено расстояние между рядами */
     }
 
@@ -118,7 +119,6 @@
       text-transform: uppercase;
       text-align: center;
       color: #2A562B; /* Цвет заголовка */
-      flex-grow: 1;
     }
 
     .row .button {
@@ -132,8 +132,6 @@
       cursor: pointer;
       display: inline-block;
       transition: background-color 0.3s;
-      position: relative;
-      left: -20px; /* Сдвигаем кнопку влево с помощью left */
     }
 
     .row .button:hover {
