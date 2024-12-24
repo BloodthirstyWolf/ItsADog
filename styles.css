@@ -48,7 +48,7 @@ body {
 }
 
 .nav-links ul li {
-    margin-right: 20px; /* Этот стиль для главного списка навигации */
+    margin-right: 20px;
     position: relative;
 }
 
@@ -61,23 +61,25 @@ body {
     padding: 10px;
 }
 
+.nav-links .dropdown {
+    position: relative;
+}
+
 .nav-links .dropdown-menu {
-    display: none; /* По умолчанию скрыто */
-    flex-direction: column; /* Меню будет вертикальным */
+    display: none;
     position: absolute;
-    top: 100%; /* Сдвигаем меню вниз от родительского элемента */
+    top: 100%;
     left: 0;
-    width: max-content;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
+    width: max-content;
     z-index: 1000;
-    min-width: 200px;
+    grid-template-columns: 1fr; /* Делаем список вертикальным */
+    padding: 0;
 }
 
 .nav-links .dropdown-menu li {
-    margin-right: 0; /* Убираем горизонтальные отступы */
-    display: block; /* Меню элементы в столбик */
+    display: block;
     width: 100%;
     padding: 10px 20px;
 }
@@ -88,17 +90,16 @@ body {
 }
 
 .nav-links .dropdown:hover .dropdown-menu {
-    display: block;  /* Меню отображается */
+    display: block;
 }
 
 .nav-links .dropdown-arrow {
     font-size: 1rem;
-    transition: transform 0.3s ease;  /* Плавное вращение стрелки */
+    transition: transform 0.3s ease;
     display: inline-block;
     margin-left: 5px;
 }
 
-/* Поворот стрелки при наведении */
 .nav-links .dropdown:hover .dropdown-arrow {
     transform: rotate(180deg);
 }
