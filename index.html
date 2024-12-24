@@ -120,7 +120,7 @@
     }
 
     .row .title {
-      font-size: clamp(2.5rem, 5vw, 4em); /* Адаптивный размер шрифта */
+      font-size: 5vw; /* Размер шрифта для заголовка */
       font-weight: bold;
       text-transform: uppercase;
       text-align: center;
@@ -160,7 +160,7 @@
     }
 
     .row .highlight .highlight-text {
-      font-size: 4em; /* Увеличен размер текста */
+      font-size: 5vw; /* Размер шрифта для текста в блоке */
       font-weight: bold;
       text-transform: uppercase;
       text-align: right;
@@ -206,6 +206,36 @@
     .photo-text-row .button:hover {
       background-color: #29562B;
       color: #FFFFFF;
+    }
+
+    /* Медиазапрос для экранов шириной 1200px и меньше */
+    @media (max-width: 1200px) {
+      .container1 {
+        width: 80vw; /* Уменьшаем ширину контейнера */
+        margin: 50px 10%; /* Уменьшаем отступы */
+      }
+    }
+
+    /* Медиазапрос для экранов шириной 768px и меньше */
+    @media (max-width: 768px) {
+      .photo-text-row {
+        flex-direction: column; /* Элементы располагаются в столбец */
+        align-items: center; /* Выравнивание элементов по центру */
+      }
+
+      .photo-text-row img {
+        width: 80vw; /* Увеличиваем ширину изображения */
+        margin-bottom: 20px; /* Отступ снизу */
+      }
+
+      .photo-text-row .description {
+        max-width: 80vw; /* Расширяем ширину описания */
+        font-size: 4vw; /* Уменьшаем размер шрифта */
+      }
+
+      .photo-text-row .button {
+        width: 80vw; /* Увеличиваем ширину кнопки */
+      }
     }
 
   </style>
