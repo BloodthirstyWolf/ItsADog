@@ -36,11 +36,13 @@ body {
 }
 
 .nav-links {
+     flex-direction: column;
     display: flex;
     align-items: center;
 }
 
 .nav-links ul {
+    flex-direction: column
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -66,15 +68,13 @@ body {
 
 .nav-links .dropdown-menu {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap; /* Позволяет элементам переполняться */
+    flex-direction: column; /* Вертикальное расположение пунктов меню */
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s ease;
     position: absolute;
     top: 100%;
     left: 0;
-    width: max-content;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
