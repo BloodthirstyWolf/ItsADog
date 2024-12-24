@@ -38,7 +38,7 @@ body {
 
 .nav-links ul li {
     margin-right: 20px;
-    position: relative;
+    position: relative; /* Обеспечивает правильное позиционирование выпадающего меню */
 }
 
 .nav-links ul li a {
@@ -54,43 +54,36 @@ body {
     position: relative;
 }
 
-.nav-links .dropdown-menu {
-    display: none;
+.nav-links .dropdown-content {
+    display: none; /* Скрыто по умолчанию */
     position: absolute;
-    top: 100%; /* Меню будет располагаться ниже */
+    top: 100%; /* Меню будет расположено ниже пункта меню */
     left: 0;
     background-color: #fff;
-    width: 200px; /* Задайте нужную ширину для выпадающего меню */
+    width: 200px; /* Ширина выпадающего меню */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 2000; /* Поверх остальных элементов */
+    z-index: 2000; /* Помещаем меню поверх других элементов */
     padding: 0;
 }
 
-.nav-links .dropdown-menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+.nav-links .dropdown-content li {
+    display: block; /* Все элементы в меню располагаются вертикально */
 }
 
-.nav-links .dropdown-menu ul li {
-    display: block;
-}
-
-.nav-links .dropdown-menu ul li a {
+.nav-links .dropdown-content li a {
     padding: 10px 20px;
     color: #333;
     text-decoration: none;
 }
 
-.nav-links .dropdown:hover .dropdown-menu {
-    display: block; /* Показываем меню при наведении */
+.nav-links .dropdown:hover .dropdown-content {
+    display: block; /* Показываем меню при наведении на родительский элемент */
 }
 
 .nav-links .dropdown:hover .dropdown-arrow {
-    transform: rotate(180deg);
+    transform: rotate(180deg); /* Поворачиваем стрелку при наведении */
 }
 
-/* Стиль для стрелочки */
 .dropdown-arrow {
     font-size: 1rem;
     transition: transform 0.3s ease;  /* Плавное вращение стрелки */
