@@ -108,8 +108,8 @@
     .row {
       display: flex;
       align-items: center;
-      justify-content: flex-start; /* Выравнивание по левому краю */
-      gap: 20px; /* Расстояние между заголовком и кнопкой */
+      justify-content: flex-end; /* Выравнивание по правому краю */
+      gap: 20px;
       margin-bottom: 10px; /* Уменьшено расстояние между рядами */
     }
 
@@ -117,7 +117,7 @@
       font-size: 4em; /* Увеличен размер текста */
       font-weight: bold;
       text-transform: uppercase;
-      text-align: left;
+      text-align: center;
       color: #2A562B; /* Цвет заголовка */
     }
 
@@ -139,17 +139,10 @@
       color: #FFFFFF;
     }
 
-    /* Правый отступ для обоих элементов */
-    .row .title,
-    .row .button {
-      margin-right: auto; /* Автоматический отступ с правой стороны */
-    }
-
-    /* Второй ряд */
     .row .highlight {
       display: flex;
       align-items: center;
-      justify-content: flex-end; /* Сдвигаем к правому краю */
+      justify-content: flex-end; /* Выравнивание по правому краю */
       position: relative;
     }
 
