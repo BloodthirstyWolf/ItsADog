@@ -218,23 +218,89 @@
 
     /* Медиазапрос для экранов шириной 768px и меньше */
     @media (max-width: 768px) {
+      .container1 {
+        width: 100%; /* Контейнер должен занять всю ширину */
+        margin: 20px 0; /* Уменьшаем отступы */
+      }
+
       .photo-text-row {
-        flex-direction: column; /* Элементы располагаются в столбец */
-        align-items: center; /* Выравнивание элементов по центру */
+        flex-direction: column; /* Располагаем элементы в столбец */
+        align-items: center; /* Центрируем элементы */
+        gap: 10px; /* Отступ между элементами */
       }
 
       .photo-text-row img {
-        width: 80vw; /* Увеличиваем ширину изображения */
-        margin-bottom: 20px; /* Отступ снизу */
+        width: 80vw; /* Фото будет занимать 80% ширины экрана */
       }
 
       .photo-text-row .description {
-        max-width: 80vw; /* Расширяем ширину описания */
-        font-size: 4vw; /* Уменьшаем размер шрифта */
+        font-size: 1.8vw; /* Увеличиваем шрифт для читаемости */
+        max-width: 80vw; /* Увеличиваем ширину текста */
+        text-align: center; /* Выравнивание текста по центру */
       }
 
       .photo-text-row .button {
-        width: 80vw; /* Увеличиваем ширину кнопки */
+        width: 80vw; /* Кнопка будет занимать 80% ширины экрана */
+        margin-top: 10px; /* Отступ сверху */
+      }
+
+      .row .button {
+        display: none; /* Скрыть кнопку "Стать волонтером" */
+      }
+
+      /* Стили для гамбургер-меню */
+      .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      .hamburger-menu div {
+        width: 35px;
+        height: 5px;
+        background-color: #29562B;
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+
+      .side-menu {
+        position: fixed;
+        top: 0;
+        right: -350px; /* Меню скрыто справа */
+        width: 350px;
+        height: 100%;
+        background-color: white;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        padding: 20px;
+        z-index: 1000;
+      }
+
+      .side-menu.active {
+        right: 0; /* Когда меню активно, оно появляется */
+      }
+
+      .side-menu .logo {
+        width: 150px;
+        height: 50px;
+        margin-bottom: 20px;
+      }
+
+      .side-menu .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .side-menu .nav-link {
+        font-size: 20px;
+        color: #29562B;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .side-menu .nav-link:hover {
+        color: #77b56e; /* Цвет при наведении */
       }
     }
 
@@ -263,8 +329,25 @@
         <a href="contacts.html" class="nav-link">Контакты</a>
         <a href="partners.html" class="nav-link">Партнёры</a>
       </nav>
+      <div class="hamburger-menu" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
   </header>
+
+  <!-- Боковое меню -->
+  <div class="side-menu" id="sideMenu">
+    <img src="logo.svg" alt="Логотип" class="logo">
+    <div class="nav-links">
+      <a href="#" class="nav-link">О нас</a>
+      <a href="#" class="nav-link">Наша деятельность</a>
+      <a href="articles.html" class="nav-link">Статьи</a>
+      <a href="contacts.html" class="nav-link">Контакты</a>
+      <a href="partners.html" class="nav-link">Партнёры</a>
+    </div>
+  </div>
 
   <main>
     <div class="container1">
@@ -297,5 +380,11 @@
       </div>
     </div>
   </main>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('sideMenu').classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
