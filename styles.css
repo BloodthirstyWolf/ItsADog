@@ -1,23 +1,10 @@
-/* Общие стили */
-@font-face {
-    font-family: 'mr_ITCSerifGothic';
-    src: url('18094.ttf') format('truetype');
-}
-
 body {
-    font-family: 'mr_ITCSerifGothic', sans-serif;
     margin: 0;
     padding: 0;
-    padding-top: 80px; /* высота хедера */
+    font-family: 'mr_ITCSerifGothic', sans-serif;
     background-color: #EEF0ED;
-    background-image: url('background.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top center;
-    overflow-x: hidden;
 }
 
-/* Стили для хедера */
 .sticky-header {
     position: fixed;
     top: 0;
@@ -63,91 +50,58 @@ body {
 }
 
 .nav-links .dropdown {
-    position: relative; /* Позиционируем относительно родителя */
+    position: relative;
 }
 
 .nav-links .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%; /* Располагаем меню ниже родительского элемента */
+    top: 100%; /* Меню будет располагаться ниже */
     left: 0;
     background-color: #fff;
+    width: 200px; /* Задайте нужную ширину для выпадающего меню */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: max-content;
+    z-index: 2000; /* Поверх остальных элементов */
     padding: 0;
-    z-index: 999; /* Чтобы меню было выше других элементов */
-    border-radius: 5px; /* Немного скруглим углы */
-    display: grid;
-    grid-template-columns: 1fr; /* Вертикальное расположение */
 }
 
-.nav-links .dropdown-menu li {
+.nav-links .dropdown-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links .dropdown-menu ul li {
     display: block;
-    width: 100%;
-    padding: 10px 20px;
 }
 
-.nav-links .dropdown-menu li a {
-    padding: 0;
+.nav-links .dropdown-menu ul li a {
+    padding: 10px 20px;
     color: #333;
+    text-decoration: none;
 }
 
 .nav-links .dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.nav-links .dropdown-arrow {
-    font-size: 1rem;
-    transition: transform 0.3s ease;
-    display: inline-block;
-    margin-left: 5px;
+    display: block; /* Показываем меню при наведении */
 }
 
 .nav-links .dropdown:hover .dropdown-arrow {
     transform: rotate(180deg);
 }
 
-/* Стили для мобильного меню */
-.nav-links .mobile-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: #fff;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
-.nav-links .mobile-menu li {
-    border-bottom: 1px solid #eee;
-}
-
-.nav-links .mobile-menu li a {
-    padding: 15px;
-    text-align: center;
-}
-
-.nav-links .mobile-menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.nav-links .mobile-menu-toggle .hamburger {
-    width: 25px;
-    height: 3px;
-    background-color: #2A562B;
-    margin: 4px 0;
+/* Стиль для стрелочки */
+.dropdown-arrow {
+    font-size: 1rem;
+    transition: transform 0.3s ease;  /* Плавное вращение стрелки */
+    display: inline-block;
+    margin-left: 5px;
 }
 
 /* Мобильная версия */
 @media (max-width: 768px) {
     .nav-links ul {
         display: none;
+        flex-direction: column;
     }
 
     .nav-links .mobile-menu-toggle {
@@ -155,66 +109,6 @@ body {
     }
 
     .nav-links .mobile-menu-toggle.active + .mobile-menu {
-        display: flex;
-    }
-
-    .nav-links .mobile-menu {
-        display: none;
-    }
-
-    .nav-links ul li {
-        margin: 10px 0;
-    }
-
-    .mobile-menu-toggle.active + .mobile-menu {
-        display: flex;
-    }
-}
-
-/* Добавим отступ сверху для контейнера */
-body {
-    margin-top: 80px; /* Замените 80px на высоту вашего хедера */
-}
-
-/* Стили для выпадающих меню с абсолютным позиционированием */
-.nav-links .dropdown-menu {
-    position: absolute; /* Позиционируем выпадающее меню абсолютно относительно родительского элемента */
-    top: 100%; /* Это заставит меню выпадать вниз */
-    left: 0;
-    display: none;
-    background-color: #fff;
-    padding: 10px 0;
-    z-index: 9999; /* Чтобы меню было выше других элементов */
-    width: auto;
-    min-width: 160px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-.nav-links .dropdown:hover .dropdown-menu {
-    display: block; /* Показываем меню при наведении */
-}
-
-.nav-links .dropdown-menu li {
-    display: block;
-    padding: 10px 20px;
-    white-space: nowrap;
-}
-
-.nav-links .dropdown-menu li a {
-    color: #333;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 5px 10px;
-}
-
-.nav-links .dropdown-menu li a:hover {
-    background-color: #f1f1f1;
-    color: #2A562B;
-}
-
-/* Мобильное меню */
-@media (max-width: 768px) {
-    .nav-links .mobile-menu-toggle {
         display: flex;
     }
 
