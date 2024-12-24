@@ -165,9 +165,9 @@
     /* Новый стиль для секции с фото и текстом */
     .photo-text-row {
       display: flex;
+      justify-content: space-between; /* Распределяем элементы по двум колонкам */
       align-items: center;
-      justify-content: space-between; /* Выравниваем элементы по бокам */
-      gap: 20px;
+      gap: 20px; /* Отступ между колонками */
     }
 
     .photo-text-row img {
@@ -245,11 +245,16 @@
 
       <!-- Новый блок с фото и текстом -->
       <div class="photo-text-row">
+        <!-- Левый столбец с изображением -->
         <img src="person_with_dog.png" alt="Человек с собакой">
-        <div class="description">
-          Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями.
+        
+        <!-- Правый столбец с текстом и кнопкой -->
+        <div>
+          <div class="description">
+            Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями.
+          </div>
+          <button class="button">Получить помощь</button>
         </div>
-        <button class="button">Получить помощь</button>
       </div>
     </div>
   </main>
