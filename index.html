@@ -251,7 +251,16 @@
   flex-direction: column;
   gap: 15px; /* Отступ между элементами внутри столбца */
 }
+    
+.container1, .container2 {
+  flex: 1; /* Каждый столбец будет растягиваться, занимая равную ширину */
+  display: flex;
+  flex-direction: column; /* Внутри каждого контейнера элементы будут располагаться вертикально */
+}
 
+.container2 .button {
+  margin-top: auto; /* Для кнопки, чтобы она была внизу */
+}
 /* Заголовки */
 .container2 .title {
   font-size: 2.5vw; /* Размер шрифта для заголовков */
