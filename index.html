@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Дело в собаке</title>
   <style>
-   
-    @font-face {
+   @font-face {
       font-family: 'mr_ITCSerifGothic';
       src: url('18094.ttf') format('truetype');
     }
@@ -139,7 +138,7 @@
       background-color: transparent;
       border: 2px solid #29562B;
       border-radius: 50px; /* Закругленные углы */
-      padding: 1.5% 3%; /* Пропорциональные отступы */
+      padding: 2.5% 4%; /* Пропорциональные отступы */
       color: #29562B;
       font-size: 16px;
       text-transform: uppercase;
@@ -234,6 +233,7 @@
   text-align: left; /* Выравнивание текста по левому краю */
   color: #000000;
   box-sizing: border-box; /* Учитывать отступы и рамки в общей ширине */
+  position: relative;
 }
 
 /* Строка внутри контейнера, два столбца */
@@ -246,10 +246,12 @@
 
 /* Столбцы */
 .container2 .column {
-  width: 48%; /* Каждый столбец будет занимать по 48% ширины контейнера */
+  width: 42%; /* Каждый столбец будет занимать по 48% ширины контейнера */
   display: flex;
   flex-direction: column;
   gap: 15px; /* Отступ между элементами внутри столбца */
+  justify-content: flex-start;
+  height: auto;
 }
     
 .container1, .container2 {
@@ -283,12 +285,14 @@
   border-radius: 50px; /* Закругленные углы */
   padding: 1.5% 3%; /* Пропорциональные отступы */
   color: #29562B;
-  font-size: 16px;
+  font-size: 1.2vw;
   text-transform: uppercase;
   cursor: pointer;
   display: inline-block;
   transition: background-color 0.3s;
   white-space: nowrap;
+  position: absolute;
+  margin-top: 14%;
 }
 
 /* Ховер для кнопки */
@@ -503,6 +507,7 @@
     margin-top: auto; /* Помещаем кнопку в самый низ контейнера */
     }
 }
+  
   </style>
 </head>
 <body>
