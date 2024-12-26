@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Дело в собаке</title>
   <style>
-   @font-face {
+   
+    @font-face {
       font-family: 'mr_ITCSerifGothic';
       src: url('18094.ttf') format('truetype');
     }
@@ -138,7 +139,7 @@
       background-color: transparent;
       border: 2px solid #29562B;
       border-radius: 50px; /* Закругленные углы */
-      padding: 2.5% 4%; /* Пропорциональные отступы */
+      padding: 1.5% 3%; /* Пропорциональные отступы */
       color: #29562B;
       font-size: 16px;
       text-transform: uppercase;
@@ -233,7 +234,6 @@
   text-align: left; /* Выравнивание текста по левому краю */
   color: #000000;
   box-sizing: border-box; /* Учитывать отступы и рамки в общей ширине */
-  position: relative;
 }
 
 /* Строка внутри контейнера, два столбца */
@@ -246,23 +246,12 @@
 
 /* Столбцы */
 .container2 .column {
-  width: 42%; /* Каждый столбец будет занимать по 48% ширины контейнера */
+  width: 48%; /* Каждый столбец будет занимать по 48% ширины контейнера */
   display: flex;
   flex-direction: column;
   gap: 15px; /* Отступ между элементами внутри столбца */
-  justify-content: flex-start;
-  height: auto;
-}
-    
-.container1, .container2 {
-  flex: 1; /* Каждый столбец будет растягиваться, занимая равную ширину */
-  display: flex;
-  flex-direction: column; /* Внутри каждого контейнера элементы будут располагаться вертикально */
 }
 
-.container2 .button {
-  margin-top: auto; /* Для кнопки, чтобы она была внизу */
-}
 /* Заголовки */
 .container2 .title {
   font-size: 2.5vw; /* Размер шрифта для заголовков */
@@ -285,14 +274,12 @@
   border-radius: 50px; /* Закругленные углы */
   padding: 1.5% 3%; /* Пропорциональные отступы */
   color: #29562B;
-  font-size: 1.2vw;
+  font-size: 16px;
   text-transform: uppercase;
   cursor: pointer;
   display: inline-block;
   transition: background-color 0.3s;
   white-space: nowrap;
-  position: absolute;
-  margin-top: 14%;
 }
 
 /* Ховер для кнопки */
@@ -355,7 +342,7 @@
 }
 
       .row .title {
-   font-size: 5vw;
+   font-size: 10vw;
    white-space: howrap;
       }
 
@@ -476,16 +463,7 @@
 
 
 /* Стили для второго контейнера */
-      
-  .container2 {
-  padding: 0 2%;
-    
-  .container2 .row {
-    flex-direction: column; 
-    align-items: center;
-    gap: 10px;
-  }
-
+     /* Для мобильных устройств, сделаем элементы в колонках, а не в строках */
   .container2 .row {
     flex-direction: column;
     align-items: center;
@@ -497,21 +475,17 @@
   }
 
   .container2 .title {
-    font-size: 6vw; 
+    font-size: 6vw; /* Увеличим размер заголовков */
   }
 
   .container2 .description {
-    font-size: 2.5vw;
+    font-size: 4vw; /* Увеличим размер описания */
   }
 
   .container2 .button {
-    font-size: 3vw; 
-    display: block; 
-    margin-top: 30%;
-    padding: 5% 30%;
-    }
+    font-size: 3vw; /* Увеличим размер шрифта кнопки */
+  }
 }
-  
   </style>
 </head>
 <body>
