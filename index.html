@@ -465,7 +465,11 @@
 
 
 /* Стили для второго контейнера */
-     /* Для мобильных устройств, сделаем элементы в колонках, а не в строках */
+ .container2 {
+    position: relative
+  }
+
+      
   .container2 .row {
     flex-direction: column;
     align-items: center;
@@ -486,6 +490,8 @@
 
   .container2 .button {
     font-size: 3vw; /* Увеличим размер шрифта кнопки */
+    position: absolute;
+  margin-top: 11%;
   }
 }
   </style>
