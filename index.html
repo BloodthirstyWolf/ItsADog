@@ -291,38 +291,29 @@
 }
 
 
-
     
 
 
 
-
-
     
 
 
-
-
-
-
-
-
-
-
-    /* Cтили для третьего контейнера */
+    /* Основной стиль для контейнера */
 .container3 {
-  background-color: #f0f0f0;
-  padding: 10%;
+  background-color: #f0f0f0; /* Цвет фона */
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
+  height: 100vh; /* или другой размер, который вам нужен */
+}
 
 .statistic {
   display: flex;
   justify-content: space-between;
-  width: 60%;
-  gap: 25%;
+  width: 100%;
+  max-width: 600px; /* Ограничение ширины контейнера */
+}
 
 .statistic-item {
   background-color: #f0f0f0; /* Цвет фона прямоугольника */
@@ -350,7 +341,7 @@
 
 
 
-  
+    
     /* Медиазапрос для экранов шириной 1200px и меньше */
     @media (max-width: 1200px) {
       .container1 {
@@ -551,30 +542,6 @@
     font-size: 3vw; /* Увеличим размер шрифта кнопки */
     
   }
-
-
-
-
-
-
-
-
-
-      
-           /* Мобильные стили для третьего контейнера */
-.container3 {
-  background-color: #f0f0f0;
-  padding: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-
-.statistic {
-  display: flex;
-  justify-content: space-between;
-  width: 60%;
-  gap: 25%;
 }
   </style>
 </head>
@@ -667,8 +634,7 @@
     </div>
   </div>
 </div>
-
-   <div class="container3">
+<div class="container3">
   <div class="statistic">
     <div class="statistic-item">
       <span class="number">14</span>
@@ -687,7 +653,7 @@
     </div>
   </div>
 </div>
-
+   
 
   </main>
 
