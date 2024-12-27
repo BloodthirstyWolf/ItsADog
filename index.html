@@ -293,7 +293,64 @@
 
 
     
+
+
+
+
+
     
+
+
+
+
+
+
+
+
+
+
+    /* Cтили для третьего контейнера */
+.container3 {
+  background-color: #f0f0f0;
+  padding: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+
+.statistic {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  gap: 25%;
+
+.statistic-item {
+  background-color: #f0f0f0; /* Цвет фона прямоугольника */
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  width: 30%; /* Можно настроить в зависимости от вашего макета */
+}
+
+.number {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.divider {
+  margin: 10px 0;
+  border: 1px solid #ccc;
+}
+
+.label {
+  font-size: 16px;
+  color: #555;
+}
+
+
+
+
+  
     /* Медиазапрос для экранов шириной 1200px и меньше */
     @media (max-width: 1200px) {
       .container1 {
@@ -494,6 +551,30 @@
     font-size: 3vw; /* Увеличим размер шрифта кнопки */
     
   }
+
+
+
+
+
+
+
+
+
+      
+           /* Мобильные стили для третьего контейнера */
+.container3 {
+  background-color: #f0f0f0;
+  padding: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+
+.statistic {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  gap: 25%;
 }
   </style>
 </head>
@@ -583,6 +664,26 @@
       <div class="description">Мы команда энтузиастов, которые работают с собаками-помощниками, способными облегчить людям жизнь</div>
       <button class="button">Стать волонтером →</button>
       <div class="arrow-to-who-we-are"></div>
+    </div>
+  </div>
+</div>
+
+   <div class="container3">
+  <div class="statistic">
+    <div class="statistic-item">
+      <span class="number">14</span>
+      <hr class="divider">
+      <span class="label">Кинологов</span>
+    </div>
+    <div class="statistic-item">
+      <span class="number">26</span>
+      <hr class="divider">
+      <span class="label">Благополучателей</span>
+    </div>
+    <div class="statistic-item">
+      <span class="number">39</span>
+      <hr class="divider">
+      <span class="label">Волонтеров</span>
     </div>
   </div>
 </div>
