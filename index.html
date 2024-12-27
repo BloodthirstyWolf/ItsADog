@@ -313,9 +313,102 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+    /* Cтили для третьего контейнера */
+.container3 {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f5f5f5; /* Цвет фона */
+  border-radius: 20px; /* Скругленные края */
+}
+
+.container3 .stats {
+  display: flex;
+  gap: 20px; /* Расстояние между блоками */
+  width: 100%;
+  justify-content: space-evenly; /* Равномерное распределение */
+}
+
+.container3 .stat {
+  background-color: #ffffff; /* Белый фон для каждого блока */
+  padding: 20px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container3 .stat .number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333333; /* Цвет текста */
+}
+
+.container3 .stat .label {
+  font-size: 1rem;
+  color: #666666;
+}
     
     
-    
+
+
+
+
+
+
+
+    /* Стили для четвертого контейнера */
+.container4 {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #ffffff;
+  gap: 20px;
+}
+
+.container4 .image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container4 .image-section .large-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px; /* Скругленные края */
+}
+
+.container4 .info-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container4 .info-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.container4 .info-block .icon {
+  width: 40px;
+  height: 40px;
+}
+
+.container4 .info-block .text {
+  font-size: 1rem;
+  color: #333333;
+}
     /* Медиазапрос для экранов шириной 1200px и меньше */
     @media (max-width: 1200px) {
       .container1 {
@@ -496,6 +589,14 @@
 ]
 
 
+
+
+
+
+
+
+
+      
 /* Стили для второго контейнера */
  .container2 {
     position: relative
@@ -534,6 +635,51 @@
     top: auto;
     bottom: 10px; /* Размещаем внизу контейнера */
     left: 10px; /* Подстраиваем позицию */
+  }
+
+
+
+
+
+
+
+
+
+
+     /* Cтили для третьего контейнера */
+     .container3 .stats {
+    flex-direction: column; /* Вертикальная ориентация */
+    gap: 10px;
+  }
+
+  .container3 .stat {
+    width: 100%; /* Растягиваем блоки */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+    /* Мобильная версия четввертого контейнера */
+  .container4 {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .container4 .image-section,
+  .container4 .info-section {
+    flex: none;
+    width: 100%;
+  }
+
+  .container4 .image-section .large-image {
+    width: 100%; /* Адаптация изображения */
   }
 }
   </style>
@@ -604,7 +750,7 @@
           <div class="description">
             Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями.
           </div>
-          <button class="button">Получить помощь</button>
+          <button class="button">Получить помощь → </button>
         </div>
             <div class="arrow-to-help"></div>
       </div>
@@ -628,6 +774,43 @@
   </div>
 </div>
 
+<div class="container3">
+  <div class="stats">
+    <div class="stat">
+      <p class="number">14</p>
+      <p class="label">Кинологов</p>
+    </div>
+    <div class="stat">
+      <p class="number">26</p>
+      <p class="label">Благополучателей</p>
+    </div>
+    <div class="stat">
+      <p class="number">64</p>
+      <p class="label">Волонтеров</p>
+    </div>
+  </div>
+</div>
+
+
+   <div class="container4">
+  <div class="image-section">
+    <img src="large-image.png" alt="Большое изображение" class="large-image">
+  </div>
+  <div class="info-section">
+    <div class="info-block">
+      <img src="icon1.svg" alt="Иконка 1" class="icon">
+      <p class="text">Гражданам РФ, достигшим 18 лет</p>
+    </div>
+    <div class="info-block">
+      <img src="icon2.svg" alt="Иконка 2" class="icon">
+      <p class="text">У которых есть собака, подходящая для работы, или возможность её приобрести</p>
+    </div>
+    <div class="info-block">
+      <img src="icon3.svg" alt="Иконка 3" class="icon">
+      <p class="text">Имеющим хронические заболевания, находящимся под контролем врача</p>
+    </div>
+  </div>
+</div>
 
   </main>
 
