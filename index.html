@@ -371,48 +371,61 @@
 
     /* Стили для четвертого контейнера */
 .container4 {
+  width: 80%;
+  margin: 0 auto; /* Центровка по горизонтали */
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  background-color: #ffffff;
-  gap: 20px;
+  align-items: flex-start; /* Выравнивание элементов по верхнему краю */
 }
 
-.container4 .image-section {
+.left-column {
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-right: 20px; /* Отступ между колонками */
 }
 
-.container4 .image-section .large-image {
-  max-width: 100%;
+.left-column img {
+  width: 100%; /* или нужная ширина изображения */
   height: auto;
-  border-radius: 20px; /* Скругленные края */
 }
 
-.container4 .info-section {
+.right-column {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 20px; /* Расстояние между строками */
 }
 
-.container4 .info-block {
+h2 {
+  font-family: 'rm_ITSerifGothic', serif; /* Заголовок с нужным шрифтом */
+  font-size: 24px;
+  margin-bottom: 20px; /* Отступ снизу от заголовка */
+}
+
+.item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 10px; /* Отступ между изображением и текстом */
 }
 
-.container4 .info-block .icon {
-  width: 40px;
-  height: 40px;
+.item img {
+  width: 24px; /* Размер изображений */
+  height: 24px;
 }
 
-.container4 .info-block .text {
-  font-size: 1rem;
-  color: #333333;
+.help-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Цвет кнопки */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
 }
+
+.help-btn:hover {
+  background-color: #45a049; /* Цвет кнопки при наведении */
+}
+  
     /* Медиазапрос для экранов шириной 1200px и меньше */
     @media (max-width: 1200px) {
       .container1 {
@@ -776,31 +789,30 @@
     </div>
   </div>
 </div>
-
-
-
+   
    <div class="container4">
-  <div class="image-section">
-    <img src="large-image.png" alt="Большое изображение" class="large-image">
+  <div class="left-column">
+    <img src="large_image.png" alt="Large Image">
   </div>
-  <div class="info-section">
-    <div class="info-block">
-      <img src="icon1.svg" alt="Иконка 1" class="icon">
-      <p class="text">Гражданам РФ, достигшим 18 лет</p>
+  <div class="right-column">
+    <h2>КОМУ МЫ МОЖЕМ ПОМОЧЬ</h2>
+    <div class="item">
+      <img src="1.svg" alt="Icon 1">
+      <p>Гражданам РФ, достигшим 18 лет</p>
     </div>
-    <div class="info-block">
-      <img src="icon2.svg" alt="Иконка 2" class="icon">
-      <p class="text">У которых есть собака, подходящая для работы, или возможность её приобрести</p>
+    <div class="item">
+      <img src="2.svg" alt="Icon 2">
+      <p>У которых есть собака, подходящая для работы, или возможность ее приобрести</p>
     </div>
-    <div class="info-block">
-      <img src="icon3.svg" alt="Иконка 3" class="icon">
-      <p class="text">Имеющим хронические заболевания, находящимся под контролем врача</p>
+    <div class="item">
+      <img src="3.svg" alt="Icon 3">
+      <p>Имеющим хронические заболевания, находящимся под контролем врача</p>
     </div>
+    <button class="help-btn">Получить помощь</button>
   </div>
-</div>
-
+   </div>
+   
   </main>
-
   <script>
     let startX = 0; // Начальная позиция для свайпа
     let isSwiping = false; // Флаг для отслеживания, идет ли свайп
