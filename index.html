@@ -290,8 +290,30 @@
   color: #FFFFFF;
 }
 
+.arrow-to-help,
+.arrow-to-who-we-are {
+  position: absolute;
+  width: 50px; /* Длина стрелки */
+  height: 20px; /* Толщина стрелки */
+  background: url('arrow.svg') no-repeat center; /* Замените на ваш файл стрелки */
+  background-size: contain;
+}
+.arrow-to-help {
+  top: 50%; /* Расположение по вертикали */
+  left: calc(100% + 20px); /* Отступ чуть правее кнопки */
+  transform: translateY(-50%);
+  z-index: 1; /* Стрелка поверх других элементов */
+}
+.arrow-to-who-we-are {
+  top: 50%; /* Центрируем стрелку относительно колонки */
+  left: -60px; /* Слегка левее колонки */
+  transform: translateY(-50%);
+  opacity: 0.5; /* Полупрозрачность */
+  z-index: 0; /* Стрелка под другими элементами */
+}
 
 
+    
     
     
     /* Медиазапрос для экранов шириной 1200px и меньше */
@@ -493,6 +515,17 @@
   .container2 .button {
     font-size: 3vw; /* Увеличим размер шрифта кнопки */
     
+  }
+
+       .arrow-to-help {
+    top: calc(100% + 10px); /* Стрелка ниже кнопки */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+ .arrow-to-who-we-are {
+    top: auto;
+    bottom: 10px; /* Размещаем внизу контейнера */
+    left: 10px; /* Подстраиваем позицию */
   }
 }
   </style>
