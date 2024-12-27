@@ -22,22 +22,27 @@
       background-color: #EFF1EE;
       overflow-x: hidden;
     }
+    
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #CCCCCC;
+  z-index: 1000;
+  width: 100%; /* Это гарантирует, что сам хедер будет занимать всю ширину экрана */
+  margin: 0; /* Убирает отступы */
+  padding: 0; /* Убирает внутренние отступы */
+}
 
-    .sticky-header {
-      position: sticky;
-      top: 0;
-      background-color: #FFFFFF;
-      border-bottom: 1px solid #CCCCCC;
-      z-index: 1000;
-    }
-
-    .header-container {
+.header-container {
   display: flex;
   align-items: center; /* Центрируем элементы по вертикали */
+  justify-content: space-between; /* Равномерное распределение элементов */
   width: 100%; /* Занимает всю ширину */
-  padding: 10px 20px;
-  box-sizing: border-box;
+  padding: 10px 20px; /* Если хотите отступы внутри хедера, используйте их */
+  box-sizing: border-box; /* Учитывает padding при расчете ширины */
 }
+
 
     .logo {
       width: 200px;
