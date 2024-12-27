@@ -298,27 +298,29 @@
     
 
 
-    /* стили для третьего контейнера */
+    /* Основной стиль для контейнера */
 .container3 {
-  background-color: #f0f0f0;
+  background-color: #f0f0f0; /* Цвет фона */
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
-  margin-top: 8%;
+  height: auto; /* или другой размер, который вам нужен */
+}
 
 .statistic {
   display: flex;
   justify-content: space-between;
-  width: 40%;
+  width: 100%;
+  max-width: 600px; /* Ограничение ширины контейнера */
+}
 
 .statistic-item {
-  background-color: #f0f0f0; 
+  background-color: #f0f0f0; /* Цвет фона прямоугольника */
   border-radius: 10px;
   text-align: center;
   padding: 15px;
-  width: 30%; 
+  width: 30%; /* Можно настроить в зависимости от вашего макета */
 }
 
 .number {
