@@ -20,29 +20,23 @@
       margin: 0;
       font-family: 'mr_ITCSerifGothic', Arial, sans-serif;
       background-color: #EFF1EE;
-      overflow-x: hidden;
     }
-    
-.sticky-header {
-  position: sticky;
-  top: 0;
-  background-color: #FFFFFF;
-  border-bottom: 1px solid #CCCCCC;
-  z-index: 1000;
-  width: 100%; /* Это гарантирует, что сам хедер будет занимать всю ширину экрана */
-  margin: 0; /* Убирает отступы */
-  padding: 0; /* Убирает внутренние отступы */
-}
 
-.header-container {
+    .sticky-header {
+      position: sticky;
+      top: 0;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid #CCCCCC;
+      z-index: 1000;
+    }
+
+    .header-container {
   display: flex;
   align-items: center; /* Центрируем элементы по вертикали */
-  justify-content: space-between; /* Равномерное распределение элементов */
   width: 100%; /* Занимает всю ширину */
-  padding: 10px 20px; /* Если хотите отступы внутри хедера, используйте их */
-  box-sizing: border-box; /* Учитывает padding при расчете ширины */
+  padding: 10px 20px;
+  box-sizing: border-box;
 }
-
 
     .logo {
       width: 200px;
@@ -296,142 +290,10 @@
   color: #FFFFFF;
 }
 
-.arrow-to-help,
-.arrow-to-who-we-are {
-  position: absolute;
-  width: 50px; /* Длина стрелки */
-  height: 20px; /* Толщина стрелки */
-  background: url('arrow.svg') no-repeat center; /* Замените на ваш файл стрелки */
-  background-size: contain;
-}
-.arrow-to-help {
-  top: 50%; /* Расположение по вертикали */
-  left: calc(100% + 20px); /* Отступ чуть правее кнопки */
-  transform: translateY(-50%);
-  z-index: 1; /* Стрелка поверх других элементов */
-}
-.arrow-to-who-we-are {
-  top: 50%; /* Центрируем стрелку относительно колонки */
-  left: -60px; /* Слегка левее колонки */
-  transform: translateY(-50%);
-  opacity: 0.5; /* Полупрозрачность */
-  z-index: 0; /* Стрелка под другими элементами */
-}
 
-
-
-
-
-
-
-
-
-
-
-    /* Cтили для третьего контейнера */
-.container3 {
-  background-color: #f0f0f0;
-  padding: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-
-.statistic {
-  display: flex;
-  justify-content: space-between;
-  width: 60%;
-  gap: 25%;
-
-.statistic-item {
-  background-color: #f0f0f0; /* Цвет фона прямоугольника */
-  border-radius: 10px;
-  text-align: center;
-  padding: 15px;
-  width: 30%; /* Можно настроить в зависимости от вашего макета */
-}
-
-.number {
-  font-size: 36px;
-  font-weight: bold;
-}
-
-.divider {
-  margin: 10px 0;
-  border: 1px solid #ccc;
-}
-
-.label {
-  font-size: 16px;
-  color: #555;
-}
 
     
     
-
-
-
-
-
-
-
-    /* Стили для четвертого контейнера */
-.container4 {
-  width: 80%;
-  margin: 0 auto; /* Центровка по горизонтали */
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start; /* Выравнивание элементов по верхнему краю */
-}
-
-.left-column {
-  flex: 1;
-  padding-right: 20px; /* Отступ между колонками */
-}
-
-.left-column img {
-  width: 100%; /* или нужная ширина изображения */
-  height: auto;
-}
-
-.right-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* Расстояние между строками */
-}
-
-h2 {
-  font-family: 'rm_ITSerifGothic', serif; /* Заголовок с нужным шрифтом */
-  font-size: 24px;
-  margin-bottom: 20px; /* Отступ снизу от заголовка */
-}
-
-.item {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Отступ между изображением и текстом */
-}
-
-.item img {
-  width: 24px; /* Размер изображений */
-  height: 24px;
-}
-
-.help-btn {
-  padding: 10px 20px;
-  background-color: #4CAF50; /* Цвет кнопки */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-}
-
-.help-btn:hover {
-  background-color: #45a049; /* Цвет кнопки при наведении */
-}
-  
     /* Медиазапрос для экранов шириной 1200px и меньше */
     @media (max-width: 1200px) {
       .container1 {
@@ -459,22 +321,14 @@ h2 {
         gap: 10px; /* Отступ между элементами */
       }
 
-       .photo-text-row .description {
-    font-size: 4vw;
-    min-width: 72vw;
-    margin-left: 29vw;
-    text-align: center;
-  }
+      photo-text-row .description {
+      font-size: 3vw;
+      margin-left: 10%;
+      }
 
-        .photo-text-row .button {
-    width: 40vw;
-    margin-top: 6%;
-    margin-left: 40vw;
-    font-size: 2vw;
-    padding: 2% 3%;
-
-        }
-    
+      photo-text-row .button {
+      font-size: 3vw;
+      }
       .photo-text-row img {
         width: 80vw; /* Фото будет занимать 80% ширины экрана */
         margin-left: 20vw;
@@ -612,14 +466,6 @@ h2 {
 ]
 
 
-
-
-
-
-
-
-
-      
 /* Стили для второго контейнера */
  .container2 {
     position: relative
@@ -648,42 +494,7 @@ h2 {
     font-size: 3vw; /* Увеличим размер шрифта кнопки */
     
   }
-
-       .arrow-to-help {
-    top: calc(100% + 10px); /* Стрелка ниже кнопки */
-    left: 50%;
-    transform: translateX(-50%);
-  }
- .arrow-to-who-we-are {
-    top: auto;
-    bottom: 10px; /* Размещаем внизу контейнера */
-    left: 10px; /* Подстраиваем позицию */
-  }
-
-
-
-
-
-
-
-
-
-
-
-          /* Мобильные стили для третьего контейнера */
-.container3 {
-  background-color: #f0f0f0;
-  padding: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-
-.statistic {
-  display: flex;
-  justify-content: space-between;
-  width: 60%;
-  gap: 25%;
+}
   </style>
 </head>
 <body>
@@ -752,7 +563,7 @@ h2 {
           <div class="description">
             Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями.
           </div>
-          <button class="button">Получить помощь → </button>
+          <button class="button">Получить помощь</button>
         </div>
             <div class="arrow-to-help"></div>
       </div>
@@ -776,49 +587,9 @@ h2 {
   </div>
 </div>
 
-<div class="container3">
-  <div class="statistic">
-    <div class="statistic-item">
-      <span class="number">14</span>
-      <hr class="divider">
-      <span class="label">Кинологов</span>
-    </div>
-    <div class="statistic-item">
-      <span class="number">26</span>
-      <hr class="divider">
-      <span class="label">Благополучателей</span>
-    </div>
-    <div class="statistic-item">
-      <span class="number">39</span>
-      <hr class="divider">
-      <span class="label">Волонтеров</span>
-    </div>
-  </div>
-</div>
-   
-   <div class="container4">
-  <div class="left-column">
-    <img src="large-image.png" alt="Large Image">
-  </div>
-  <div class="right-column">
-    <h2>КОМУ МЫ МОЖЕМ ПОМОЧЬ</h2>
-    <div class="item">
-      <img src="1.svg" alt="Icon 1">
-      <p>Гражданам РФ, достигшим 18 лет</p>
-    </div>
-    <div class="item">
-      <img src="2.svg" alt="Icon 2">
-      <p>У которых есть собака, подходящая для работы, или возможность ее приобрести</p>
-    </div>
-    <div class="item">
-      <img src="3.svg" alt="Icon 3">
-      <p>Имеющим хронические заболевания, находящимся под контролем врача</p>
-    </div>
-    <button class="help-btn">Получить помощь</button>
-  </div>
-   </div>
-   
+
   </main>
+
   <script>
     let startX = 0; // Начальная позиция для свайпа
     let isSwiping = false; // Флаг для отслеживания, идет ли свайп
