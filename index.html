@@ -753,7 +753,48 @@
 	  .col-left img {
   display: none;
     }
-    
+
+
+ /* Медиазапрос для экранов шириной 480px и меньше */
+    @media (max-width: 480px) {
+      .container1 {
+        width: 80vw; /* Уменьшаем ширину контейнера */
+        margin: 50px 10%; /* Уменьшаем отступы */
+      }
+
+    .oval-first {
+      width: 187vw;
+      height: 159vh;
+      top: 240%;
+      left: -40vw;
+      transform: rotate(7.4deg);
+      transform-origin: center;
+      position: absolute;
+      z-index: -1;
+      background-color: white;
+      border-radius: 50%;
+    }
+
+   .rectangle {
+      position: absolute;
+      background-color: white;
+      width: 120vw;
+      height: 133vh;
+      top: 376%;
+      left: -15vw;
+      z-index: -1;
+    }
+
+    .oval-second {
+      width: 158vw;
+      height: 73vh;
+      top: 483%;
+      left: -25vw;
+      position: absolute;
+      background-color: white;
+      border-radius: 50%;
+      z-index: -1;
+    }
   </style>
 </head>
 <body>
