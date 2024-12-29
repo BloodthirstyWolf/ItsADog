@@ -149,12 +149,12 @@
 
 .rectangle {
   position: absolute;
-  background-color: white;    /* Белый цвет */
-  width: 120vw;               /* Ширина 120% от ширины экрана */
-  height: 20vh;               /* Высота прямоугольника */
-  top: 50%;                   /* Позиционирование по вертикали */
-  left: -15vw;                /* Отступ влево на 15% от ширины экрана */
-  z-index: -1;                /* Помещаем прямоугольник под овалы */
+  background-color: white;
+  width: 120vw;
+  height: 51vh;
+  top: 303%;
+  left: -15vw;
+  z-index: -1;
 }
 
 
@@ -483,11 +483,54 @@
         width: 80vw; /* Уменьшаем ширину контейнера */
         margin: 50px 10%; /* Уменьшаем отступы */
       }
+
+
+	oval-first {
+  top: 170%;
     }
 
     /* Медиазапрос для экранов шириной 768px и меньше */
     @media (max-width: 768px) {
-      .container1 {
+
+	    .oval-first {
+  width: 124vw;
+  height: 167vh;
+  top: 350%;
+  left: -15vw;
+  transform: rotate(7.4deg);
+  transform-origin: center;
+  position: absolute;
+  z-index: -1;
+  background-color: white;
+  border-radius: 50%;
+}
+
+	    
+	  rectangle {
+  position: absolute;
+  background-color: white;
+  width: 115vw;
+  height: 202vh;
+  top: 484%;
+  left: -15vw;
+  z-index: -1;
+}  
+
+.oval-second {
+  width: 120vw;
+  height: 140vh;
+  top: 660%;
+  left: -15vw;
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  z-index: -1;
+}
+	    
+	    
+	    
+	    
+	    .container1 {
         width: 100%; /* Контейнер должен занять всю ширину */
         margin: 20px 0; /* Уменьшаем отступы */
       }
