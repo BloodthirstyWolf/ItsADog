@@ -347,24 +347,27 @@
 
 
 
-	  .container4 {
+.container4 {
   display: flex;
-  padding: 50px;
+  justify-content: space-between; /* Равномерное распределение столбцов */
+  gap: 20px; /* Пространство между колонками */
+  padding: 50px; /* Внешние отступы */
 }
 
 .col-left {
-  flex: 1;
-  padding-right: 20px;
+  flex: 1; /* Левый столбец будет уменьшаться при необходимости */
+  max-width: 50%; /* Максимальная ширина левой колонки */
+  padding: 0 20px;
 }
 
 .col-left img {
   width: 100%;
-  max-width: 500px;
   height: auto;
 }
 
 .col-right {
-  flex: 2;
+  flex: 1; /* Правый столбец будет занимать равное пространство */
+  padding: 0 20px;
 }
 
 .help-header {
