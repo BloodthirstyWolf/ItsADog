@@ -30,6 +30,7 @@
       z-index: 1000;
     }
 
+	
     .header-container {
   display: flex;
   align-items: center; /* Центрируем элементы по вертикали */
@@ -106,7 +107,19 @@
       border-width: 0 5px 5px 5px;
       border-color: transparent transparent #29562B transparent;
     }
+	  
+  .oval-shape {
+  position: absolute;
+  top: calc(var(--second-container-offset) - 50px); /* Начало чуть выше второго контейнера */
+  left: 0;
+  width: 100vw; /* Растягивается на всю ширину экрана */
+  height: calc(var(--fourth-container-offset) + 100px); /* Заканчивается чуть ниже четвертого контейнера */
+  z-index: -1; /* Отправляем элемент в фон */
+}
 
+
+
+	  
     /* Основная часть страницы */
     .container1 {
       width: auto;
@@ -686,6 +699,11 @@
   </div>
 
  <main>
+
+  <div class="oval-shape">
+    <img src="oval-shape.svg" alt="Oval Shape Background">
+  </div>
+	 
     <div class="container1">
       <!-- Первый ряд -->
       <div class="row">
