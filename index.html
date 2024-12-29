@@ -117,10 +117,11 @@
 /* Общие стили для овальных элементов */
 #oval-shape {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;  /* Ширина 100% от экрана */
-  height: auto;  /* Высота будет автоматически подстраиваться */
+  top: 28%;
+  left: 0%;
+  width: 100vw;
+  height: 90%;
+  z-index: -1;
 }
 
 
@@ -461,43 +462,14 @@ border-radius: 10px; /* Закругленные углы */
     /* Медиазапрос для экранов шириной 768px и меньше */
     @media (max-width: 768px) {
 
-	        .oval-first {
-      width: 124vw;
-      height: 149vh;
-      top: 355%;
-      left: -15vw;
-      transform: rotate(7.4deg);
-      transform-origin: center;
-      position: absolute;
-      z-index: -1;
-      background-color: white;
-      border-radius: 50%;
-    }
-
-	    
-	.rectangle {
+	      #oval-shape {
   position: absolute;
-  background-color: white;
-  width: 120vw;
-  height: 231vh;
-  top: 465%;
-  left: -15vw;
+  top: 37%;
+  left: -24%;
+  width: 155vw;
+  height: 86%;
   z-index: -1;
 }
-
-  .oval-second {
-      width: 120vw;
-      height: 140vh;
-      top: 650%;
-      left: -15vw;
-      position: absolute;
-      background-color: white;
-      border-radius: 50%;
-      z-index: -1;
-    }
-	    
-	    
-	    
 	    
 	    .container1 {
         width: 100%; /* Контейнер должен занять всю ширину */
@@ -726,44 +698,8 @@ border-radius: 10px; /* Закругленные углы */
 
  /* Медиазапрос для экранов шириной 480px и меньше */
     @media (max-width: 480px) {
-      .container1 {
-        width: 80vw; /* Уменьшаем ширину контейнера */
-        margin: 50px 10%; /* Уменьшаем отступы */
-      }
 
-    .oval-first {
-      width: 187vw;
-      height: 159vh;
-      top: 240%;
-      left: -40vw;
-      transform: rotate(7.4deg);
-      transform-origin: center;
-      position: absolute;
-      z-index: -1;
-      background-color: white;
-      border-radius: 50%;
-    }
-
-   .rectangle {
-      position: absolute;
-      background-color: white;
-      width: 120vw;
-      height: 133vh;
-      top: 376%;
-      left: -15vw;
-      z-index: -1;
-    }
-
-    .oval-second {
-      width: 158vw;
-      height: 73vh;
-      top: 483%;
-      left: -25vw;
-      position: absolute;
-      background-color: white;
-      border-radius: 50%;
-      z-index: -1;
-    }
+	    }
   </style>
 </head>
 <body>
