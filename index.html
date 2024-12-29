@@ -108,13 +108,16 @@
       border-color: transparent transparent #29562B transparent;
     }
 	  
-  .oval-shape {
+ .oval-shape {
   position: absolute;
-  top: calc(var(--second-container-offset) - 50px); /* Начало чуть выше второго контейнера */
+  top: calc(100vh * 0.1); /* Овальная форма начнется чуть выше второго контейнера (10% от высоты экрана) */
   left: 0;
-  width: 100vw; /* Растягивается на всю ширину экрана */
-  height: calc(var(--fourth-container-offset) + 100px); /* Заканчивается чуть ниже четвертого контейнера */
-  z-index: -1; /* Отправляем элемент в фон */
+  width: 100vw;
+  height: calc(100vh * 0.6); /* Овальная форма будет растягиваться на 60% высоты экрана */
+  background: url('oval-shape.svg') no-repeat center center;
+  background-size: contain;
+  z-index: -1; /* Чтобы овальная форма не перекрывала контент */
+  transform: translateY(-50%); /* Смещаем овальную форму вверх, чтобы она заканчивалась немного ниже четвертого контейнера */
 }
 
 
