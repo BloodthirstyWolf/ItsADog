@@ -326,6 +326,7 @@
   justify-content: center;
   align-items: center;
   height: auto; /* или другой размер, который вам нужен */
+padding-top: 5%;
 }
 
 .statistic {
@@ -698,7 +699,13 @@ border-radius: 10px; /* Закругленные углы */
 
  /* Медиазапрос для экранов шириной 480px и меньше */
     @media (max-width: 480px) {
+.statistic-item {
+  width: 95%;
+}
 
+.statistic {
+  width: 74vw;
+  flex-direction: column;
 	    }
   </style>
 </head>
