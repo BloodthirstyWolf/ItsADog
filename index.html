@@ -115,53 +115,14 @@
 
 
 /* Общие стили для овальных элементов */
-.oval {
+#oval-shape {
   position: absolute;
-  background-color: white;    /* Белый цвет */
-  border-radius: 50%;         /* Овальная форма */
-  z-index: -1;                /* Оставляем под другими элементами */
-  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100vw;  /* Ширина 100% от экрана */
+  height: auto;  /* Высота будет автоматически подстраиваться */
 }
 
-/* Первый овал */
-.oval-first {
-  width: 124vw;
-  height: 167vh;
-  top: 180%;
-  left: -15vw;
-  transform: rotate(7.4deg);
-  transform-origin: center;
-  position: absolute;
-  z-index: -1;
-  background-color: white;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-/* Второй овал */
-.oval-second {
-  width: 120vw;
-  height: 140vh;
-  top: 319%;
-  left: -15vw;
-  position: absolute;
-  background-color: white;
-  border-radius: 50%;
-  z-index: -1;
-  overflow: hidden;
-}
-
-
-.rectangle {
-  position: absolute;
-  background-color: white;
-  width: 120vw;
-  height: 51vh;
-  top: 303%;
-  left: -15vw;
-  z-index: -1;
-  overflow: hidden;
-}
 
 
 	  
@@ -847,12 +808,8 @@ border-radius: 10px; /* Закругленные углы */
 
  <main>
 
-<div class="oval-first"></div>
-<div class="rectangle"></div>
-<div class="oval-second"></div>
+<img src="oval-shape.svg" alt="Oval Shape" id="oval-shape">
 
-
-	 
     <div class="container1">
       <!-- Первый ряд -->
       <div class="row">
