@@ -108,17 +108,39 @@
       border-color: transparent transparent #29562B transparent;
     }
 	  
- .oval-shape {
-  position: absolute;
-  top: calc(100vh * 0.1); /* Овальная форма начнется чуть выше второго контейнера (10% от высоты экрана) */
-  left: 0;
-  width: 100vw;
-  height: calc(100vh * 0.6); /* Овальная форма будет растягиваться на 60% высоты экрана */
-  background: url('oval-shape.svg') no-repeat center center;
-  background-size: contain;
-  z-index: -1; /* Чтобы овальная форма не перекрывала контент */
-  transform: translateY(-50%); /* Смещаем овальную форму вверх, чтобы она заканчивалась немного ниже четвертого контейнера */
+
+
+
+
+
+	  /* Общий стиль для фона */
+.background {
+  position: relative; /* Относительное позиционирование для контейнера */
+  z-index: -1;        /* Убедимся, что фон находится под содержимым */
 }
+
+/* Общие стили для овальных форм */
+.oval {
+  position: absolute;
+  width: 120vw;       /* Ширина овала */
+  height: 80vh;       /* Высота овала */
+  background-color: rgba(200, 200, 255, 0.3); /* Цвет овала (можно изменить) */
+  border-radius: 50%; /* Превращаем блок в овал */
+}
+
+/* Первый овал (во втором контейнере) */
+.first-oval {
+  top: calc(2 * 100vh - 50vh); /* Примерное позиционирование внутри второго контейнера */
+  left: -15vw;                /* Отступ влево */
+  transform: rotate(-7.4deg); /* Поворот на -7.4° */
+}
+
+/* Второй овал (в четвертом контейнере) */
+.second-oval {
+  top: calc(4 * 100vh - 50vh); /* Примерное позиционирование внутри четвертого контейнера */
+  left: -15vw;                /* Отступ влево */
+}
+
 
 
 
@@ -703,9 +725,11 @@
 
  <main>
 
-  <div class="oval-shape">
-    <img src="oval-shape.svg" alt="Oval Shape Background">
-  </div>
+<div class="background">
+  <div class="oval first-oval"></div>
+  <div class="oval second-oval"></div>
+</div>
+
 	 
     <div class="container1">
       <!-- Первый ряд -->
