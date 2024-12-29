@@ -342,7 +342,75 @@
 
 
 
-    
+
+
+
+
+
+	  .container4 {
+  display: flex;
+  padding: 50px;
+}
+
+.col-left {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.col-left img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.col-right {
+  flex: 2;
+}
+
+.help-header {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.help-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.help-item img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.help-item p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.help-btn {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.help-btn:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+	  
     /* Медиазапрос для экранов шириной 1200px и меньше */
     @media (max-width: 1200px) {
       .container1 {
@@ -671,7 +739,36 @@
     </div>
   </div>
 </div>
-   
+
+<section class="container4">
+  <div class="row">
+    <!-- Левый столбец с изображением -->
+    <div class="col-left">
+      <img src="large-image.png" alt="Image">
+    </div>
+    <!-- Правый столбец с заголовками и иконками -->
+    <div class="col-right">
+      <!-- Заголовок "Кому мы можем помочь" -->
+      <h2 class="help-header">КОМУ МЫ МОЖЕМ ПОМОЧЬ</h2>
+      <!-- Строки с иконками и текстами -->
+      <div class="help-item">
+        <img src="1.svg" alt="Icon 1" class="help-icon">
+        <p>Гражданам РФ, достигшим 18 лет</p>
+      </div>
+      <div class="help-item">
+        <img src="2.svg" alt="Icon 2" class="help-icon">
+        <p>У которых есть собака, подходящая для работы, или возможность её приобрести</p>
+      </div>
+      <div class="help-item">
+        <img src="3.svg" alt="Icon 3" class="help-icon">
+        <p>Имеющим хронические заболевания, находящимся под контролем врача</p>
+      </div>
+      <!-- Кнопка "Получить помощь" -->
+      <button class="help-btn">Получить помощь</button>
+    </div>
+  </div>
+</section>
+
 
   </main>
 
