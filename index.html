@@ -122,24 +122,40 @@
 
 /* Первый овал */
 .oval-first {
-  width: 120vw;               /* Ширина 120% от ширины окна */
-  height: 80vh;               /* Высота 80% от высоты окна */
-  top: 50%;                   /* Позиционирование по вертикали (например, на середине родительского контейнера) */
-  left: -15vw;                /* Отступ влево на 15% от ширины окна */
-  transform: rotate(-7.4deg); /* Поворот на -7.4 градуса */
-  transform-origin: center;  /* Центр вращения - по центру овала */
+  width: 124vw;
+  height: 167vh;
+  top: 180%;
+  left: -15vw;
+  transform: rotate(7.4deg);
+  transform-origin: center;
+  position: absolute;
+  z-index: -1;
+  background-color: white;
+  border-radius: 50%;
 }
 
 /* Второй овал */
 .oval-second {
-  width: 120vw;               /* Ширина 120% от ширины окна */
-  height: 80vh;               /* Высота 80% от высоты окна */
-  top: 50%;                   /* Позиционирование по вертикали (например, на середине родительского контейнера) */
-  left: -15vw;                /* Отступ влево на 15% от ширины окна */
+  width: 120vw;
+  height: 140vh;
+  top: 319%;
+  left: -15vw;
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  z-index: -1;
 }
 
 
-
+.rectangle {
+  position: absolute;
+  background-color: white;    /* Белый цвет */
+  width: 120vw;               /* Ширина 120% от ширины экрана */
+  height: 20vh;               /* Высота прямоугольника */
+  top: 50%;                   /* Позиционирование по вертикали */
+  left: -15vw;                /* Отступ влево на 15% от ширины экрана */
+  z-index: -1;                /* Помещаем прямоугольник под овалы */
+}
 
 
 	  
@@ -724,6 +740,7 @@
  <main>
 
 <div class="oval-first"></div>
+<div class="rectangle"></div>
 <div class="oval-second"></div>
 
 
