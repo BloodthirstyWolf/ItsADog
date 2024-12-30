@@ -513,22 +513,21 @@ border-radius: 10px; /* Закругленные углы */
 
 
 
-	/* Стиль контейнера с стрелкой и кнопкой */
+	/* Контейнер с кнопкой и стрелкой */
 .arrow-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Выравниваем по левому краю */
-  width: 100%; /* Контейнер занимает всю ширину */
+  justify-content: flex-start; /* Выравниваем элементы по горизонтали */
+  width: 100%; /* Контейнер занимает всю ширину родительского блока */
   margin-top: 20px;
   flex-direction: row; /* Элементы (стрелка и кнопка) располагаются горизонтально */
 }
 
 
-/* Стрелка */
+/* Стрелка (SVG) */
 .faq-arrow {
-  width: 100%; /* Стрелка теперь занимает всю ширину контейнера */
-  height: 2px; /* Сделаем стрелку более тонкой */
-  margin-right: 10px; /* Отступ между стрелкой и кнопкой */
+  width: 100%; /* Растягиваем стрелку на всю ширину контейнера */
+  height: 20px; /* Высота стрелки, можно настроить по необходимости */
   cursor: pointer;
 }
 
@@ -549,6 +548,7 @@ border-radius: 10px; /* Закругленные углы */
   padding: 10px 20px;
   transition: all 0.3s ease;
 }
+
 
 .help-btn:hover {
   background-color: #2A562B;
@@ -1067,14 +1067,17 @@ border-radius: 10px; /* Закругленные углы */
     <div class="faq-answer">Ответ на этот вопрос.</div>
   </div>
 	
- <div class="arrow-container">
-  <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20">
-    <line x1="0" y1="10" x2="100" y2="10" stroke="#2A562B" stroke-width="2" />
-    <line x1="100" y1="10" x2="90" y2="5" stroke="#2A562B" stroke-width="2" />
-    <line x1="100" y1="10" x2="90" y2="15" stroke="#2A562B" stroke-width="2" />
+<div class="arrow-container">
+  <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10">
+    <!-- Основная линия стрелки -->
+    <line x1="0" y1="5" x2="100" y2="5" stroke="#2A562B" stroke-width="2" />
+    <!-- Стрелочные наконечники -->
+    <line x1="100" y1="5" x2="90" y2="0" stroke="#2A562B" stroke-width="2" />
+    <line x1="100" y1="5" x2="90" y2="10" stroke="#2A562B" stroke-width="2" />
   </svg>
   <button class="help-btn">Получить помощь →</button>
 </div>
+
 
 
 	
