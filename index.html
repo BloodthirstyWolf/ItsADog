@@ -733,10 +733,72 @@ border-radius: 10px; /* Закругленные углы */
         z-index: -1;
       }
 	  }
+
+
+
+
+
 	    
 
 
-	
+	.container5 {
+  margin: 20px;
+}
+
+.question {
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+}
+
+.question:hover {
+  background-color: #e0e0e0;
+}
+
+.question .question-text {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.indicator {
+  font-size: 24px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s;
+}
+
+.answer {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.question.open .answer {
+  display: block;
+}
+
+.question.open .indicator {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.question .answer {
+  padding-top: 10px;
+}
+
+
+
+
+
+
+	    
   </style>
 </head>
 <body>
@@ -878,6 +940,59 @@ border-radius: 10px; /* Закругленные углы */
       <button class="help-btn">Получить помощь →</button>
     </div>
   </div>
+
+<div class="container5">
+    <div class="question">
+        <span class="question-text">Это платно?</span>
+        <span class="indicator">\/</span>
+        <div class="answer">
+            Ответ на вопрос о стоимости.
+        </div>
+    </div>
+    <div class="question">
+        <span class="question-text">Сколько длится обучение собаки?</span>
+        <span class="indicator">\/</span>
+        <div class="answer">
+            Ответ на вопрос о длительности обучения.
+        </div>
+    </div>
+    <div class="question">
+        <span class="question-text">Что, если у меня есть собака?</span>
+        <span class="indicator">\/</span>
+        <div class="answer">
+            Ответ на вопрос, если у вас уже есть собака.
+        </div>
+    </div>
+    <div class="question">
+        <span class="question-text">С какими заболеваниями помогают собаки?</span>
+        <span class="indicator">\/</span>
+        <div class="answer">
+            Ответ на вопрос о заболеваниях.
+        </div>
+    </div>
+    <div class="question">
+        <span class="question-text">Подходят ли для работы собаки из приюта?</span>
+        <span class="indicator">\/</span>
+        <div class="answer">
+            Ответ на вопрос о собаках из приюта.
+        </div>
+    </div>
+    <div class="question">
+        <span class="question-text">Кто будет обучать собаку?</span>
+        <span class="indicator">\/</span>
+        <div class="answer">
+            Ответ на вопрос о том, кто будет обучать.
+        </div>
+    </div>
+    <div class="question">
+        <span class="question-text">Что, если я живу далеко?</span>
+        <span class="indicator">\/</span>
+        <div class="answer">
+            Ответ на вопрос, что если он живет далеко.
+        </div>
+    </div>
+</div>
+
 </section>
 
 
@@ -936,6 +1051,12 @@ border-radius: 10px; /* Закругленные углы */
 
       sidebar.style.right = ''; // Сбрасываем стиль после окончания свайпа
     });
+
+document.querySelectorAll('.question').forEach(function(question) {
+  question.addEventListener('click', function() {
+    this.classList.toggle('open');
+  });
+});
 
   </script>
 </body>
