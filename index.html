@@ -741,57 +741,56 @@ border-radius: 10px; /* Закругленные углы */
 
 
 	.container5 {
-  margin: 20px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
 }
 
 .question {
-  background-color: #f7f7f7;
-  border-radius: 8px;
-  margin: 10px 0;
-  padding: 15px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  position: relative;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .question:hover {
-  background-color: #e0e0e0;
+    background-color: #f0f0f0;
 }
 
-.question .question-text {
-  font-size: 16px;
-  font-weight: bold;
-  margin-right: 20px;
+.question-text {
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .indicator {
-  font-size: 24px;
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: transform 0.3s;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s;
 }
 
 .answer {
-  display: none;
-  margin-top: 10px;
-  font-size: 14px;
-  color: #555;
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
 }
 
-.question.open .answer {
-  display: block;
+.question.active .answer {
+    display: block;
 }
 
-.question.open .indicator {
-  transform: translateY(-50%) rotate(180deg);
+.question.active .indicator {
+    transform: rotate(180deg);
 }
 
-.question .answer {
-  padding-top: 10px;
-}
-}
 
 
 
@@ -1048,11 +1047,12 @@ border-radius: 10px; /* Закругленные углы */
       sidebar.style.right = ''; // Сбрасываем стиль после окончания свайпа
     });
 
-document.querySelectorAll('.question').forEach(function(question) {
-  question.addEventListener('click', function() {
-    this.classList.toggle('open');
-  });
+document.querySelectorAll('.question').forEach(function (question) {
+    question.addEventListener('click', function () {
+        question.classList.toggle('active');
+    });
 });
+
 
   </script>
 </body>
