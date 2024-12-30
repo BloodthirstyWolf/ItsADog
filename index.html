@@ -440,6 +440,69 @@ border-radius: 10px; /* Закругленные углы */
   background-color: #45a049;
 }
 
+/* Стили для пятого контейнера */
+.container5 {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: #f6fbf6;
+  border-radius: 12px;
+}
+
+/* Элемент вопроса */
+.faq-item {
+  border: 1px solid #d8e3d8;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+/* Стиль вопроса */
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+  background-color: #eef6ee;
+}
+
+/* Индикатор (стрелочка) */
+.faq-toggle {
+  width: 12px;
+  height: 12px;
+  border: solid #4caf50;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+}
+
+/* Перевернутая стрелочка */
+.faq-item.open .faq-toggle {
+  transform: rotate(-135deg);
+}
+
+/* Ответ */
+.faq-answer {
+  display: none;
+  padding: 15px 20px;
+  background-color: #f6fbf6;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.faq-item.open .faq-answer {
+  display: block;
+}
 
 
 
@@ -737,75 +800,6 @@ border-radius: 10px; /* Закругленные углы */
 
 
 
-	    
-
-
-	/* Стили для пятого контейнера */
-.container5 {
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 800px;
-  background-color: #f6fbf6;
-  border-radius: 12px;
-}
-
-/* Элемент вопроса */
-.faq-item {
-  border: 1px solid #d8e3d8;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  overflow: hidden;
-}
-
-/* Стиль вопроса */
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background-color: #ffffff;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: background-color 0.3s;
-}
-
-.faq-question:hover {
-  background-color: #eef6ee;
-}
-
-/* Индикатор (стрелочка) */
-.faq-toggle {
-  width: 12px;
-  height: 12px;
-  border: solid #4caf50;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  transform: rotate(45deg);
-  transition: transform 0.3s;
-}
-
-/* Перевернутая стрелочка */
-.faq-item.open .faq-toggle {
-  transform: rotate(-135deg);
-}
-
-/* Ответ */
-.faq-answer {
-  display: none;
-  padding: 15px 20px;
-  background-color: #f6fbf6;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.faq-item.open .faq-answer {
-  display: block;
-}
-
-
-
 
 
 
@@ -1073,11 +1067,20 @@ border-radius: 10px; /* Закругленные углы */
       sidebar.style.right = ''; // Сбрасываем стиль после окончания свайпа
     });
 
-document.querySelectorAll('.question').forEach(function (question) {
-    question.addEventListener('click', function () {
-        question.classList.toggle('active');
+document.querySelectorAll('.faq-question').forEach((question) => {
+  question.addEventListener('click', () => {
+    const item = question.parentElement;
+
+    // Закрываем все остальные вопросы
+    document.querySelectorAll('.faq-item').forEach((otherItem) => {
+      if (otherItem !== item) otherItem.classList.remove('open');
     });
+
+    // Открываем/закрываем текущий
+    item.classList.toggle('open');
+  });
 });
+
 
 
   </script>
