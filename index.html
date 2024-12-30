@@ -490,16 +490,16 @@ border-radius: 10px; /* Закругленные углы */
   transform: rotate(-135deg);
 }
 
+/* Ответ */
 .faq-answer {
-  height: 0;
-  overflow: hidden;
-  transition: height 0.3s ease;
+  display: none;
+  padding: 15px 20px;
+  background-color: #f6fbf6;
+  font-size: 16px;
+  line-height: 1.6;
+  border-radius: 20px;
+  margin-top: 1%;
 }
-
-.faq-answer.open {
-  height: auto; /* Этот класс будет добавляться для открытых ответов */
-}
-
 
 .faq-item.open .faq-answer {
   display: block;
@@ -1061,36 +1061,19 @@ border-radius: 10px; /* Закругленные углы */
       sidebar.style.right = ''; // Сбрасываем стиль после окончания свайпа
     });
 
-document.querySelectorAll('.faq-item').forEach(item => {
-  const question = item.querySelector('.faq-question');
-  const answer = item.querySelector('.faq-answer');
-  const indicator = item.querySelector('.faq-indicator');
-
+document.querySelectorAll('.faq-question').forEach((question) => {
   question.addEventListener('click', () => {
-    const isOpen = answer.classList.contains('open');
+    const item = question.parentElement;
 
-    if (isOpen) {
-      // Закрытие ответа
-      answer.style.height = `${answer.scrollHeight}px`; // Сначала устанавливаем текущую высоту
-      setTimeout(() => {
-        answer.style.height = '0'; // Затем убираем высоту
-      }, 0);
-      answer.classList.remove('open');
-      indicator.style.transform = 'rotate(0deg)';
-    } else {
-      // Открытие ответа
-      answer.style.height = `${answer.scrollHeight}px`; // Устанавливаем высоту
-      answer.classList.add('open');
-      indicator.style.transform = 'rotate(180deg)';
+    // Закрываем все остальные вопросы
+    document.querySelectorAll('.faq-item').forEach((otherItem) => {
+      if (otherItem !== item) otherItem.classList.remove('open');
+    });
 
-      // Сброс стиля `height`, чтобы адаптировать к динамическому содержимому
-      setTimeout(() => {
-        answer.style.height = 'auto';
-      }, 300);
-    }
+    // Открываем/закрываем текущий
+    item.classList.toggle('open');
   });
 });
-
 
 
 
