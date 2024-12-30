@@ -516,16 +516,42 @@ border-radius: 10px; /* Закругленные углы */
 	.arrow-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* Выравниваем по левому краю */
+  width: 100%; /* Контейнер занимает всю ширину */
   margin-top: 20px;
-  flex-direction: column; /* Чтобы стрелка и кнопка располагались по вертикали */
+  flex-direction: row; /* Элементы (стрелка и кнопка) располагаются горизонтально */
 }
 
+
+/* Стрелка */
 .faq-arrow {
-  width: 100px; /* Ширина стрелки */
-  height: 20px; /* Высота стрелки */
-  margin-bottom: 10px; /* Отступ между стрелкой и кнопкой */
+  width: 80%; /* Стрелка занимает большую часть экрана */
+  height: 2px; /* Сделаем стрелку более тонкой */
+  margin-right: 10px; /* Отступ между стрелкой и кнопкой */
   cursor: pointer;
+}
+
+.faq-arrow line {
+  stroke-width: 2;
+  stroke: #2A562B;
+}
+
+/* Кнопка */
+.help-btn {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2A562B;
+  text-decoration: none;
+  background-color: #ffffff;
+  border: 2px solid #2A562B;
+  border-radius: 20px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.help-btn:hover {
+  background-color: #2A562B;
+  color: #ffffff;
 }
 
 .help-button {
