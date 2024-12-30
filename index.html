@@ -492,18 +492,22 @@ border-radius: 10px; /* Закругленные углы */
 
 /* Ответ */
 .faq-answer {
-  display: none;
-  padding: 15px 20px;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px; /* Оставляем боковые отступы */
   background-color: #f6fbf6;
   font-size: 16px;
   line-height: 1.6;
   border-radius: 20px;
-  margin-top: 1%;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
 .faq-item.open .faq-answer {
-  display: block;
+  max-height: 300px; /* Задаём достаточно большое значение для максимальной высоты */
+  padding: 15px 20px; /* Добавляем отступы при открытии */
+  margin-top: 1%;
 }
+
 
 
 
