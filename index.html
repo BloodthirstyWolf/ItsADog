@@ -451,7 +451,6 @@ border-radius: 10px; /* Закругленные углы */
 
 /* Элемент вопроса */
 .faq-item {
-  border: 1px solid #d8e3d8;
   border-radius: 8px;
   margin-bottom: 10px;
   overflow: hidden;
@@ -468,7 +467,6 @@ border-radius: 10px; /* Закругленные углы */
   font-size: 18px;
   font-weight: bold;
   border-radius: 20px;
-  transition: background-color 0.3s;
 }
 
 .faq-question:hover {
@@ -648,47 +646,66 @@ background-color: #29562B;
 }
 
 /* Подвал */
+/* Подвал */
 .footer {
-  background-color: #f6fbf6;
-  padding: 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 20px 40px;
+  background-color: #f6fbf6;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .footer-logo img {
   max-width: 150px;
 }
 
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.footer-socials {
   display: flex;
-  flex-wrap: wrap;
   gap: 10px;
-}
-
-.footer-links ul li {
-  margin: 5px 10px;
-}
-
-.footer-links ul li a {
-  text-decoration: none;
-  color: #2A562B;
-  font-size: 14px;
 }
 
 .footer-socials a img {
   width: 32px;
   height: 32px;
-  margin: 0 10px;
+  transition: opacity 0.3s ease;
 }
 
 .footer-socials a:hover img {
   opacity: 0.8;
 }
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 5px;
+}
+
+.footer-links li a {
+  text-decoration: none;
+  color: #2A562B;
+  font-size: 14px;
+}
+
+.footer-links li a:hover {
+  text-decoration: underline;
+}
+
 
 
 
@@ -1182,13 +1199,15 @@ background-color: #29562B;
   </div>
 	
 <div class="arrow-container">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1000 0 1300 20" width="100%" height="20">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1000 0 1300 20" width="100%" height="20">
   <!-- Основная линия стрелки -->
   <line y2="5" stroke="#2A562B" stroke-width="2" x2="300" y1="5" x1="-1002"></line>
   <!-- Левый наконечник стрелки -->
-<line y1="5" y2="0" stroke="#2A562B" stroke-width="2" x1="300" x2="290" transform="translate(0, 3)"></line>
-<line y1="5" y2="10" stroke="#2A562B" stroke-width="2" x1="300" x2="290" transform="translate(0, 3)"></line>
+  <line y1="5" y2="0" stroke="#2A562B" stroke-width="2" x1="300" x2="290"></line>
+  <!-- Правый наконечник стрелки -->
+  <line y1="5" y2="10" stroke="#2A562B" stroke-width="2" x1="300" x2="290"></line>
 </svg>
+
   <button class="help-btn">Получить помощь →</button>
 </div>
 </div>
@@ -1228,8 +1247,8 @@ background-color: #29562B;
     </ul>
   </div>
   <div class="footer-socials">
-    <a href="#"><img src="path/to/telegram-icon.png" alt="Telegram"></a>
-    <a href="#"><img src="path/to/vk-icon.png" alt="VK"></a>
+    <a href="#"><img src="telegram-icon.png" alt="Telegram"></a>
+    <a href="#"><img src="vk-icon.png" alt="VK"></a>
   </div>
 </footer>
 
