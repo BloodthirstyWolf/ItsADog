@@ -651,7 +651,8 @@ background-color: #29562B;
   justify-content: space-between;
   align-items: flex-start;
   padding: 20px 40px;
-  background-color: #f6fbf6;
+  background-color: transparent; /* Прозрачный фон */
+  border-top: 2px solid #2A562B; /* Тонкая зелёная полоска сверху */
 }
 
 .footer-left {
@@ -661,7 +662,7 @@ background-color: #29562B;
 }
 
 .footer-logo img {
-  max-width: 150px;
+  max-width: 200px;
 }
 
 .footer-socials {
@@ -670,8 +671,8 @@ background-color: #29562B;
 }
 
 .footer-socials a img {
-  width: 32px;
-  height: 32px;
+  width: 64px;
+  height: 64px;
   transition: opacity 0.3s ease;
 }
 
@@ -680,6 +681,7 @@ background-color: #29562B;
 }
 
 .footer-right {
+  margin-left: 100px; /* Сдвигаем правую колонну ближе к центру */
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -704,6 +706,7 @@ background-color: #29562B;
 .footer-links li a:hover {
   text-decoration: underline;
 }
+
 
 
 
