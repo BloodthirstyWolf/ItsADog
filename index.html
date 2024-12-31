@@ -646,7 +646,6 @@ background-color: #29562B;
 }
 
 /* Подвал */
-/* Подвал */
 .footer {
   display: flex;
   justify-content: space-between;
@@ -687,7 +686,7 @@ background-color: #29562B;
 }
 
 .footer-links {
-  list-style: none;
+  list-style: none; /* Убираем маркеры списка */
   padding: 0;
   margin: 0;
 }
@@ -705,6 +704,7 @@ background-color: #29562B;
 .footer-links li a:hover {
   text-decoration: underline;
 }
+
 
 
 
@@ -1233,11 +1233,17 @@ background-color: #29562B;
 </div>
 
 <footer class="footer">
-  <div class="footer-logo">
-    <img src="logo.svg" alt="Дело в собаке">
+  <div class="footer-left">
+    <div class="footer-logo">
+      <img src="path/to/logo.png" alt="Дело в собаке">
+    </div>
+    <div class="footer-socials">
+      <a href="#"><img src="telegram-icon.svg" alt="Telegram"></a>
+      <a href="#"><img src="vk-icon.svg" alt="VK"></a>
+    </div>
   </div>
-  <div class="footer-links">
-    <ul>
+  <div class="footer-right">
+    <ul class="footer-links">
       <li><a href="#">О нас</a></li>
       <li><a href="#">Наша деятельность</a></li>
       <li><a href="#">Статьи</a></li>
@@ -1246,11 +1252,8 @@ background-color: #29562B;
       <li><a href="#">Политика конфиденциальности</a></li>
     </ul>
   </div>
-  <div class="footer-socials">
-    <a href="#"><img src="telegram-icon.svg" alt="Telegram"></a>
-    <a href="#"><img src="vk-icon.svg" alt="VK"></a>
-  </div>
 </footer>
+
 
   </main>
 
