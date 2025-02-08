@@ -1212,7 +1212,7 @@ flex-direction: column;
       <!-- Первый ряд -->
       <div class="row">
         <div class="title">ОБУЧАЕМ СОБАК</div>
-        <button class="button">Стать волонтером →</button>
+        <button class="button" onclick="openModal('volunteerModal')">Стать волонтером→</button>
       </div>
 
       <!-- Второй ряд -->
@@ -1233,7 +1233,7 @@ flex-direction: column;
           <div class="description">
             Работаем с собаками-помощниками для людей с ментальными, неврологическими, эндокринными и другими заболеваниями.
           </div>
-          <button class="button">Получить помощь →</button>
+          <button class="button" onclick="openModal('helpModal')">Получить помощь→</button>
         </div>
             <div class="arrow-to-help"></div>
       </div>
@@ -1300,7 +1300,7 @@ flex-direction: column;
         <p>Имеющим хронические заболевания, находящимся под контролем врача</p>
       </div>
       <!-- Кнопка "Получить помощь" -->
-      <button class="help-btn">Получить помощь →</button>
+      <button class="button" onclick="openModal('helpModal')">Получить помощь→</button>
     </div>
   </div>
 </section>
@@ -1390,6 +1390,33 @@ flex-direction: column;
   </div>
 </div>
 
+<!-- Всплывающее окно "Стать волонтером" -->
+    <div id="volunteerModal" class="modal">
+        <span class="close" onclick="closeModal('volunteerModal')">&times;</span>
+        <h2>ХОТИТЕ СТАТЬ ВОЛОНТЕРОМ?</h2>
+        <input type="text" id="volunteerName" placeholder="Введите имя">
+        <input type="tel" id="volunteerPhone" placeholder="Ваш телефон">
+        <label><input type="checkbox" id="volunteerAgree"> Согласен с политикой конфиденциальности</label>
+        <button onclick="submitForm('volunteer')">Стать волонтером</button>
+    </div>
+
+    <!-- Всплывающее окно "Получить помощь" -->
+    <div id="helpModal" class="modal">
+        <span class="close" onclick="closeModal('helpModal')">&times;</span>
+        <h2>НУЖНА ПОМОЩЬ СОБАКИ-ПОМОЩНИКА?</h2>
+        <input type="text" id="helpName" placeholder="Введите имя">
+        <input type="tel" id="helpPhone" placeholder="Ваш телефон">
+        <label><input type="checkbox" id="helpAgree"> Согласен с политикой конфиденциальности</label>
+        <button onclick="submitForm('help')">Получить помощь</button>
+    </div>
+
+    <!-- Всплывающее окно "Уже работаем над вашей заявкой!" -->
+    <div id="successModal" class="modal">
+        <span class="close" onclick="closeModal('successModal')">&times;</span>
+        <h2>УЖЕ РАБОТАЕМ НАД ВАШЕЙ ЗАЯВКОЙ!</h2>
+        <p>Спасибо за обращение! Мы скоро свяжемся с вами.</p>
+		</div>
+	 
 <footer class="footer">
   <div class="footer-left">
     <div class="footer-logo">
@@ -1485,6 +1512,28 @@ document.querySelectorAll('.faq-question').forEach((question) => {
 
 
 
+
+	  function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        function submitForm(type) {
+            let name = document.getElementById(type + "Name").value.trim();
+            let phone = document.getElementById(type + "Phone").value.trim();
+            let agree = document.getElementById(type + "Agree").checked;
+
+            if (name && phone && agree) {
+                closeModal(type + "Modal");
+                openModal("successModal");
+            } else {
+                alert("Пожалуйста, заполните все поля и согласитесь с политикой конфиденциальности.");
+            }
+        }
+    </script
   </script>
 </body>
 </html>
