@@ -1464,7 +1464,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (modal) modal.classList.remove("show");
     }
 
-    // Закрытие модалки при клике вне ее
+    // Закрытие модалки при клике вне нее
     window.addEventListener("click", function (event) {
         document.querySelectorAll(".modal").forEach(modal => {
             if (event.target === modal) {
@@ -1473,36 +1473,30 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Обработка формы (проверка заполненности)
+    // Проверка формы перед отправкой
     function submitForm(type) {
-        let nameField = document.querySelector(`#${type}Name`);
-        let phoneField = document.querySelector(`#${type}Phone`);
-        let agreeCheckbox = document.querySelector(`#${type}Agree`);
+        let name = document.querySelector(`#${type}Name`)?.value.trim();
+        let phone = document.querySelector(`#${type}Phone`)?.value.trim();
+        let agree = document.querySelector(`#${type}Agree`)?.checked;
 
-        let name = nameField ? nameField.value.trim() : "";
-        let phone = phoneField ? phoneField.value.trim() : "";
-        let agree = agreeCheckbox ? agreeCheckbox.checked : false;
-
-        if (!name) {
-            alert("Пожалуйста, введите ваше имя.");
-            return;
+        if (name && phone && agree) {
+            closeModal(type + "Modal");
+            openModal("successModal");
+        } else {
+            alert("Пожалуйста, заполните все поля и согласитесь с политикой конфиденциальности.");
         }
-        if (!phone) {
-            alert("Пожалуйста, введите ваш телефон.");
-            return;
-        }
-        if (!/^\+?\d{10,15}$/.test(phone)) {
-            alert("Пожалуйста, введите корректный номер телефона.");
-            return;
-        }
-        if (!agree) {
-            alert("Пожалуйста, подтвердите согласие с политикой конфиденциальности.");
-            return;
-        }
-
-        closeModal(type + "Modal");
-        openModal("successModal");
     }
+
+    // Навешивание обработчиков на кнопки отправки форм
+    document.querySelectorAll(".modal button").forEach(button => {
+        button.addEventListener("click", function () {
+            let modal = this.closest(".modal"); // Находим родительское окно
+            if (modal) {
+                if (modal.id === "volunteerModal") submitForm("volunteer");
+                if (modal.id === "helpModal") submitForm("help");
+            }
+        });
+    });
 
     // Закрытие по кнопке "×"
     document.querySelectorAll(".close").forEach(closeBtn => {
@@ -1511,16 +1505,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (modal) modal.classList.remove("show");
         });
     });
-
-    // Обработчики кнопок отправки формы
-    document.querySelectorAll("[onclick^='submitForm']").forEach(btn => {
-        btn.addEventListener("click", function () {
-            let type = this.getAttribute("onclick").match(/submitForm\('(.+)'\)/)[1];
-            submitForm(type);
-        });
-    });
 });
 </script>
+
 
 
 </body>
