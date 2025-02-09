@@ -1398,26 +1398,26 @@ flex-direction: column;
     </div>
   </div>
 </div>
-
 <!-- Всплывающее окно "Стать волонтером" -->
-    <div id="volunteerModal" class="modal">
-        <span class="close" onclick="closeModal('volunteerModal')">&times;</span>
-        <h2>ХОТИТЕ СТАТЬ ВОЛОНТЕРОМ?</h2>
-        <input type="text" id="volunteerName" placeholder="Введите имя">
-        <input type="tel" id="volunteerPhone" placeholder="Ваш телефон">
-        <label><input type="checkbox" id="volunteerAgree"> Согласен с политикой конфиденциальности</label>
-        <button onclick="submitForm('volunteer')">Стать волонтером</button>
-    </div>
+<div id="volunteerModal" class="modal">
+    <span class="close" onclick="closeModal('volunteerModal')">&times;</span>
+    <h2>ХОТИТЕ СТАТЬ ВОЛОНТЕРОМ?</h2>
+    <input type="text" id="volunteerName" placeholder="Введите имя">
+    <input type="tel" id="volunteerPhone" placeholder="Ваш телефон">
+    <label><input type="checkbox" id="volunteerAgree"> Согласен с политикой конфиденциальности</label>
+    <button id="volunteerSubmit">Стать волонтером</button>
+</div>
 
-    <!-- Всплывающее окно "Получить помощь" -->
-    <div id="helpModal" class="modal">
-        <span class="close" onclick="closeModal('helpModal')">&times;</span>
-        <h2>НУЖНА ПОМОЩЬ СОБАКИ-ПОМОЩНИКА?</h2>
-        <input type="text" id="helpName" placeholder="Введите имя">
-        <input type="tel" id="helpPhone" placeholder="Ваш телефон">
-        <label><input type="checkbox" id="helpAgree"> Согласен с политикой конфиденциальности</label>
-        <button onclick="submitForm('help')">Получить помощь</button>
-    </div>
+<!-- Всплывающее окно "Получить помощь" -->
+<div id="helpModal" class="modal">
+    <span class="close" onclick="closeModal('helpModal')">&times;</span>
+    <h2>НУЖНА ПОМОЩЬ СОБАКИ-ПОМОЩНИКА?</h2>
+    <input type="text" id="helpName" placeholder="Введите имя">
+    <input type="tel" id="helpPhone" placeholder="Ваш телефон">
+    <label><input type="checkbox" id="helpAgree"> Согласен с политикой конфиденциальности</label>
+    <button id="helpSubmit">Получить помощь</button>
+</div>
+
 
     <!-- Всплывающее окно "Уже работаем над вашей заявкой!" -->
     <div id="successModal" class="modal">
@@ -1452,19 +1452,25 @@ flex-direction: column;
   </main>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    // Открытие модального окна
+    // Функция открытия модального окна
     function openModal(modalId) {
         let modal = document.getElementById(modalId);
-        if (modal) modal.classList.add("show");
+        if (modal) {
+            modal.classList.add("show");
+        } else {
+            console.error("Не найдено модальное окно с ID:", modalId);
+        }
     }
 
-    // Закрытие модального окна
+    // Функция закрытия модального окна
     function closeModal(modalId) {
         let modal = document.getElementById(modalId);
-        if (modal) modal.classList.remove("show");
+        if (modal) {
+            modal.classList.remove("show");
+        }
     }
 
-    // Закрытие модалки при клике вне нее
+    // Закрытие модального окна при клике вне его области
     window.addEventListener("click", function (event) {
         document.querySelectorAll(".modal").forEach(modal => {
             if (event.target === modal) {
@@ -1473,32 +1479,39 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Проверка формы перед отправкой
+    // Функция проверки формы перед отправкой
     function submitForm(type) {
-        let name = document.querySelector(`#${type}Name`)?.value.trim();
-        let phone = document.querySelector(`#${type}Phone`)?.value.trim();
-        let agree = document.querySelector(`#${type}Agree`)?.checked;
+        let nameInput = document.getElementById(`${type}Name`);
+        let phoneInput = document.getElementById(`${type}Phone`);
+        let agreeCheckbox = document.getElementById(`${type}Agree`);
+
+        if (!nameInput || !phoneInput || !agreeCheckbox) {
+            console.error("Не найдены элементы формы для:", type);
+            return;
+        }
+
+        let name = nameInput.value.trim();
+        let phone = phoneInput.value.trim();
+        let agree = agreeCheckbox.checked;
 
         if (name && phone && agree) {
-            closeModal(type + "Modal");
+            closeModal(`${type}Modal`);
             openModal("successModal");
         } else {
             alert("Пожалуйста, заполните все поля и согласитесь с политикой конфиденциальности.");
         }
     }
 
-    // Навешивание обработчиков на кнопки отправки форм
-    document.querySelectorAll(".modal button").forEach(button => {
-        button.addEventListener("click", function () {
-            let modal = this.closest(".modal"); // Находим родительское окно
-            if (modal) {
-                if (modal.id === "volunteerModal") submitForm("volunteer");
-                if (modal.id === "helpModal") submitForm("help");
-            }
-        });
+    // Привязка обработчиков к кнопкам внутри модальных окон
+    document.getElementById("volunteerSubmit").addEventListener("click", function () {
+        submitForm("volunteer");
     });
 
-    // Закрытие по кнопке "×"
+    document.getElementById("helpSubmit").addEventListener("click", function () {
+        submitForm("help");
+    });
+
+    // Обработчики для кнопок закрытия (крестики "×")
     document.querySelectorAll(".close").forEach(closeBtn => {
         closeBtn.addEventListener("click", function () {
             let modal = this.closest(".modal");
@@ -1507,6 +1520,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+
 
 
 
