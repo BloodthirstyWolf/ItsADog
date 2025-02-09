@@ -1475,26 +1475,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Обработка формы (проверка заполненности)
     function submitForm(type) {
-        let name = document.querySelector(`#${type}Name`).value.trim();
-        let phone = document.querySelector(`#${type}Phone`).value.trim();
-        let agree = document.querySelector(`#${type}Agree`).checked;
+        let nameField = document.querySelector(`#${type}Name`);
+        let phoneField = document.querySelector(`#${type}Phone`);
+        let agreeCheckbox = document.querySelector(`#${type}Agree`);
 
-        if (name && phone && agree) {
-            closeModal(type + "Modal");
-            openModal("successModal");
-        } else {
-            alert("Пожалуйста, заполните все поля и согласитесь с политикой конфиденциальности.");
+        let name = nameField ? nameField.value.trim() : "";
+        let phone = phoneField ? phoneField.value.trim() : "";
+        let agree = agreeCheckbox ? agreeCheckbox.checked : false;
+
+        if (!name) {
+            alert("Пожалуйста, введите ваше имя.");
+            return;
         }
-    }
+        if (!phone) {
+            alert("Пожалуйста, введите ваш телефон.");
+            return;
+        }
+        if (!/^\+?\d{10,15}$/.test(phone)) {
+            alert("Пожалуйста, введите корректный номер телефона.");
+            return;
+        }
+        if (!agree) {
+            alert("Пожалуйста, подтвердите согласие с политикой конфиденциальности.");
+            return;
+        }
 
-    // Навешивание обработчиков на кнопки
-    document.querySelectorAll(".button").forEach(button => {
-        button.addEventListener("click", function () {
-            let modalType = this.getAttribute("onclick");
-            if (modalType.includes("volunteerModal")) openModal("volunteerModal");
-            if (modalType.includes("helpModal")) openModal("helpModal");
-        });
-    });
+        closeModal(type + "Modal");
+        openModal("successModal");
+    }
 
     // Закрытие по кнопке "×"
     document.querySelectorAll(".close").forEach(closeBtn => {
@@ -1504,14 +1512,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Добавление обработчиков к кнопкам отправки формы
+    // Обработчики кнопок отправки формы
     document.querySelectorAll("[onclick^='submitForm']").forEach(btn => {
         btn.addEventListener("click", function () {
-            let type = this.getAttribute("onclick").match(/submitForm'(.+)'/)[1];
+            let type = this.getAttribute("onclick").match(/submitForm\('(.+)'\)/)[1];
             submitForm(type);
         });
     });
 });
-		    </script>
+</script>
+
 </body>
 </html>
