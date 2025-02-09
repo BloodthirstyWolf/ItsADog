@@ -1441,45 +1441,68 @@ flex-direction: column;
 
 
   </main>
-
-  <script>
-    document.querySelectorAll('.faq-question').forEach((question) => {
-    question.addEventListener('click', () => {
-        const item = question.parentElement;
-
-        // Закрываем все остальные вопросы
-        document.querySelectorAll('.faq-item').forEach((otherItem) => {
-            if (otherItem !== item) otherItem.classList.remove('open');
-        });
-
-        // Открываем/закрываем текущий
-        item.classList.toggle('open');
-    });
-}); // ← Здесь была недостающая закрывающая скобка!
-
-// Функции для работы с модальными окнами
-function openModal(modalId) {
-    let modal = document.getElementById(modalId);
-    if (modal) modal.style.display = "block";
-}
-
-function closeModal(modalId) {
-    let modal = document.getElementById(modalId);
-    if (modal) modal.style.display = "none";
-}
-
-function submitForm(type) {
-    let name = document.getElementById(type + "Name").value.trim();
-    let phone = document.getElementById(type + "Phone").value.trim();
-    let agree = document.getElementById(type + "Agree").checked;
-
-    if (name && phone && agree) {
-        closeModal(type + "Modal");
-        openModal("successModal");
-    } else {
-        alert("Пожалуйста, заполните все поля и согласитесь с политикой конфиденциальности.");
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Открытие модального окна
+    function openModal(modalId) {
+        let modal = document.getElementById(modalId);
+        if (modal) modal.classList.add("show");
     }
-	  }
-  </script>
+
+    // Закрытие модального окна
+    function closeModal(modalId) {
+        let modal = document.getElementById(modalId);
+        if (modal) modal.classList.remove("show");
+    }
+
+    // Закрытие модалки при клике вне ее
+    window.addEventListener("click", function (event) {
+        document.querySelectorAll(".modal").forEach(modal => {
+            if (event.target === modal) {
+                modal.classList.remove("show");
+            }
+        });
+    });
+
+    // Обработка формы (проверка заполненности)
+    function submitForm(type) {
+        let name = document.querySelector(`#${type}Name`).value.trim();
+        let phone = document.querySelector(`#${type}Phone`).value.trim();
+        let agree = document.querySelector(`#${type}Agree`).checked;
+
+        if (name && phone && agree) {
+            closeModal(type + "Modal");
+            openModal("successModal");
+        } else {
+            alert("Пожалуйста, заполните все поля и согласитесь с политикой конфиденциальности.");
+        }
+    }
+
+    // Навешивание обработчиков на кнопки
+    document.querySelectorAll(".button").forEach(button => {
+        button.addEventListener("click", function () {
+            let modalType = this.getAttribute("onclick");
+            if (modalType.includes("volunteerModal")) openModal("volunteerModal");
+            if (modalType.includes("helpModal")) openModal("helpModal");
+        });
+    });
+
+    // Закрытие по кнопке "×"
+    document.querySelectorAll(".close").forEach(closeBtn => {
+        closeBtn.addEventListener("click", function () {
+            let modal = this.closest(".modal");
+            if (modal) modal.classList.remove("show");
+        });
+    });
+
+    // Добавление обработчиков к кнопкам отправки формы
+    document.querySelectorAll("[onclick^='submitForm']").forEach(btn => {
+        btn.addEventListener("click", function () {
+            let type = this.getAttribute("onclick").match(/submitForm'(.+)'/)[1];
+            submitForm(type);
+        });
+    });
+});
+		    </script>
 </body>
 </html>
